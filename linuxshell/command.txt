@@ -36,3 +36,182 @@ finger www
 less /etc/passwd
 yum install p7zip
 rm -rf phpwind
+
+
+/usr/bin/dde-desktop
+amh info
+amh mysql start
+amh mysql stop
+amh nginx start
+amh nginx stop
+apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+bash iRedMail.sh 
+cat /home/William/t.txt
+cat amh.log
+cd /etc/udev/rules.d
+cd /etc/vsftpd_user_conf 
+cd ~
+cd iRedMail-0.9.0/
+cd share
+chkconfig httpd off
+chkconfig redis on
+clear
+dde-setting
+deepin-seting
+deepin-setting
+deepin-settings
+exit
+ftp localhost
+gnome-session-properties
+gsettings set com.deepin.dde.desktop enabled-plugins '["clock","weather"]'
+halt
+history
+ifconfig
+killall dde-desktop
+killall dde-dock
+ll
+ls
+ls -l
+lspci |grep VGA
+make
+make clean
+make distclean
+make install
+make test
+nmcli con list
+node -v
+nodejs -V
+optirun nvidia-settings -c :8
+ping lys.zoesap.com
+ps -e|grep ssh
+python /home/william/公共的/google_appengine/goagent-2.1.5/local/proxy.py
+python -V
+reboot
+rm -rf 70-persistent-net.rules 
+service dovecot restart
+service httpd restart
+service httpd stop
+service lightdm restart
+service lightdm stop
+service network restart
+service postgresql start
+service postgresql stop
+service redis start
+service redis status
+service redis stop
+service vsftpd restart
+sestatus -b | grep ftp 
+setting
+shutdown
+ssh root@
+ssh root@182.92.106.241
+startx
+sudo /etc/init.d/apache2 restart
+sudo /etc/init.d/vsftpd restart 
+sudo /etc/pam.d/vsftpd
+sudo add-apt-repository ppa:bumblebee/stable
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-cache search php5
+sudo apt-get autoclean
+sudo apt-get autoremove
+sudo apt-get install bumblebee bumblebee-nvidia
+sudo apt-get install db4.8-util
+sudo apt-get install db-util
+sudo apt-get install deepin-settings
+sudo apt-get install libgcc1
+sudo apt-get install linux-headers-generic
+sudo apt-get install mysql-server mysql-client
+sudo apt-get install nginx
+sudo apt-get install php5-fpm
+sudo apt-get install phpmyadmin
+sudo apt-get install --reinstall bcmwl-kernel-source
+sudo apt-get install ubuntu-tweak
+sudo apt-get install vsftpd
+sudo apt-get purge linux-headers-3.13.0-30 linux-headers-3.13.0-30-generic linux-image-3.13.0-30-generic linux-image-extra-3.13.0-30-generic 
+sudo apt-get --reinstall install dde-meta-zh-hans
+sudo apt-get remove indicator-messages 
+sudo apt-get remove --purge btrfs-tools
+sudo apt-get remove --purge pointdownload
+sudo apt-get remove --purge vsftpd
+sudo apt-get update
+sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get --reinstall install dde-meta-zh-hans && reboot
+sudo apt-get update --fix-missing
+sudo chmod 600 /etc/vsftpd_login.db
+sudo chmod 777 /etc/vsftpd_login.db
+sudo chmod -R 775 /home/William/share
+sudo chown -R www-data:www-data /home/William/share
+sudo db5.3_load -T -t hash -f /home/William/t.txt /etc/vsftpd_login.db
+sudo dpkg --get-selections |grep linux
+sudo gedit /boot/grub/grub.cfg
+sudo gedit /etc/default/grub
+sudo gedit /etc/fstab
+sudo gedit /etc/hosts
+sudo gedit /etc/nginx/sites-available/default
+sudo gedit /etc/pam.d/vsftpd
+sudo gedit /etc/selinux/config
+sudo gedit /etc/shells
+sudo gedit /etc/vsftpd.chroot_list
+sudo gedit /etc/vsftpd.conf
+sudo gedit /etc/vsftpd_user_conf/t1
+sudo gedit /var/log/nginx/error.log
+sudo gedit ~/.bash_history
+sudo mkdir /etc/vsftpd/vuser_conf
+sudo mkdir /etc/vsftpd_user_conf
+sudo mkdir Data
+sudo modprobe wl
+sudo mv /usr/share/phpmyadmin/ /home/william/phpmyadmin
+sudo passwd t1
+sudo reboot
+sudo rmmod b43
+sudo rmmod bcma
+sudo rmmod brcmsmac
+sudo rmmod wl
+sudo -s
+sudo service nginx restart 
+sudo service nginx start
+sudo service nginx stop
+sudo service php5-fpm restart
+sudo service php5-fpm start
+sudo service php5-fpm stop
+sudo service php-fpm stop
+sudo service vsftpd restart
+sudo touch t1 t2 t3
+sudo update --fix-missing
+sudo update-grub
+sudo useradd -d /home/William/share/t1 –s /bin/false t1
+sudo useradd -d /home/William/share/t1 –s /bin/false t1clear
+sudo useradd -g www-data -d /home/William/share/t1 –s /bin/false t1
+sudo useradd –g www-data -d /home/William/share/t1 –s /bin/false t1
+sudo useradd -g www-data -d /home/William/share/t1 –s /sbin/nologin t1
+sudo useradd -g www-data -d /home/William/share/t1 –s /sbin/nologin t2
+sudo useradd –s /bin/false t1
+sudo useradd t1
+sudo useradd t1 -d /home/William/share/t1 -s /bin/false
+sudo useradd t1 -d /home/William/share/t1 –s /bin/false
+sudo useradd t1 -d /home/William/share/t1 –s /sbin/nologin
+sudo useradd t1 –g www-data -d /home/William/share/t1 –s /bin/false
+sudo useradd t1 –s /bin/false
+sudo userdel t1
+sudo usermod -d /home/William/share www-data
+sudo usermod -d /home/William/share/t1 t1
+sudo usermod -s /usr/sbin/nologin
+sudo usermod -s /usr/sbin/nologin t1
+sudo vi /etc/vsftpd.chroot_list
+sudo vi /etc/vsftpd.conf
+top
+uname -r
+useradd -g www-data -d /home/William/share/t1 –s /sbin/nologin t1
+usermod
+usermod -s /usr/sbin/nologin t1
+vi /etc/sysconfig/network-scripts/ifcfg-eth0 
+vim /etc/redis.conf 
+wget http://amh.sh/file/AMH/4.2/amh.sh && chmod 775 amh.sh && ./amh.sh 2>&1|tee amh.log
+which nologin
+yum install epel-release
+yum install nodejs npm
+yum install php-devel
+yum install php-redis
+yum install redis
+yum install tcl
+yum install vim
+yum install wget
