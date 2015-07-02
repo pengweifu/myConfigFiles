@@ -1,0 +1,64 @@
+{
+	"dpi_scale": 1.0,
+	"font_size": 21,
+	"ignored_packages":
+	[
+		"Vintage",
+        "Markdown",
+
+        "LESS",
+        "Less2Css",
+        
+        "Themr",
+        "Theme - Cobalt2",
+        "Colorsublime",
+
+		"Git",
+        "GitGutter",
+
+		"MarkdownEditing",
+		"Markdown Preview",
+
+        "LiveStyle",
+        "SublimeTmpl",
+        "TrailingSpaces",
+
+        "Diff",
+        "FileDiffs",
+
+		"CSScomb",
+        // "Emmet",
+		// "HTML-CSS-JS Prettify",
+
+        "CTags",
+		// "SublimeLinter-phpcs",
+		// "SublimeLinter",
+		// "PHP Companion",
+		// "Phpcs",
+
+        // "CoolFormat",
+        // "Alignment",
+
+        // "DocBlockr",
+        // "BracketHighlighter",
+        // "SideBarEnhancements",
+        
+        // "AutoFileName",
+        // "SublimeCodeIntel",
+        // "All Autocomplete",
+        // "Better Completion",
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"spacegray_sidebar_font_xlarge": true,
+	"spacegray_sidebar_tree_xlarge": true,
+	"spacegray_tabs_auto_width": true,
+	"spacegray_tabs_xlarge": true,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"word_wrap": "true",
+    // "theme": "Spacegray.sublime-theme",
+    // "color_scheme": "Packages/User/SublimeLinter/3024_Night (SL).tmTheme",
+    "theme": "Spacegray Light.sublime-theme",
+    "color_scheme": "Packages/User/SublimeLinter/3024_Day (SL).tmTheme",
+}

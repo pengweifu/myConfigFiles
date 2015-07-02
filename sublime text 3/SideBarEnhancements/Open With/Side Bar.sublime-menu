@@ -1,0 +1,87 @@
+[
+	{"id": "side-bar-files-open-with",
+		"children":
+		[
+
+			//application 1
+			{
+				"caption": "Photoshop",
+				"id": "side-bar-files-open-with-photoshop",
+
+				"command": "side_bar_files_open_with",
+				"args": {
+									"paths": [],
+									"application": "C:\\Program Files\\Adobe\\Adobe Photoshop CS3\\Photoshop.exe",
+									"extensions":"psd|png|jpg|jpeg",  //any file with these extensions
+									"args":[]
+								},
+				"open_automatically" : false // will close the view/tab and launch the application
+			},
+
+			//separator
+			{"caption":"-"},
+			//application n
+			{
+				"caption": "Chrome",
+				"id": "side-bar-files-open-with-chrome",
+
+				"command": "side_bar_files_open_with",
+				"args": {
+									"paths": [],
+									"application": "C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
+									"extensions":"html|htm|txt", //any file with extension
+									"args":[]
+						},
+				"open_automatically" : false // will close the view/tab and launch the application
+			},
+
+			{"caption":"-"},
+			//application n
+			{
+				"caption": "Editplus",
+				"id": "side-bar-files-open-with-editplus",
+
+				"command": "side_bar_files_open_with",
+				"args": {
+									"paths": [],
+									"application": "D:\\Program Files\\EditPlus 3\\EditPlus.exe",
+									"extensions":"html|htm|txt|css|js|php|asp|tpl|aspx|vb|cs|py|json|ini|bat|md|less|conf|xml|sql", //any file with extension
+									"args":[]
+						},
+				"open_automatically" : false // will close the view/tab and launch the application
+			},
+
+			{"caption":"-"},
+			//application n
+			{
+				"caption": "AxureRP",
+				"id": "side-bar-files-open-with-axurerppro",
+
+				"command": "side_bar_files_open_with",
+				"args": {
+									"paths": [],
+									"application": "D:\\Program Files\\axurerppro\\AxureRP.exe",
+									"extensions":"rp", //any file with extension
+									"args":[]
+						},
+				"open_automatically" : false // will close the view/tab and launch the application
+			},
+
+			{"caption":"-"},
+			//application n
+			{
+				"caption": "XnView",
+				"id": "side-bar-files-open-with-xnview",
+
+				"command": "side_bar_files_open_with",
+				"args": {
+									"paths": [],
+									"application": "D:\\Program Files\\XnView\\xnview.exe",
+									"extensions":"bmp|png|jpg|jpeg|gif", //any file with extension
+									"args":[]
+						},
+				"open_automatically" : false // will close the view/tab and launch the application
+			}
+		]
+	}
+]

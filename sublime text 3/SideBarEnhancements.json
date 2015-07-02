@@ -1,0 +1,6 @@
+{
+    "D:\\Server\\web\\wwwroot\\StaticTemplate":{
+        "url_testing"   :"http://localhost/StaticTemplate/",
+        "url_production":"http://localhost/StaticTemplate/"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "PHP": {
+        "php": "D:\\Server\\php5.4\\php.exe",
+        "phpExtraPaths": [],
+        "phpConfigFile": "D:\\Server\\php5.4\\php.ini"
+    },
+    "JavaScript": {
+        "javascriptExtraPaths": []
+    }
+}
