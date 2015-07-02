@@ -1,0 +1,38 @@
+zip -r 20150104.zip wwwroot
+wget http://www.vfunding.cn
+traceroute www.vfunding.cn 
+yum install traceroute
+top
+iftop
+mysql -u root -p
+df -hv
+du -hs data
+ps auxw | grep vsftpd
+service vsftpd restart
+service nginx restart
+service mysqld restart
+service php-fpm restart
+/etc/init.d/php-fpm restart
+pkill vsftpd
+kill 14461
+netstat -antp | grep 21 | grep ESTABLISHED -c
+netstat -anp
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+chown -R  www:www /alidata/www/wwwroot/login/
+chmod –R 777 sh-1.3.0
+unzip t2.zip -d /alidata/www/wwwroot
+uptime
+yum install telnet
+telnet 211.103.157.45 80
+service crond status
+find / -name my.cnf
+yum install crontabs
+yum update
+crontab -e
+crontab -l
+crontab -r
+whereis php5
+finger www
+less /etc/passwd
+yum install p7zip
+rm -rf phpwind
