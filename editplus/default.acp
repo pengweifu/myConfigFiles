@@ -1,0 +1,34 @@
+#TITLE=SHTML
+; EditPlus Auto-completion file v1.0 written by EMischie.
+; This file is provided as an auto-completion file for SSI.
+
+#CASE=y
+
+#T=asp
+<%
+^!
+%>
+#T=php
+<?php
+^!
+?>
+#T==
+<?php echo $^!;?>
+#T=.
+/**^!
+/**/
+#T=html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="generator" content="editplus">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+^!
+</body></html>
+#

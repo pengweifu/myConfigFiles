@@ -1,0 +1,818 @@
+#TITLE=HTML
+; EditPlus Auto-completion File v1.0 written by ES-Computing.
+; This file is intended to be used by HTML Toolbar of EditPlus.
+; <WARNING>
+; This file is required for EditPlus to run correctly.
+; You can modify only the content of each entry.
+; Do not add/remove any entry.
+; Do not modify title of each entry.
+
+#CASE=y
+
+#T=asp
+<%
+^!%>
+#T=psa
+%>^!<%
+#T=include
+<!--#include file="^!"-->
+#T=rw
+Response.Write ^!
+#T=rf
+Response.Flush
+#T=rwa
+Response.Write "^!"&Char(10)
+#T=r
+Stc.Re("^!","yes")
+#T=rr
+Response.Redirect ("?action=^!")
+#T=re
+Response.End()
+#T=rex
+Response.Expires=0
+#T=rb
+Response.Write ("<br>")&Chr(10)
+^!
+#T=ra
+Rs.Addnew
+^!
+#T=rcl
+Response.Clear()
+#T=alert
+Sys.Alert "错误:\n\n必须要填写^!!","BACK","0"
+#T=ru
+Rs.Update
+#T=rbf
+<%Response.Buffer=False%>
+#T=rbt
+<%Response.Buffer=True%>
+#T=rcc
+Response.clear()
+^!
+#T=rc
+Rs.Close
+^!
+#T=record
+Rs.Recordcount
+#T=sr
+Set Rs=Nothing
+#T=ri
+Response.IsClientConnected
+#T=rs
+Rs("^!")
+#T=is
+Sys.IsNum(^!)=False
+#T=get
+Sys.toGet("^!","yes")
+#T=or
+OR ^!
+#T=else
+Else
+	^!
+#T=isnull
+Isnull(^!)
+#TITLE=HTML
+; EditPlus Auto-completion file v1.0 written by 麦田稻草人(http://987528260.qzone.qq.com).
+; This file is provided as a default auto-completion file for HTML
+
+#CASE=n
+
+#T=body
+<body>^!</body>
+#T=header
+<header>^!</header>
+#T=footer
+<footer>^!</footer>
+#T=html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="Author" content="QQ987528260">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>首页</title>
+	<link type="text/css" href="css/mx.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/mx.js"></script>
+</head>
+
+ <body>
+^!
+ </body>
+</html>
+#T=f
+<form method="post" action="">
+^!
+</form>
+#T=jq
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(^!);
+	});
+</script>
+#T=submit
+<input type="submit" value="^!"/>
+#T=li
+<li>^!</li>
+#T=reset
+<input type="reset" value="^!"/>
+#T=head
+<head>^!</head>
+#T=title
+<title>^!</title>
+#T=js
+<script type="text/javascript">^!</script>
+#T=b
+<b>^!</b>
+#T=em
+<em>^!</em>
+#T=sp
+<span>^!</span>
+#T=spc
+<span class="^!"></span>
+#T=h1
+<h1>^!</h1>
+#T=h2
+<h2>^!</h2>
+#T=h3
+<h3>^!</h3>
+#T=h4
+<h4>^!</h4>
+#T=h5
+<h5>^!</h5>
+#T=h6
+<h6>^!</h6>
+#T=p
+<p>^!</p>
+#T=n
+&nbsp;
+#T=a
+<a href="" title="">^!</a>
+#T=at
+<a target="_blank" href="" title="">^!</a>
+#T=hr
+<hr />
+#T=img
+<img src="images/^!.jpg" alt="" />
+#T=d
+<div>^!</div>
+#T=di
+<div id="^!"></div>
+#T=dc
+<div class="^!"></div>
+#T=dic
+<div id="^!" class=""></div>
+#T=rem
+<!-- ^! -->
+#T=label
+<label>^!</label>
+#T=radio
+<input type="radio" name="^!" />
+#T=text
+<input type="text" name="^!" />
+#T=pwd
+<input type="password" name="^!" />
+#T=select
+<select name="^!"></select>
+#T=option
+<option value="^!" ></option>
+#T=utf
+<meta http-equiv="Content-Type" content="text/html; charset=^!" />
+#T=button
+<button>^!</button>
+#T=textarea
+<textarea>^!</textarea>
+#T=lbl
+<label for="">^!</label>
+#T=tab
+<table>
+	<tr>
+		<td>^!</td>
+		<td></td>
+	</tr>
+</table>
+#T=thead
+<thead>
+	<th>^!</th>
+	<th></th>
+</thead>
+#T=tr
+<tr><td>^!</td><td></td></tr>
+#T=td
+<td>^!</td>
+#T=th
+<th>^!</th>
+#T=css
+<link type="text/css" href="^!" rel="stylesheet" />
+#T=br
+<br />
+#T=style
+<style type="text/css">^!</style>
+#T=ul
+<ul>
+	<li>^!</li>
+	<li></li>
+</ul>
+#T=ua
+<ul>
+	<li><a href="^!" title=""></a></li>
+</ul>
+#T=uia
+<ul id="^!">
+	<li><a href="" title=""></a></li>
+</ul>
+#T=html5
+<!DOCTYPE>
+<html>
+ <head>
+	<meta charset="utf-8" />
+	<title>麦田稻草人</title>
+	<meta name="Author" content="QQ987528260">
+	<link href="" rel="stylesheet" />
+	<script src="js/jquery.js"></script>
+ </head>
+
+ <body>
+	<header class="header">
+		^!
+	</header>
+	<div class=""></div>
+	<footer class="footer">
+		
+	</footer>
+ </body>
+</html>
+#T=swf
+<object id="^!" width="" height="" classid="CLSID:D27CDB6E-AE6D-11cf-96B8-444553540000">
+<param name="movie" value="" />
+<param name="quality" value="high" />
+<param name="wmode" value="transparent" />
+<embed width="" height="" src="" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+</object>
+#T=#
+#^!{
+}
+#T=while 
+While(^!)
+	
+Wend 
+#T=for 
+For ^! 
+	
+Next 
+#T=case
+Select Case ^!
+Case  
+Case Else 
+End Select 
+#T=do 
+Do ^!
+	
+Loop 
+#T=if 
+If ^! Then End if 
+#T=sub 
+Sub ^!()
+	
+End Sub 
+#T=fun
+Function ^!()
+	
+End Function 
+#T=Abs 
+Abs(^!)
+#T=Remove 
+Remove(^!)
+#T=StaticObjects 
+StaticObjects(^!)
+#T=Array 
+Array(^!)
+#T=Asc 
+Asc(^!)
+#T=Atn 
+Atn(^!)
+#T=CBool 
+CBool(^!)
+#T=CByte 
+CByte(^!)
+#T=CCur 
+CCur(^!)
+#T=CDate 
+CDate(^!)
+#T=CDbl 
+CDbl(^!)
+#T=Chr 
+Chr(^!)
+#T=CInt 
+CInt(^!)
+#T=CLng 
+CLng(^!) 
+#T=Cos 
+Cos(^!)
+#T=CreateObject 
+CreateObject(^!)
+#T=CSng 
+CSng(^!)
+#T=CStr 
+CStr(^!)
+#T=DateAdd 
+DateAdd(^!, , )
+#T=DateDiff 
+DateDiff(^!, , )
+#T=DatePart 
+DatePart(^!, date)
+#T=DateSerial 
+DateSerial(^!, , )
+#T=DateValue 
+DateValue(^!)
+#T=Day 
+Day(^!)
+#T=Eval 
+Eval(^!)
+#T=Exp 
+Exp(^!)
+#T=CompareMode 
+CompareMode^! 
+#T=Count 
+#T=Item 
+Item(^!)
+#T=Key 
+Key(^!)=  
+#T=Add 
+Add(^!, )
+#T=Exists 
+Exists(^!)
+#T=Items 
+#T=Keys 
+#T=Remove 
+Remove(^!)
+#T=VolumeName 
+VolumeName^! 
+#T=Move 
+Move(^!)
+#T=OpenAsTextStream 
+OpenAsTextStream(^!, )
+#T=BuildPath 
+BuildPath(^!, )
+#T=CopyFile 
+CopyFile(^!, )
+#T=CopyFolder 
+CopyFolder(^!, )
+#T=CreateFolder 
+CreateFolder(^!)
+#T=DeleteFile 
+DeleteFile(^!)
+#T=DeleteFolder 
+DeleteFolder(^!)
+#T=DriveExists 
+DriveExists(^!)
+#T=FileExists 
+FileExists(^!)
+#T=FolderExists 
+FolderExists(^!)
+#T=GetAbsolutePathName 
+GetAbsolutePathName(^!)
+#T=GetBaseName 
+GetBaseName(^!)
+#T=GetDrive 
+GetDrive(^!)
+#T=GetDriveName 
+GetDriveName(^!)
+#T=GetExtensionName 
+GetExtensionName(^!)
+#T=GetFile 
+GetFile(^!)
+#T=GetFileName 
+GetFileName(^!)
+#T=GetFolder 
+GetFolder(^!)
+#T=GetParentFolderName 
+GetParentFolderName(^!)
+#T=GetSpecialFolder 
+GetSpecialFolder(^!)
+#T=GetTempName 
+#T=MoveFile 
+MoveFile(^!, )
+#T=MoveFolder 
+MoveFolder(^!,)
+#T=OpenTextFile 
+OpenTextFile(^!, , , )
+#T=Filter 
+Filter(^!, )
+#T=Fix 
+Fix(^!)
+#T=Attributes 
+Attributes^! 
+#T=Copy 
+Copy(^!)
+#T=CreateTextFile 
+CreateTextFile(^!)
+#T=Delete 
+Delete^! 
+#T=Name 
+Name^! 
+#T=FormatCurrency 
+FormatCurrency(^!)
+#T=FormatDateTime 
+FormatDateTime(^!, )
+#T=FormatNumber 
+FormatNumber(^!)
+#T=FormatPercent 
+FormatPercent(^!)
+#T=GetLocale 
+#T=GetObject 
+GetObject(^!)
+#T=GetRef 
+GetRef(^!)
+#T=Hex 
+Hex()
+#T=Hour 
+Hour(^!)
+#T=InputBox 
+InputBox(^!)
+#T=InStr 
+InStr(^! , )
+#T=InStrRev 
+InStrRev(^!, )
+#T=Int 
+Int(^!)
+#T=IsArray 
+IsArray(^!)
+#T=IsDate 
+IsDate(^!)
+#T=IsEmpty 
+IsEmpty(^!)
+#T=IsNull 
+IsNull(^!)
+#T=IsNumeric 
+IsNumeric(^!)
+#T=IsObject 
+IsObject(^!)
+#T=Join 
+Join(^!)
+#T=LBound 
+LBound(^!)
+#T=LCase 
+LCase(^!)
+#T=Left 
+Left(^!, )
+#T=Len 
+Len(^!)
+#T=LoadPicture 
+LoadPicture(^!)
+#T=Log 
+Log(^!)
+#T=LTrim 
+LTrim(^!)
+#T=Mid 
+Mid(^!, )
+#T=Minute 
+Minute(^!)
+#T=Month 
+Month(^!)
+#T=MonthName 
+MonthName(^!)
+#T=MsgBox 
+MsgBox(^!)
+#T=Oct 
+Oct(^!)
+#T=Replace 
+Replace(^!,,)
+#T=BinaryRead 
+BinaryRead(^!)
+#T=Cookies 
+Cookies(^!)
+#T=Form 
+Form(^!)
+#T=QueryString 
+QueryString(^!)
+#T=ServerVariables 
+ServerVariables(^!)
+#T=AddHeader 
+AddHeader(^!, )
+#T=AppendToLog 
+AppendToLog(^!)
+#T=BinaryWrite 
+BinaryWrite(^!)
+#T=Buffer 
+Buffer^! 
+#T=ChacheControl 
+CacheControl^! 
+#T=ContentType 
+Charset(^!)
+#T=End 
+#T=Expires 
+Expires^! 
+#T=ExpiresAbsolute 
+ExpiresAbsolute^! 
+#T=Flush 
+#T=IsClientConnected 
+IsClientConnected 
+#T=Pics 
+Pics(^!)
+#T=Redirect 
+Redirect ^! 
+#T=Status 
+Status = ^! 
+#T=RGB 
+RGB(^!, , )
+#T=Right 
+Right(^!, )
+#T=Rnd 
+Rnd^! 
+#T=Round 
+Round(^!)
+#T=RTrim 
+RTrim(^!)
+#T=Second 
+Second(^!)
+#T=CodePage 
+CodePage^! 
+#T=Contents 
+Contents(^!)
+#T=LCID 
+LCID^! 
+#T=Timeout 
+Timeout^! 
+#T=Execute 
+Execute(^!) 
+#T=HTMLEncode   
+HTMLEncode(^!) 
+#T=MapPath 
+MapPath(^!)
+#T=ScriptTimeout 
+ScriptTimeout^! 
+#T=Transfer  
+Transfer(^!)
+#T=URLEncode 
+URLEncode(^!) 
+#T=SetLocale 
+SetLocale(^!)
+#T=Sgn 
+Sgn(^!)
+#T=Sin 
+Sin(^!)
+#T=Space 
+Space(^!)
+#T=Split 
+Split(^!)
+#T=Sqr 
+Sqr(^!)
+#T=StrComp 
+StrComp(^!, )
+#T=String 
+String(^!, )
+#T=StrReverse 
+StrReverse(^!)
+#T=Tan 
+Tan(^!)
+#T=Read 
+Read(^!)
+#T=Skip 
+Skip(^!)
+#T=Write 
+Write(^!)
+#T=WriteLine 
+WriteLine(^!)
+#T=WriteBlankLines 
+WriteBlankLines(^!)
+#T=TimeSerial 
+TimeSerial(^!,, )
+#T=TimeValue 
+TimeValue(^!)
+#T=Trim 
+Trim(^!)
+#T=TypeName 
+TypeName(^!)
+#T=UBound 
+UBound(^!)
+#T=UCase 
+UCase(^!) 
+#T=VarType 
+VarType(^!)
+#T=WeekDay 
+Weekday(^!)
+#T=WeekDayName 
+WeekdayName(^!)
+#T=Year 
+Year(^!)
+#T=php
+<?php
+^!
+?>
+#T=&&
+&^!&
+#T=rw
+Response.Write ^!
+#T=rr
+Response.Redirect ^!
+#T=re
+Response.End
+#T=sc
+Set conn=Server.CreateObject("adodb.Connection")
+conn.open "provider=microsoft.jet.oledb.4.0;data source="&server.mappath("^!")
+#T=mx
+Set mx=Server.CreateObject("adodb.Recordset")
+sql="select * from ^! where"
+mx.open sql,conn,1,1
+#T=mxc
+mx.close
+set mx=nothing
+#T=scc
+conn.close
+set conn=nothing^!
+#T=rqf
+Request.Form("^!")
+#T=rqq
+Request.QueryString("^!")
+#T=dim
+Dim ^!
+#T=inc
+<!--#include file="^!"-->
+#T=foreach
+For Each ^! In
+Next
+#T=session
+Session("^!")
+#T=on
+On Error resume Next
+#T=call
+Call ^!()
+#T=len
+Len(^!)<1
+#T=exit
+Exit Sub
+^!
+#T=split
+Arr=Split(^!,"|")
+For i=0 To Ubound(Arr)
+	Response.Write Arr(i)
+Next
+#T=setdel
+Conn.ExeCute("delete from ^! where =")
+#T=action
+^! = InSql(toGet("^!","yes"))
+#T=for
+For ^!=^! To ^!
+IF Rs.Eof Or Rs.Bof Then Exit For
+
+Rs.MoveNext
+Next
+#T=application
+Application.Lock
+	Application(^!)=
+Application.UnLock
+#T=setrs
+IntId=Conn.ExeCute("select id from ^!")("id")
+#T=des
+'==========================================================================
+'^!
+'Design by Seven (See7di@Gmail.com)
+#T=while
+While Not Rs.Eof
+	Response.write""&VBNewLine
+	Rs.MoveNext
+Wend
+#T=do
+Do While Not Rs.Bof
+IF Rs.Eof Or Rs.Bof Then Exit Do
+	^!
+Rs.Movenext
+Loop
+#T=const
+'==========================================================================
+'作  者:冯健(QQ:9256114  eMail:See7di@Gmail.com)
+'日  期:2008-11-3
+'版  权:Copyright (C) 2008 www.7di.Net
+'==========================================================================
+Const ^!=
+#T=conn
+Set conn=Server.CreateObject("ADODB.Connection")
+ConnStr="Provider=Microsoft.Jet.OLEDB.4.0;Data Source="&server.mappath("^!.mdb")&""
+'Connstr="DBQ="&server.mappath("^!.mdb")&";DRIVER={Microsoft Access Driver (*.mdb)};"
+On Error Resume Next
+Conn.open ConnStr
+IF Err Then
+	Err.Clear
+	Set Conn = Nothing
+	Response.Write "连接数据库错误……"
+	Response.End
+End IF
+#T=setex
+Set Rs = Conn.ExeCute("Select * From ^! Where =")
+	IF Not(Rs.Eof OR Rs.Bof) Then
+
+	End IF
+Set Rs = Nothing
+#T=set
+Set Rs = Server.CreateObject("Adodb.Recordset")
+Rs.Open "Select * From ^! Where = Order by Desc",Conn,1,1
+IF Not(Rs.Eof OR Rs.Bof) Then
+	RecordCount=Rs.Recordcount
+	Page = Trim(Request("page")):IF Len(Page)<1 Then Page=0:IF IsNum(Page)=False Or Page=0 Then Page = 1
+	Rs.pageSize = Conf(7):PageCount = Rs.pageCount:Rs.absolutepage = Page
+	For i = 1 To Conf(7)
+	IF Rs.Eof Or Rs.Bof Then Exit For
+		Response.Write ""
+	Rs.MoveNext
+	Next
+End IF
+Rs.Close
+Set Rs = Nothing
+Call Divpage(Page,PageCount,RecordCount,"?")
+#T=setts
+Set Ts = Server.CreateObject("Adodb.Recordset")
+Ts.Open "Select * From ^! Where = Order by Desc",Conn,1,1
+IF Not(Ts.Eof OR Ts.Bof) Then
+	RecordCount=Ts.Recordcount
+	Page = Trim(Request("page")):IF Len(Page)<1 Then Page=0:IF IsNum(Page)=False Or Page=0 Then Page = 1
+	Ts.pageSize = Conf(7):PageCount = Ts.pageCount:Ts.absolutepage = Page
+	For i = 1 To Conf(7)
+	IF Ts.Eof Or Ts.Bof Then Exit For
+		Response.Write ""
+	Ts.MoveNext
+	Next
+End IF
+Ts.Close
+Set Ts = Nothing
+Call Divpage(Page,PageCount,RecordCount,"?")
+#T=sub
+'==========================================================================
+'功  能:
+'参  数:无
+'作  者:冯健(QQ:9256114  eMail:See7di@Gmail.com)
+'==========================================================================
+Sub ^!()
+End Sub
+#T=num
+IntNum = Conn.ExeCute("Select count(*) As IntNum From ^! Where ^!="&^!&"")(0)
+#T=function
+'==========================================================================
+'功  能:
+'参  数:
+'返回值:
+'作  者:冯健(QQ:9256114  eMail:See7di@Gmail.com)
+'==========================================================================
+Function ^!()
+End Function
+#T=insql
+Function InSql(str)
+	Dim strResult,i
+	str=Trim(str)
+	IF IsNULL(str) Then
+		InSql = ""
+		Exit Function
+	End IF
+	strResult = ""
+	For i = 1 To Len(str)
+		Select Case Mid(str,i,1)
+			Case "'":		strResult = strResult & ""
+			Case Chr(13):	strResult = strResult & "<br>"
+			Case Chr(9):	strResult = strResult & "	"
+			Case Chr(34):	strResult = strResult & ""
+			Case Chr(37):	strResult = strResult & ""
+			Case Chr(39):	strResult = strResult & ""
+			Case Chr(42):	strResult = strResult & ""
+			'Case "<":		strResult = strResult & "&lt;"
+			'Case ">":		strResult = strResult & "&gt;"
+			'Case Chr(34):	strResult = strResult & "&quot;"
+			'Case Chr(32):	strResult = strResult & "&nbsp;"
+			'Case "&":		strResult = strResult & "&amp;"
+			Case Else:		strResult = strResult & Mid(str,i,1)
+		End Select
+	Next
+
+	For i=0 To 5
+		IF InStr(strResult,"<P>")>0 Then strResult=Replace(strResult,"<P>","")
+		IF InStr(strResult,"</P>")>0 Then strResult=Replace(strResult,"</P>","<BR>")
+		IF InStr(strResult,"<p>")>0 Then strResult=Replace(strResult,"<p>","")
+		IF InStr(strResult,"</p>")>0 Then strResult=Replace(strResult,"</p>","<BR>")
+		strResult=Replace(strResult,"<BR><BR><BR>","<BR>")
+	Next
+	InSql = strResult
+End Function
+#T=subalert
+Sub Alert(Url,Mess)
+	Url=LCase(Url)
+	IF Url<>"" Then
+		IF Url="#close" Then
+			StrDo="window.close();"
+		Else
+			StrDo="window.location='"&Url&"';"
+		End IF
+	Else
+		StrDo="window.location='javascript:history.back(1)';"
+	End IF
+
+	IF Len(Trim(Mess))<=0 Then
+		StrAlert=""
+	Else
+		StrAlert="alert('"&Mess&"');"
+	End IF
+	
+	Response.write "<script>"&StrAlert&StrDo&"</script>"
+	Response.End()
+End Sub
+#T=length
+<fieldset><legend>^!</legend>www.7di.net</fieldset>
+#

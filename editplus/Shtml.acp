@@ -1,0 +1,101 @@
+#TITLE=SHTML
+; EditPlus Auto-completion file v1.0 written by EMischie.
+; This file is provided as an auto-completion file for SSI.
+
+#CASE=y
+
+#T=$(
+$(^!)
+#T=/*
+<!--/*
+^!
+*/-->
+#T=//
+<!--#comment text=" ^! " -->
+#T=Decrypt
+$Decrypt(basicrypt, ^!)
+#T=EmbedFile
+$EmbedFile(^!, RAW)
+#T=Encrypt
+$Encrypt(basicrypt, ^!)
+#T=FormatDate
+$FormatDate(^!, ) 
+#T=LocalizePathSlashes
+$LocalizePathSlashes(^!)
+#T=QPairToText
+$QPairToText(^!)
+#T=RandomNumber
+$RandomNumber(^!)
+#T=Substr
+$Substr(^!, )
+#T=SpecialsLiteral
+$SpecialsLiteral(^!)
+#T=TextToQPair
+$TextToQPair(^!)
+#T=TextToURLVariable
+$TextToURLVariable(^!)
+#T=Translate
+$Translate(B64, RAW, ^!)
+#T=abort
+<!--#abort -->
+#T=charseq
+<!--#charseq seq="^!" -->
+#T=comment
+<!--#comment text="^!" -->
+#T=dir
+<!--#dir localvar="^!" source="" pattern="*.*" -->
+#T=echo
+<!--#echo var="^!" -->
+#T=elif
+<!--#elif var="^!" equals="" -->
+#T=else
+<!--#else -->
+#T=embed
+<!--#embed file="^!" encoding="base64" -->
+#T=endfor
+<!--#endfor name="^!" -->
+#T=endif
+<!--#endif -->
+#T=endloop
+<!--#endloop name="^!" -->
+#T=endwhile
+<!--#endwhile name="^!" -->
+#T=exitloop
+<!--#exitloop name="^!" var="" equals="" exists="true" -->
+#T=foreach
+<!--#foreach name="^!" var="" setvar="" -->
+	
+<!--#endfor name="^!" -->
+#T=gwavacmd
+<!--#gwavacmd process_xml="^!" localvar="" -->
+#T=if
+<!--#if var="^!" equals="" -->
+
+<!--#endif -->
+#T=include
+<!--#include file="^!" -->
+#T=jdbc
+<!--#jdbc select="^!" name="" -->
+#T=localvar
+<!--#localvar var="^!" equals="" -->
+#T=loop
+<!--#loop name="^!" -->
+#T=math
+<!--#math var="^!" operator="+" value="1" decimalplaces="" -->
+#T=maxloops
+<!--#maxloops equals="^!" -->
+#T=rendertotarget
+<!--#rendertotarget literal="^!" targettype="tempfile" target="" -->
+#T=scripttimeout
+<!--#scripttimeout equals="^!" -->
+#T=tempfile
+<!--#tempfile var="^!" action="open" -->
+#T=until
+<!--#until name="^!" var="" equals="" -->
+#T=var
+<!--#var var="^!" equals="" -->
+#T=while
+<!--#while name="^!" var="" equals="" -->
+	
+<!--#endwhile name="^!" -->
+#

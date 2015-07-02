@@ -1,0 +1,7615 @@
+#TITLE=Perl
+; EditPlus 自动完成脚本文件 v1.0 由Seven编辑而成.
+; 该文件用来自动完成 Perl 所属的PHP程序开发而用.
+; $a=$_GET[a];//?a = '1abc';
+; $int = (int) $a;
+; $float = (float) $a;
+; $string = (string) $a;
+; $array = settype($int,'array');
+#CASE=y
+
+#T==
+<?php echo $^!;?>
+#T=.
+/**^!
+/**/
+#T=php
+<?php
+^!
+#T=$
+$^!=;
+#T=b
+break;^!
+#T=c
+continue;^!
+#T=var
+var $^!;
+#T=mod
+% ^!
+#T=define
+define('^!','');
+!defined('SYS_') && exit('Access Denied!');
+#T=new
+$^!=new ();
+#T=_
+_('^!',$out);
+#T=__
+$sql=str_repeat('^!',5);
+#T=t
+true
+#T=f
+false
+#T=n
+null^!;
+#T=unset
+unset($^!);
+#T=unsett
+$^!=null;
+#T=or
+or ^!
+#T=and
+and ^!
+#T=d
+die(^!);
+#T=e
+exit(^!);
+#T=r
+return ^!;
+#T=v
+$v['^!']
+#T=rs
+$rs['^!']
+#T=re
+$re['^!']
+#T=rv
+rv['^!']
+#T=isnull
+empty($^!)
+#T=getvalue
+getValue($^!,'name','')
+#T=isnum
+is_numeric($^!)
+#T=require
+require('^!');
+#T=include
+include('^!');
+include_Once('^!');
+require_Once('^!');
+set_include_path('^!');
+#T=dll
+//dl()函数是用来加载dll的，但如果在php.ini文件中将所需要的dll前面的“;”已经去掉的话，那么这时就不要使用这个函数
+dl('php_gd_gif.dll');
+#T=isset
+isset($^!)
+#T=count
+count($^!)
+#T=gs
+$GLOBALS['^!']
+#T=global
+Global $^!;
+#T=globall
+$A='This ';
+$GLOBALS['B']='is ';
+function Sum() {
+    echo $GLOBALS['A'],$GLOBALS['B'],'<br>';
+	$GLOBALS['C']=$GLOBALS['A'].$GLOBALS['B'].'C!';
+}Sum();
+echo $C;
+#T=this
+$this->^!=;
+#T=isarray
+is_array($^!)
+#T=trim
+Trim($^!)
+#T=ltrim
+Ltrim($^!)//Rtrim($)
+#T=basename
+BaseName($^!)
+#T=dirname
+DirName($^!)
+#T=static
+Static $i=0;^!
+#T=fileex
+File_Exists($^!)
+#t=file_
+Pathinfo('a/img.jpg^!',PATHINFO_EXTENSION);
+#T=path
+$Root=$_SERVER['DOCUMENT_ROOT'];//取得虛擬根目錄,結尾沒有/,如D:/WWW/wamp/www
+
+Realpath('./')//得到物理路徑
+GetCwd();//得到当前工作目录
+Realpath('./')//得到當前目錄,結尾沒有\,如D:\WWW\wamp\www\inc
+Define('S_ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
+Define('DEDEADMIN',Preg_replace('/\+/','/',dirname(__FILE__)));
+
+BaseName()
+echo '<br>',Realpath('./').Basename(__FILE__),'<br>';
+$Self='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].DirName($_SERVER['PHP_SELF']);
+$a='http://feng%20jian@www.7di.net:8080/index.asp?id=99#end';
+print_r (Parse_Url($a));
+
+GetCwd();//得到当前工作目录
+Realpath('./')
+Define('S_ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
+Define('DEDEADMIN',Preg_replace('/\+/','/',dirname(__FILE__)));
+
+echo '<br>',Realpath('./').Basename(__FILE__),'<br>';
+$Self='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].DirName($_SERVER['PHP_SELF']);
+$a='http://feng%20jian@www.7di.net:8080/index.asp?id=99#end';
+print_r (Parse_Url($a));
+//=============================================================
+#T=int
+$^!=(int)$^!;
+Is_Int($^!)
+Intval($^!);//取得变量的整数值
+#T=public
+Public $^!;//Private Protected
+#T=rand
+Md5(time().Mt_rand(1,1000000));
+//產生唯一id的函數echo uniqid('bar_',true);
+#T=xml
+$xml=Simplexml_load_file('test.xml');
+
+header('Content-Type:text/xml');
+$Xml='<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <items>
+     <item>
+           <title>1</title>
+           <link>2</link>
+     </item>
+  </items>
+</root>';
+echo $Xml;
+Die();
+//=============================================================
+#T=isdir
+Is_dir($^!)
+ChDir($^!);//改变目录
+#T=md5
+Md5($^!)
+Md5_File($^!)
+#T=instrrev
+Strripos($^!,'')
+#T=instr
+StriStr($^!,'')!==False
+echo Substr_Count('Hello world. The world is nice','world');//出現了兩次
+#T=echo
+echo $^!;
+#T=echonum
+Number_Format($^!,2)
+#T=echobr
+echo '<br>',^!'<br>';
+#T=ec
+echo "<textarea style='width:97%;height:100px;border:1px solid #ccc'>",Chr(10),$^!,Chr(10),"</textarea>";Die();
+#T=echoo
+$Xml=<<<Html
+Html;
+echo $Xml;
+
+str_Repeat('-',$^!);
+
+echo (int)(5/2);//整除
+
+$text = 'The quick brown fox jumped over the lazy dog.';
+echo wordwrap($text, 20, "<br />\n");
+//输出：
+//The quick brown fox<br />
+//jumped over the lazy<br />
+//dog.
+//=============================================================
+#T=alert
+Alert('^!!','?work=','',500);
+#T=rename
+ReName($^!,'.txt');
+#T=left
+SubStr($^!,1,2);//abcde:bc
+#T=leftt
+Mb_substr (string str,int start[, int length [, string encoding]])//Return ''
+Mb_substr('不会有乱码^!',0,3,'utf-8');
+echo Substr_Count('Hello world. The world is nice','world');//出現了兩次
+#T=right
+SubStr($^!,-3,2);//abcde:cd
+#T=round
+Round($^!,2);//四舍五入,保留2个小数点
+#T=ceil
+Ceil($^!);//得到最大页数
+#T=floor
+Floor($^!);//去掉小数点保留整数
+#T=GET
+File_Get_Contents('../^!.htm');
+#T=PUT
+File_Put_Contents('../^!.htm',$,LOCK_EX);
+#T=toget
+$^!=Toget('^!');
+#T=togett
+$^!=$_GET['^!'];
+$^!=$_POST['^!'];
+$^!=AddsLashes($_REQUEST['^!']);
+#T=now
+now('Y-m-d H:i:s^!',time())
+#T=noww
+now('Y-m-d H:i:s^!',time());//有前導0  now('Y-n-j G:×:×',$Rs['addtime^!']);//沒前導0
+所有要存入数据库的时间都不可+8,显示的时候会自动使用now()函数+8
+//函数:统一时间函数
+//参数:格式化语句,时间值
+//now(),返回+8的Unix时间戳
+//now('Y-m-d H:i:s'),返回+8且格式化后的现在的时间
+//now('Y-m-d H:i:s',$Rs['addtime']),返回+8且格式化后的指定的时间
+function now($x='',$y=0) {
+	if(!Is_numeric($y) Or $y<1){$y=time();}
+	$y=$y+YJ_SysLocal*3600;
+	if($x!='') {
+		$Tim=Gmdate(''.$x.'',$y);
+	}else{
+		$Tim=&$y;
+	}
+	return $Tim;//StrtoTime($Tim);
+}
+
+Set_time_limit(0)//秒,0:不限时间
+配置文件php.ini里的max_execution_time=30;
+
+//兩個日期相差幾天
+$_d=Round(($v['tim']-time())/3600/24);
+echo '差'.$_d.'天';
+
+//当前时间加指定的天数
+$_tim=date('Y-m-d G:i:s',time()+86400*2);
+echo $_tim;						//2天后的年月日
+echo date('w',$_tim+86400*$i);	//2天后星期几
+
+//当前时间加指定的天数
+$y=2012;
+$m=4;
+$d=29;
+echo $tim=$y.SubStr(('0'.$m),-2,2).SubStr(('0'.$d),-2,2),'<br>';
+echo $_tim=strtotime($tim),'<br>';
+echo $_tim=date('Y-m-d G:i:s',$_tim+86400*2);//2天后的年月日
+
+//字符串转日期1
+$a=strtotime('2010-03-10');
+echo now('Y-m-d H:i:s',$a);
+
+//字符串转日期2
+$Now=StrtoTime('2010-03-10');
+$Now=Gmdate('Y-m-d H:i:s',$Now);
+echo $Now;
+
+//mkTime的用法
+mkTime(0,0,0,0,0,$y^!);
+echo date('M-d-Y', mktime(0, 0, 0, 12, 32, 1997));
+
+//输出现在的真实时间+8
+$Tim=(time()+8*3600);
+$Now=Gmdate('Y-m-d H:i:s',$Tim);
+
+//返回当月天数
+echo idate('t');
+
+//得到2011年9月的天数(任何给定月份的最后一天都可以被表示为下个月的第0天，而不是-1天,所以9月最后一天就是10月的第0天)
+$L=mkTime(0,0,0,10,0,2011);$D=StrfTime("%d",$L);
+
+//今天的时间,Unix时间戳
+$y=now('Y',time());		//取得系统年份
+$m=now('m',time());		//取得系统月份
+$d=now('d',time());		//取得系统日期
+$today=mkTime(0,0,1,$m,$d,$y)-YJ_SysLocal*3600;
+
+echo $today;
+//=============================================================
+#T=replace
+Strtr($^!,Array('^!'=>'',""=>""));
+#T=replacee
+Str_iReplace('查','',$^!);
+#T=len
+StrLen($^!)
+#T=lenn
+Mb_strlen($^!)
+#T=substr
+SubStr_Count($^!,$needle)
+#T=chmod
+Chmod('somefile',0777);
+#T=explode
+Explode(',',$^!)
+#T=implode
+Implode(',',$^!)
+#T=gettype
+GetType($^!)
+#T=settype
+SetType($^!,'integer');
+#T=unless
+//UnLess(^!){}
+#T=until
+Until(^!){
+}
+#T=switch
+Switch($^!) {
+Case '':
+	Break;
+Default:
+	Break;
+}
+#T=case
+Case '^!':
+	Break;
+#T=default
+Default:
+	^!();
+	Break;
+#T=while
+While($i<=10) {
+	$i++;
+	^!
+}
+#T=do
+Do{
+	^!;
+	$i++;
+}While($i<5);
+#T=foreach
+Foreach($^! as $k=>$v) {
+	echo $k,':',$v,'-',$v['^!'],'<br>';
+}Unset($);
+#T=for
+For($i=0;$i<10;$i++) {^!
+}
+#T=iif
+$^!=() ? '' : '';
+#T=if
+if(^!) {
+}
+#T=else
+else{^!
+}
+#T=elseif
+elseif(^!) {
+}
+#T=sel
+$arr=Arr(^!);//$arr=DB::View("SELECT id,name FROM `{$Table}` ORDER BY id");
+$L1='<select name="sex">';
+Foreach($arr as $k=>$v) {
+	$sel=($Rs['sex']==$k)?' selected':'';
+	$L1.="<option value='{$k}'{$sel}>{$v}</option>";
+}Unset($sel,$arr);$L1.='</select>';
+#T=bijiao
+serialize($^!);//产生一个可存储的值的表示
+Similar_text('abcd','abdc',$percent);//比较两个字符串相似度有多少part
+Levenshtein();//告诉你两个单词之间的“距离”。它告诉你如果想把一个单词变成另一个单词，需要插入、替换和删除多少字母。
+#T=error
+//使用set_error_handler()后，error_reporting ()将会失效
+//Set_error_handler('_function:showError');//E_USER_NOTICE   E_USER_WARNING
+
+//程序错误输出方式
+//Error_reporting(E_ALL|E_STRICT);
+//Error_reporting(E_ALL || ~E_NOTICE);//0;E_ALL;E_ALL || ~E_NOTICE
+Error_reporting(E_ALL);
+
+0 关闭错误报告
+E_ALL - 所有的错误和警告
+E_ERROR - 致命性运行时错
+E_WARNING - 运行时警告（非致命性错）
+E_PARSE - 编译时解析错误
+E_NOTICE - 运行时提醒(这些经常是是你的代码的bug引起的
+E_CORE_ERROR - 发生于PHP启动时初始化过程中的致命错误
+E_CORE_WARNING - 发生于PHP启动时初始化过程中的警告(非致命性错)
+E_COMPILE_ERROR - 编译时致命性错
+E_COMPILE_WARNING - 编译时警告(非致命性错)
+E_USER_ERROR - 用户产生的出错消息
+E_USER_WARNING - 用户产生的警告消息
+E_USER_NOTICE - 用户产生的提醒消息
+//=============================================================
+#T=rr
+if(!headers_sent()) {
+	Header('Location:^!.php');
+	//Header('Content-type:text/xml');
+	Header('Content-type:text/html;charset=utf-8');
+}
+echo '<script>window.location="',$PHP_SELF,'";</script>';
+echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=index.php">';
+#T=rcl
+OB_start();			// 開始控制緩沖(从他开始的内容遇到header前不会输出)
+OB_clean();
+...
+$mess=Ob_get_contents();	// 取得緩存區內容
+OB_end_clean();			// 清理原有內容OB_clean();
+OB_end_flush();
+//Clearstatcache();		//清理文件緩存
+//每隔5秒輸出一次
+header('Content-Type: text/plain');
+set_time_limit(0);
+
+$infoString="Hello World\n";
+while(isset($infoString)) {
+	echo $infoString;
+	flush();
+	ob_flush();
+	sleep(5);
+}
+function Exec($file) {
+	Extract($變量數組);				// 提取變量到當前命名空間
+	OB_start();						// 開始輸出緩沖
+	OB_clean();						// 清理原有內容
+	Include($模板文件);				// 調用模板文件
+	$contents=ob_get_contents();	// 取得緩存區內容
+	ob_end_clean();					// 結束緩沖區
+	Return $contents;				// 返回模板文件執行結果后的內容
+}
+//=============================================================
+#T=query
+Mysql_Query("INSERT INTO `^!` SET own='{$}'");
+DB::Exe("INSERT INTO `` SET own='{$}'");
+$Sql="INSERT INTO `{$Tab}` SET a='{$a}',b='{$b}',c='{$c}'';";
+$Sql="UPDATE `{$Tab}` SET a='{$a}',b='{$b}',c='{$c}' WHERE name='{$c}';";
+Mysql_query($Sql.";");
+#T=encode
+Htmlspecialchars($)//中文不亂碼,轉換HTML实体 HtmlSpecialChars_Decode($)
+Htmlspecialchars($^!,ENT_QUOTES,'UTF-8')
+
+Return Trim(Htmlspecialchars($^!,ENT_QUOTES));//中文用這個不亂碼
+Return Trim(Strip_tags($^!));//过滤标签
+function htmlEscape($param) {
+	Return Trim(Htmlspecialchars($param, ENT_QUOTES));
+	Return Trim(Strip_tags($param));//过滤标签
+}
+
+//HtmlEnTities($^!)		//(這個儘量不用)轉換HTML实体Html_Entity_decode($),如果包含中文会转换成乱码需要设置character-set为GB2312才行！而htmlspecialchars无需设置直接转换
+AddsLashes($^!)			//使用反斜线引用字符串 //Stripslashes($)
+UTF8_Encode($^!);		//将ISO-8859-1编码的字符串转换为UTF-8编码 //UTF8_Decode($);
+Mb_convert_encoding($html,'UTF8','BIG5'); //將big5轉為utf8
+Base64_Encode($^!)		//使用 MIME base64 对数据进行编码 //Base64_decode($)
+Base_convert($^!,16,2);		//在任意进制之间转换数字,这里将16进制转为2进制
+mysql_real_escape_string();//转义 SQL 语句中使用的字符串中的特殊字符
+
+UrlEnCode($)			//编码 URL 字符串 //UrlDeCode($)
+UrlEncode('Error:^!');//EscapeShellArg
+
+//注意編碼順序
+$encode=mb_detect_encoding($keytitle,array('ASCII','GB2312','GBK','UTF-8'),true);
+if(StrToLower(Mb_detect_encoding($^!))!='utf-8') {
+	//将任意进制的内容转为UTF-8格式
+	$^!=Mb_convert_encoding($^!,'UTF-8','ASCII,GBK,JIS,EUC-JP,SJIS,UCS-2LE,JIS,eucjp-win,sjis-win');
+}
+
+Json_encode($)			//Json_decode($);
+echo Json_encode($^!);
+$json_string='{"id":1,"name":"foo","email":"foo@foobar.com","interest":["wordpress","php"]} ';
+$obj=Json_decode($json_string);
+echo $obj->name; //prints foo
+
+//任意進制之間轉換
+$hexadecimal = 'A37334';
+echo base_convert($hexadecimal,16,2);
+//=============================================================
+#T=json
+$JsonStr = '[
+	{"id":"1","name":"\u5f20\u96ea\u6885","age":"27","subject":"\u8ba1\u7b97\u673a\u79d1\u5b66\u4e0e\u6280\u672f"},
+	{"id":"2","name":"\u5f20\u6c9b\u9716","age":"21","subject":"\u8f6f\u4ef6\u5de5\u7a0b"}
+]';
+$Json = Json_Decode($JsonStr);
+For($i=0;$i<count($Json);$i++){
+	echo "姓名：".$Json[$i]->name.'<br>';
+	echo "年龄：".$Json[$i]->age.'<br>';
+	echo "专业：".$Json[$i]->subject.'<br>';
+}
+Unset($Json);
+$Json = Json_Decode($JsonStr,True);
+For($i=0;$i<count($Json);$i++){
+	echo "姓名：".$Json[$i]['name']."年龄：".$Json[$i]['age']."专业：".$Json[$i]['subject']."<br/>";
+}
+//把數組轉成json字符串
+$JsonStr=Json_Encode($Json);
+echo $JsonStr;
+#T=object
+$user = new stdClass();
+$user->name = 'gouki';
+$user->sex = '男士';
+$user->age = 33;
+
+print_r ($user);
+echo '<br>',$user->sex,'<br>';
+echo '<br>',Count(get_object_vars($user)),'<br>';
+#T=prtt
+print_r ($^!);
+#T=prt
+echo '<br><textarea rows="8" style="border:1px gray solid;width:90%;overflow:auto;">';
+Foreach($L as $k=>$v) {
+	echo $k,':',Chr(10);
+	print_r ($v);
+	echo '---------------',Chr(10);
+}	
+echo '</textarea>';
+Foreach($^! as $k=>$v) {
+	echo '<textarea rows="5" style="border:1px gray solid;width:90%;overflow:auto;">【',$k,'】',Chr(10);
+	print_r ($v);
+	echo '</textarea>';
+}
+Print "$^!";
+Printf ($LangA[^!],$);
+$Str=sPrintf("金額合計:%1\$.2f",$total);
+//=============================================================
+#T=lcase
+StrToLower($^!)
+#T=lcasee
+StrToLower($^!)
+StrToUpper($^!)
+UcFirst($^!)//字串中第一个单词首字母大写
+UcWords($^!)//字串中每一个单词首字母大写
+#T=mail
+//效率較低
+if(Filter_var($^!,FILTER_VALIDATE_EMAIL)==''){Exit('Error:Email地址是錯誤的!');}
+
+//不夠準確
+if(Preg_match("/^[[:alnum:]._-]+@[[:alnum:]-]+\.([[:alnum:]-]+\.)*[[:alnum:]]+$/isU",$^!)){echo 'Email地址合法.';}
+
+//发送Email
+function Mail2($to,$subject,$msg) {
+	$title="=?UTF-8?B?".base64_encode($subject)."?=";
+	$from="From:".YJ_SysMail."\nContent-Type:text/html;charset=utf-8";
+	mail($to,$title,$msg,$from);
+}
+Mail2('see7di@gmail.com','测试一下','这是邮件内<strong>容</strong>!')
+或
+Require('class_mail.php');
+//Mail('see7di@gmail.com','标题','内容',"From:see7di@gmail.com\r\n");
+
+$subject='您的朋友發送給你一個視頻';
+
+$from_header='MIME-Version: 1.0'."\r\n";
+$from_header.='Content-type: text/html; charset=utf-8'."\r\n";
+$from_header.='From: '.$fr;
+
+$content='<table width="100%">
+	<tr><td>Hi,<br/>Your friend thought you might be interested in this video:</td></tr>
+	<tr><td align="center"><a href="'.$playerPage.'" target="_blank">'.$playerPage.'</a></td></tr>
+	</table>';
+
+$UseMail=False;
+if($UseMail) {
+	Mail($to,$subject,$content,$from_header);
+}else{
+	$Smtp=new Smtp('smtp.163.com',25,true,'bhgsfj@163.com','supervisor999');	//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+	$Smtp->debug=False;													//是否显示发送的调试信息
+	$Smtp->sendmail($to,$fr,$subject,$content,'HTML');
+}
+//=============================================================
+#T=str2arr
+Str2Arr($^!,'|',True,True,True);//是否去除空arr項目,是否Trim掉外層,是否去除重複值
+#T=strtr
+$htm=strtr($^!,Array("\n"=>"","\r"=>"","\""=>""));
+echo Strtr('123456','12','abc');//output:ab3456
+
+$s=array('a'=>'c','b'=>"d");
+echo strtr('a,b', $s);
+//output:c,d
+#T=reg
+//替换
+$x=preg_replace('/\-(\d)*\./i', '-1.', $FileName);
+
+//eregi("<title>(.*)</title>",$du,$title);
+preg_match("/<title>(.*)<\/title>/",$du,$title);
+
+$out='';
+preg_match("/([a-zA-Z0-9_]+)/i",$html,$out);
+echo $out[1];
+
+//查找,这里的/i表示不区分大小写
+if(Preg_match("/php/i","I Like PHP")) {
+	echo 'True.';
+}
+//查找所有
+Preg_match_all("|<[^>]+>(.*)</[^>]+>|U","<b>example: </b><div align=left>this is a test</div>",$out,PREG_SET_ORDER);
+Preg_match_all("/12/x","Call 555-1212 or 1-800-555-1212",$phones);
+//=============================================================
+#T=debug
+var_dump($^!);
+#T=debugg
+//配合xdebug
+echo '文件:'.xdebug_call_file().'<br>行號:'.xdebug_call_line().'<br>函數名:'.xdebug_call_function();
+var_dump(xdebug_get_headers());//輸出頭
+
+echo xdebug_time_index(),"\n";//執行時間
+...
+echo xdebug_time_index(),"\n";
+
+xdebug_start_trace('trace');//代碼跟蹤
+$DB = New DB();
+xdebug_stop_trace();
+
+echo var_dump($^!),'<BR>';
+//var_export($);
+//$aa=var_export($,True);
+Foreach(Get_defined_vars() as $key=>$val) {
+	echo '<strong>',$key,':</strong> ';
+	print_r ($val);
+	echo '<br>---------------------------------------------<br>';
+}
+Exit();
+#T=inarray
+In_Array('^!',$)
+#T=session
+$_SESSION['^!']
+#T=cook
+$blab_name=Cook('name','','Read');
+Cook('name',$value,'',1);//1天有效
+//函数:Cook设置/读取
+//参数:Cook名称,Cook值,写入/读取,有效天數
+function Cook($key,$val='',$type='Read',$exptime=365) {
+	if(Empty($key)) {
+		Return False;
+	}
+	if(StrToLower($type)=='read') {
+		Return (Isset($_COOKIE[$key]))?$_COOKIE[$key]:'';
+	}else{
+		SetType($exptime,'integer');
+		if($exptime<1) {
+			Setcookie($key,$val,0);
+		}else{
+			Setcookie($key,$val,(time()+($exptime*24*3600)),'/');
+		}
+	}
+}
+$blab_name=Cook('name','','Read');
+Cook('name',$value,'',1);//1天有效
+//=============================================================
+#T=sessionn
+//当前SessionID
+$sessionid=session_id();//session_name();
+
+//获取SessionID
+$sessionid=(Array_key_exists('sessionid',$_REQUEST))?$_REQUEST['sessionid']:'';
+
+//设置并使用SessionID
+Session_id($sessionid);
+
+//重新设施session存放位置
+Session_save_path($savePath);
+
+//该函数必须在 session_start() 函数调用之前调用
+Session_set_cookie_params(24 * 3600);
+
+if(!Session_id()){Session_start();}
+if(!IsSet($_SESSION)) {
+	Session_start();
+}
+
+//如果客户端没有禁用 Cookie,可以在启动session后设置时间
+SetCookie(session_name(), session_id(), time() + (24 * 3600), '/');//24小时
+$_SESSION['^!']=;
+if(!IsSet($_SESSION['UserId'])) {
+	Session_destroy();
+}
+//如果客户端使用 IE 6.0 ， session_set_cookie_params(); 函数设置 Cookie 会有些问题，所以我们还是手动调用 setcookie 函数来创建 cookie
+//=============================================================
+#T=function
+//------------------------------------------------*
+//作者:Seven (QQ:9256114 eMail:See7di@Gmail.com)
+//函数:
+//参数:
+//返回:
+function ^!() {
+	Global $DB,$Table;
+	$id=Toget('id');
+	if(!$id Or !Is_numeric($id)) {
+		Alert('Request error!');
+	}
+
+	$Rs=$DB->Get("SELECT * FROM `{$Table}` WHERE id={$id}");
+	if(Count($Rs)<1) {
+		Alert('No message!');
+		Die();
+	}
+	Unset($Rs);
+
+	Unset($DB,$Table,$id);
+}
+#T=functionn
+//print_r(get_loaded_extensions()); 获取所有可用的模块
+//print_r(get_extension_funcs('gd')); 获取指定模块的可用函数,传入的参数（模块名称）必须是小写
+//print_r(get_defined_functions());获取所有已经定义的函数
+//if(!function_Exists('^!')){Die('该函数不存在!');}
+//print_r(get_defined_functions());//得到所有自定義的function
+//function foo() {
+//	$args=func_get_args();
+//	Foreach($args as $k=>$v) {
+//		echo ($k+1),':',$v,'<br>';
+//	}Unset($args);
+//}
+#T=arr
+$^!=Array(''=>'',);
+#T=array
+Array('a^!'=>1,'b'=>'b','c'=>Array(1,2));
+#T=arrayy
+//count($);个数
+//sort($);排序
+//rsort($);排序
+//max($);最大值
+//min($);最小值
+//natsort();自然排序
+//Array_Merge($arr1,$arr2);键名重复时2会覆盖1
+Foreach($LableArray as $Arr2) {
+	$Arr1[]=$Arr2[0];
+}Unset($LableArray);
+Array_multisort($Arr1, $LableArray);//对数组$LableArray这个多维数组根据[0]进行排序
+//判断键名是否存在
+if(array_key_exists('a',$a)) {
+	echo 'Key exists!';
+}
+
+//拆分字符串
+$str='abcdefgh';
+$str=implode(',',str_split($str));
+echo $str;
+
+//隨即打亂字符串
+echo str_shuffle($str);
+
+$a=array('a'=>'Dog','b'=>'Cat');
+if(array_key_exists('a',$a)) {
+	echo 'Key exists!';
+}
+
+//指针操作
+$a=array(3=>'a',5=>'b',6=>'c');
+echo Current($a);	//a
+echo Key($a);		//3
+echo Next($a);		//b
+echo Key($a);		//5
+echo Reset($a);		//a
+//将指针指向指定键名的项目上
+Reset($a);While(key($a)!=$键名){Next($a);}
+
+//按键名排序,并保持索引键名
+$a=Array('a'=>'Dog','b'=>'Cat','c'=>'Horse');
+Krsort($a);//ksort
+print_r($a);//Array([c]=>Horse[b]=>Cat[a]=>Dog)
+
+//随机排序
+Shuffle($array);
+
+//建立有序数组
+$a=range('a','d');
+print_r($a);	//Array([0]=>a[1]=>b[2]=>c[3]=>d)
+$a=range(0,50,10);
+print_r($a);	//Array([0]=>0[1]=>10[2]=>20[3]=>30[4]=>40[5]=>50)
+//=============================================================
+#T=sqlite
+$PDO=New PDO("sqlite:{$_SERVER['DOCUMENT_ROOT']}/@db.db") Or Die('Can not open the database!');
+
+//修改数据
+if($PDO->Exec("UPDATE `mess` SET memo='八大角色',net='光纤50M',tim='10点开放' WHERE id='1'")) {
+	echo '修改成功!<br>';
+}
+
+//添加数据
+if($PDO->Exec("INSERT INTO `mess` (dengji,paixu,xiaxian,name,memo,net,tim,qq,web) values ('3','0','123456','破天一剑','八大角色','光纤50M','10点开放','9256114','http://7di.net')")) {
+	echo $PDO->lastInsertId();
+}
+
+//刪除
+//if($Rs=$PDO->Exec("DELETE FROM `mess` WHERE id='1'")) {
+//	echo '共刪除了',$Rs,'條數據.';
+//}
+
+//显示列表
+$Rs=$PDO->Query("SELECT * FROM mess");
+$Rs=$Rs->fetchall();
+echo '共有'.Count($Rs).'条数据!<br>';
+Foreach($Rs as $k=>$v) {
+	echo '<textarea rows="5" style="border:1px gray solid;width:90%;overflow:auto;">【',$k,'】',Chr(10);
+	print_r ($v);
+	echo '</textarea>';
+}
+Unset($Rs,$PDO);
+//=============================================================
+#T=pdo
+$PDO=New PDO('mysql:host=localhost;dbname=test','root','') Or Die('Can not open the database!');
+
+//添加
+//if($PDO->Exec("INSERT INTO (name,content) values ('".$."','".$."')")) {
+if($PDO->Exec("INSERT INTO `{$Table}` SET ^!='{$^!}',='".mysql_real_escape_string($)."',addtime='".time()."'")) {
+	echo $PDO->lastInsertId();
+}
+
+//刪除
+$Rs=$PDO->Exec("DELETE FROM `{$Table}^!` WHERE id='{$id}'");
+if($Rs) {
+	echo '共刪除了',$Rs,'條數據.';
+}
+
+//檢查
+$Rs=$PDO->Query("SELECT * FROM WHERE id=");
+$Rs=$Rs->fetchall();
+if(Count($Rs)<1) {
+	UnSet($Rs);
+	Die('沒有數據');
+}UnSet($Rs);
+
+$Rs=$PDO->Query("SELECT * FROM `{$Table}` ORDER BY id DESC");
+Foreach($Rs as $k=>$v) {
+	echo '<textarea rows="5" style="border:1px gray solid;width:90%;overflow:auto;">【',$k,'】',Chr(10);
+	print_r ($v);
+	echo '</textarea>';
+}
+Unset($Rs,$PDO);
+//=============================================================
+#T=insert
+Mysql_Query("INSERT INTO `^!` SET own='{$}'");
+$id=$DB->Exe("INSERT INTO `{$Table}` SET ^!='{$^!}',='".mysql_real_escape_string($)."',addtime=".time()."",True,True,True);
+//$Rs=$DB->Exe("INSERT INTO `{$Table}` (`name`,content) values ('".$^!."','".$."')");
+$Rs=$DB->Exe("INSERT INTO `{$Table}` SET ^!='{$^!}',='".mysql_real_escape_string($)."',addtime=".time()."");
+if($Rs) {
+	Alert('信息已经添加成功!');
+}else{
+	Alert($Rs);
+}
+#T=update
+Mysql_Query("UPDATE `^!` SET own='{$}' WHERE id='{$^!}'");
+$Rs=$DB->Exe("UPDATE `{$Table}` SET ='{$^!}',='".mysql_real_escape_string($)."' WHERE id='{$^!}'");
+if($Rs) {
+	Alert('信息已经修改成功!');
+}else{
+	Alert($Rs);
+}
+#T=delete
+Mysql_Query("DELETE FROM `` WHERE id='{$}'");
+$Rs=$DB->Exe("DELETE FROM `` WHERE id='{$}'");
+if($Rs) {
+	Alert('信息已经刪除成功!');
+}else{
+	Alert($Rs);
+}
+#T=get
+$Rs=$DB->Get("SELECT * FROM `^!` WHERE id='{$^!}'");
+if(Count($Rs)<=0) {
+	Alert('没有发现记录!');
+}Unset($Rs);
+#T=view
+$Rv=DB::View("SELECT * FROM `^!` WHERE id='{$^!}' ORDER BY id DESC LIMIT ,");
+Foreach($Rv as $k=>$v) {
+	echo $k.':'.$v.'<br>';
+}Unset($Rv);
+#T=total
+$total=Mysql_num_rows(Mysql_query("SELECT id FROM ^! WHERE id='{$^!}'"));
+或
+$Re=DB::Get("SELECT Count(id) FROM `user` WHERE Locate(',{$Rs['id']},',sendsids)>0");
+$total=(Is_numeric($Re[0]))?$Re[0]:0;
+Unset($Re);
+echo $total;
+
+$Rs=$DB->Get("SELECT SUM(num) FROM `add_roomnum` WHERE rid='509' And y='2013' And m='5' And d='6'");
+$t=(Is_numeric($Rs[0]))?$Rs[0]:0;
+Unset($Rs);
+echo $t;
+//=============================================================
+#T=del
+//------------------------------------------------*
+function _DelUser() {
+	Global $DB;
+	$id=Toget('id');
+	if(!$id) {
+		Alert('参数获取失败!');
+	}
+
+	//单个删除
+	if(Is_numeric($id)) {
+		if($id<1 Or StrLen($id)<1){Alert('参数获取失败!');}
+
+		//不可删除管理员
+		$Rs=$DB->Get("SELECT typ FROM `user` WHERE id='".$id."' And typ='1'");
+		if(Count($Rs)>0) {
+			Alert('管理员账号不可被删除!');
+		}Unset($Rs);
+
+		//删除用户自身
+		$DB->Exe("DELETE FROM `user` WHERE id='".$id."'");
+
+		//删除该用户的试卷
+		$DB->Exe("DELETE FROM `test` WHERE uid='".$id."'");
+
+	//批量删除
+	}else{
+		Foreach($id as $k=>$v) {
+			if(!Is_numeric($v) Or $v<1){Continue;}
+
+			//不可删除管理员
+			$Rs=$DB->Get("SELECT typ FROM `user` WHERE id='".$v."' And typ='1'");
+			if(Count($Rs)>0) {
+				Continue;
+			}Unset($Rs);
+
+			//删除用户自身
+			$DB->Exe("DELETE FROM `user` WHERE id='".$v."'");
+
+			//删除该用户的试卷
+			$DB->Exe("DELETE FROM `test` WHERE uid='".$v."'");
+		}Unset($id);
+	}
+
+	Unset($DB,$Rs,$id);
+	Alert('','?work=userlist');
+}
+//=============================================================
+#T=add
+//------------------------------------------------*
+function _Adduser() {
+	Global $DB;
+
+	$Rs=$DB->Get("SELECT id,name FROM user WHERE name=''");
+	if(Count($Rs)>0) {
+		Alert('',"?work=mdy&id={$Rs['id']}");
+	}Unset($Rs);
+
+	$id=$DB->Exe("INSERT INTO user SET name='',isglobal='0',addtime='".time()."'",True,True,True);
+
+	Unset($DB,$Rs);
+	Alert('',"?work=mdy&id={$id}");
+}
+#T=list
+//------------------------------------------------*
+function _UserList() {
+	Global $DB;
+
+	echo "<style>/*The Global Table Style*/
+	.Tab{border-collapse:collapse;width:100%;border-spacing:0;background-color:#FFF;}
+	.Tab td{line-height:25px;font-size:12px;}
+	.Head td{font-size:14px;letter-spacing:2px;padding-bottom:8px;}
+	.Tab .tit{background-color:#F1F8FF;}
+	.Tab .tit td{line-height:30px;border-color:#E4EFF5 #FFF;border-style:solid;border-width:1px 0;}
+	.Tab .main td{border-bottom:1px dotted #C1C1C1;line-height:35px;color: #34668B;}
+	.Tab .pag{padding:0px;letter-spacing:0.1em;}
+	.bnone{border-bottom:none;}</style>";
+	echo "<form action='' id='f1' method='post'>";
+	echo "<table width='100%' align='center' border='0' cellspacing='0' cellpadding='1' class='Tab'>".Chr(10);
+	echo "<tr class='Head'><td colspan='10'><strong>考生列表</strong> | <a href='?work=adduser'>新增考生</a> | <a href='?work=adduser'>批量导入</a></td></tr>".Chr(10);
+	echo "<tr class='tit'><td width='18'><input type='checkbox' id='id'></td><td>姓名</td><td>类型</td><td>身份证号</td><td width='90'>管理项目</td></tr>".Chr(10);
+
+	$Result=$DB->View("SELECT * FROM `user` ORDER BY id DESC LIMIT [1],[2]",0);
+	Foreach($Result as $Rs) {
+		if(!Is_array($Rs) Or Count($Rs)<2){Continue;}
+		$Rs['sex']=($Rs['sex']==1)?'男':'女';
+		echo "<tr class='main'><td><input type='checkbox' value='{$Rs['id']}' name='id[]'></td><td>{$Rs['xingming']}</td><td>{$Rs['typ']}</td><td>{$Rs['card']}</td><td><a href='?work=mdyuser&id={$Rs['id']}'>修改</a>{$Rs['id']}</td></tr>".Chr(10);
+	}Unset($Result);
+	echo "<tr class='pag'><td colspan='3' align='right'><a href='?work=deluser' submit='true' fid='f1' js=\"$('#f1').attr('action',this.href);\">删除所选</a></td><td colspan='7'>".$DB->PagBar(1)."</td></tr>".Chr(10);
+	echo "</table></form>".Chr(10);
+	Unset($DB,$PageNum,$dis);
+}
+#T=mdy
+//------------------------------------------------*
+function _MdyUser() {
+	Global $DB;
+	$id=Toget('id');
+	if(!Is_numeric($id) Or $id<1 Or !$id) {
+		Alert('参数获取失败!');
+	}
+
+	//非管理员只能修改自己的信息
+	if($_U['typ']!=1 And $_U['id']!=$id) {
+		Alert('请不要试图做违法的事!');
+	}
+
+	$Rs=$DB->Get("SELECT * FROM `user` WHERE id='".$id."'");
+	if(Count($Rs)<=0) {
+		Alert('没有发现记录!');
+	}
+
+	//性别
+	$sex='<select name="sex">';
+	$arrSex=Arr(0);
+	Foreach($arrSex as $k=>$v) {
+		$sel='';
+		if($Rs['sex']==$k){$sel=' selected';}
+		$sex.="<option value='{$k}'{$sel}>{$v}</option>";
+	}Unset($arrSex,$sel);$sex.='</select>';
+
+	//找回密码的问题
+	$ask='<select name="ask">';
+	$arrAsk=Arr(1);
+	Foreach($arrAsk as $k=>$v) {
+		$sel='';
+		if($Rs['ask']==$k){$sel=' selected';}
+		$ask.="<option value='{$k}'{$sel}>{$v}</option>";
+	}Unset($arrAsk,$sel);$ask.='</select>';
+
+	echo "<div class='tBox'><form action='?work=smdyuser&id={$id}' id='f1' method='post'>";
+	echo "<table width='100%' align='center' border='0' cellspacing='0' cellpadding='1' class='Tab'>".Chr(10);
+	echo "<tr class='Head'><td colspan='10'><strong>修改信息</strong></td></tr>".Chr(10);
+	echo "<tr class='tit'><td colspan='10' class='info h'>红字项目为必填项</td></tr>".Chr(10);
+
+	echo "<tr class='main'><td><b>姓名</b></td><td><input type='text' value='{$Rs['xingming']}' name='xingming'></td></tr>";
+	echo "<tr class='main'><td><b>登录名称</b></td><td><input type='text' value='{$Rs['name']}' name='name'></td></tr>";
+	echo "<tr class='main'><td><b>身份证号</b></td><td><input type='text' value='{$Rs['card']}' name='card'></td></tr>";
+	if($_U['typ']==1) {
+		echo "<tr class='main'><td><b>准考证号</b></td><td><input type='text' value='{$Rs['cod']}' name='cod'></td></tr>";
+	}
+	echo "<tr class='main'><td><b>找回密码的问题</b></td><td>{$ask}</td></tr>";
+	echo "<tr class='main'><td><b>找回密码的答案</b></td><td><input type='text' value='{$Rs['ans']}' name='ans'></td></tr>";
+	echo "<tr class='main'><td>登录密码</td><td><input type='password' value='' name='pass'> <em>不想修改则请勿填写</em></td></tr>";
+	echo "<tr class='main'><td>确认密码</td><td><input type='password' value='' name='pass1'> <em>不想修改则请勿填写</em></td></tr>";
+	echo "<tr class='main'><td>性别</td><td>{$sex}</td></tr>";
+	echo "<tr class='main'><td>单位</td><td><input type='text' value='{$Rs['company']}' name='company'></td></tr>";
+	echo "<tr class='main'><td>邮箱</td><td><input type='text' value='{$Rs['email']}' name='email'></td></tr>";
+	echo "<tr class='main'><td>电话</td><td><input type='text' value='{$Rs['tel']}' name='tel'></td></tr>";
+	if($_U['typ']==1) {
+		echo "<tr class='main'><td>考场</td><td><input type='text' value='{$Rs['cod1']}' name='cod1'></td></tr>";
+		echo "<tr class='main'><td>座号</td><td><input type='text' value='{$Rs['cod2']}' name='cod2'></td></tr>";
+	}
+
+	echo "<tr class='pag'><td colspan='10' style='padding:12px 0;'><input type='button' value='保存资料' class='btn' submit='true' fid='f1'></td></tr>".Chr(10);
+
+	echo "</table></form></div>".Chr(10);
+
+	Unset($DB,$Rs,$id,$sex,$ask);
+}
+//------------------------------------------------*
+function _Smdyuser() {
+	Global $DB;
+	$id=Toget('id');
+	if(!Is_numeric($id) Or $id<1 Or !$id) {
+		Alert('参数获取失败!');
+	}
+	$xingming=Toget('xingming');
+	$name=Toget('name');
+	$card=Toget('card');
+	$cod=Toget('cod');
+	$ask=Toget('ask');
+	$ans=Toget('ans');
+	$pass=Toget('pass');
+	$pass1=Toget('pass1');
+	$sex=Toget('sex');
+	$company=Toget('company');
+	$email=Toget('email');
+	$tel=Toget('tel');
+	$cod1=Toget('cod1');
+	$cod2=Toget('cod2');
+
+	if(!$xingming){Alert('请填写用户姓名!');}
+	if(!$name){Alert('请填写登录名称!');}
+	if(!$card){Alert('请填写身份证号!');}
+	if(!$ask){Alert('请选择密码找回问题!');}
+	if(!$ans){Alert('请填写密码找回的答案!');}
+
+	//登录名唯一
+	$Rs=$DB->Get("SELECT name FROM `user` WHERE name='{$name}' And id<>'{$id}'");
+	if(Count($Rs)>0) {
+		Alert('登录名称已经有人使用了!');
+	}Unset($Rs);
+
+	//身份证号唯一
+	$Rs=$DB->Get("SELECT card FROM `user` WHERE card='{$card}' And id<>{$id}");
+	if(Count($Rs)>0) {
+		Alert('身份证号已经有人使用了!');
+	}Unset($Rs);
+
+	$sql='';
+
+	//是否修改密码
+	if($pass And $pass1) {
+		if($pass!=$pass1){Alert('两次输入的密码必须相同!');}
+		if(!_Reg($pass,'/^[a-z0-9]{6,16}$/i','chk')){Alert('密码只能由英文或数字组成且长度在6-16位之间!');}
+		$sql.=",pass='".Md5($pass)."'";
+	}else{
+		//如果密码未设置则必须设置密码
+		$Rs=$DB->Get("SELECT pass FROM `user` WHERE id='".$id."' And (pass='' Or pass is null)");
+		if(Count($Rs)>0) {
+			Alert('系统发现该用户的密码尚未设置,所以必须要填写密码!');
+		}Unset($Rs);
+	}
+
+	$DB->Exe("UPDATE user SET zzz='{$zzz}',zzz='{$zzz}',zzz='{$zzz}',zzz='{$zzz}',zzz='{$zzz}',zzz='{$zzz}',zzz='{$zzz}'{$sql} WHERE id='".$id."'");
+	Unset($DB,$Rs,$id,$name,$ask,$xingming,$card,$cod,$ask,$ans,$pass,$pass1,$company,$email,$tel,$cod1,$cod2,$sql,$sex);
+	Alert('','?work=userlist');
+}
+#T=mysql
+"INSERT INTO `{$Table}` SET ^!='{$}',=''"
+"INSERT INTO `{$Table}` (name,content) values ('{$}','{$}')"
+"UPDATE `{$Table}` SET ^!='{$}',='".mysql_real_escape_string($)."' WHERE id='{$}'"
+"SELECT * FROM `{$Table}` WHERE id='{$}' ORDER BY id DESC LIMIT 0,10"
+"SELECT DISTINCT name FROM `{$Table}` WHERE id='{$}' ORDER BY id DESC LIMIT 0,10"
+"SELECT DISTINCT bid id,uid FROM `{$Table}` WHERE id='{$^!}' ORDER BY uid ASC,id DESC LIMIT 0,10"
+"DELETE FROM `{$Table}` WHERE id='{$}'"
+"SELECT * FROM table WHERE id BETWEEN 1000000 AND 1000010;"
+
+$Result=Mysql_Query("^!");
+$memo=GetValue($num,'name','user','num');
+
+//得到num的和
+$Rs=$DB->Get("SELECT SUM(num) FROM `add_roomnum` WHERE rid='509' And y='2013' And m='5' And d='6'");
+$t=(Is_numeric($Rs[0]))?$Rs[0]:0;
+Unset($Rs);
+echo $t;
+
+//复制$Table表里id=1的值为新记录(选择性的复制)
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+$DB->Exe("INSERT INTO `{$Table}` (email^!,pass,name,birthday) SELECT email,pass,name,birthday FROM `user` WHERE id='1'");
+Alert('信息已经复制成功!');
+
+//从memo字段把内容aa删掉，然后用原文章长度减去删掉之后文章长度 除以4
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+"SELECT id,name,(length(memo)-length(replace(memo,'aa',''))) / length('aa') FROM pkucun WHERE pid='12'"
+
+//从cid字段内把,10,替换掉之后变成空的那个项目
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+"SELECT id FROM pkucun WHERE replace(cid,',10,','')=''"
+
+//最精确的模糊查找方式
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+SELECT * FROM `{$Table}` WHERE Locate(',5,',cid)>0 And Locate(',10,',cid)>0 And Length(cid)=Length(',5,10,')
+SELECT * FROM `{$Table}` WHERE cid like '%,15,%' And cid like '%,9,%' And Length(cid)=Length(',15,9,');
+
+正则表达式,转译使用双\,即\\
+┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄
+SELECT * FROM `hotel` WHERE address REGEXP '^連江縣';//地址是以連江縣开头的
+SELECT * FROM `hotel` WHERE address REGEXP '^連江縣|桃園市';//地址是以連江縣开头的,或包含桃園市的
+SELECT * FROM `hotel` WHERE tel REGEXP '\\|99|\\|2311';//电话是以|99开始或以|2231开始的
+SELECT * FROM `hotel` WHERE gps REGEXP '\\|2\\||\\|1';//gps是|2|或以|1开始的
+
+$DB->Exe("INSERT INTO `{$Table}` SET name='{$^!}',ord='{$}'");
+$DB->Exe("DELETE FROM `{$Table}` WHERE id='{$id^!}'");
+
+$Rs=$DB->Get("SELECT *^! FROM `{$Table}` ORDER BY id DESC");
+if(Count($Rs)<=0) {
+	Alert('没有发现记录!');
+}Unset($Rs);
+
+$_sel='<option>選擇項目</option>';
+$Rs=DB::View("SELECT name FROM `{$Table}` WHERE class='{$scls^!}' ORDER BY id");
+Foreach($Rs as $_s) {
+	$_sel.='<option>'.$_s[0].'</option>';
+}Unset($Rs);
+
+$Rv=DB::View("SELECT * FROM `town` ORDER BY ord ");
+Foreach($Rv as $k=>$v) {
+	Mysql_query("INSERT INTO `t` SET name='{$v['name']}'");
+}Unset($Rv);
+
+$Rs=Mysql_query("SELECT 学号, 科目1, 科目2, 科目3 FROM 学生成绩表");
+echo '<tr><th>'.join('</th><th>',array_keys(mysql_fetch_array($Rs))).'</th></tr>';
+do{
+  echo '<tr><td>'.join('</td><td>',$Rw).'</td></tr>';
+}while($Rw=mysql_fetch_array($Rs));Unset($Rs);
+//=============================================================
+#T=GZIP
+//强行编码
+mb_internal_encoding('UTF-8');
+mb_http_output('UTF-8');
+mb_detect_order('UTF-8,EUC-JP,GB2312,BIG5,SJIS,ASCII');
+
+//输出头部
+Header('Content-type:text/html; charset=utf-8');
+
+//这是ob_gzip压缩机
+function ob_gzip($content) {
+	if(!headers_sent() && extension_loaded('zlib') && strstr($_SERVER['HTTP_ACCEPT_ENCODING'],'gzip')) {
+		$content = gzencode($content." \n//此页已压缩",8);
+
+		header('Content-Encoding: gzip');
+		header('Vary: Accept-Encoding');
+		header('Content-Length: '.strlen($content));
+	}
+	Return $content;
+}
+
+//启用一个带有ob_gzip压缩机的工作台
+ob_start('ob_gzip');
+
+//准备一些待压缩的内容
+$a='';
+for($i=0;$i<10;$i++) {
+	$a.=$i.':这里是压缩饼干的原料<br>';
+}
+echo $a;
+File_Put_Contents('./A.htm',$a,LOCK_EX);
+
+//输出压缩成果
+ob_end_flush();
+//=============================================================
+#T=PAGE
+Require('@manage/inc/config.php');
+Require('@manage/inc/class_db.php');
+$DB = New DB();
+
+Class Paging{
+	Private Static $_Instance;
+	Private function __clone(){}
+	Public Static function getInstance() {
+		if(empty(self::$_Instance)){self::$_Instance = new self();}
+		Return self::$_Instance;
+	}
+
+	Protected $count = 0;
+	Protected $size = 0;
+	Protected $page = 0;
+	function view($sql,$pagesize=10) {
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
+		$pageon = ($page - 1) * $pagesize;
+		$sql = preg_replace('/select\s/i','$0SQL_CALC_FOUND_ROWS ',$sql)." LIMIT {$pageon},{$pagesize}";
+		$rs = mysql_query($sql);
+		list($this->count) = mysql_fetch_row(mysql_query('SELECT FOUND_ROWS()'));
+		$this->size = $pagesize;
+		$this->page = $page;
+		Return $rs;
+	}
+	function bar($tpl='') {
+		if(!$tpl){$tpl='共{count}页 第{page}页 <a href=?{first}>首页</a> <a href=?{prve}>上一页</a> <a href=?{next}>下一页</a> <a href=?{end}>尾页</a>';}
+		$count = ceil($this->count / $this->size);
+		$page = $this->page;
+		$d = array(
+			'{first}' => 1,
+			'{prve}' => $page > 1 ? $page - 1 : 1,
+			'{next}' => $page < $count ? $page + 1 : $count,
+			'{end}' => $count,
+			'{count}' => $count,
+			'{page}' => $page,
+		);
+		Foreach($d as $k=>&$v) {
+			if(in_array($k,array('{first}','{prve}','{next}','{end}'))) {
+				$_GET['page'] = $v;
+				$v = http_build_query($_GET);
+			}
+		}
+		Return strtr($tpl,$d);
+	}
+}
+function PagView($sql,$num=10) {
+	Return Paging::getInstance()->view($sql,$num);
+}
+function PagBar($tpl='') {
+	Return Paging::getInstance()->bar($tpl);
+}
+
+$Result=PagView('SELECT id,name FROM room WHERE id<1200 ORDER BY id DESC ');
+echo "<table border='1'>";
+echo "<tr><td colspan='2'>".PagBar()."</td></tr>";
+echo "<tr><th>id</th><th>name</th></tr>";
+While($Rs=mysql_fetch_array($Result,MYSQL_ASSOC)) {
+	echo "<tr>";
+	echo "<td>{$Rs['id']}</td>";
+	echo "<td>{$Rs['name']}</td>";
+	echo "</tr>";
+}
+echo "<tr><td colspan='2'>".PagBar()."</td></tr>";
+echo "</table>";
+//=============================================================
+#T=DOWNLOAD
+OB_start();
+DownLoad('readme.txt');
+function DownLoad($File) {
+	Ob_end_clean();
+
+	Header('Content-Transfer-Encoding: binary');
+	Header('Content-Type: application/force-download; name="'.$File.'"');
+	Header('Content-Disposition: attachment; filename='.$File.'');
+	Header('Cache-control: private');
+	Header('Pragma: no-cache');
+	Header('Expires: 0');
+	echo File_Get_Contents($File);
+}
+#T=COOKIE
+//函数:Cook设置/读取
+//参数:Cook名称,Cook值,写入/读取,有效天數
+//$_n=Cook('UserLoginName');
+//Cook('UserLoginName',$username,'Set',365);
+function Cook($key,$val='',$type='Read',$exptime=YJ_SysCookietime) {
+	if(Empty($key)) {
+		Return False;
+	}else{
+		$key.=YJ_SysIsone;
+	}
+	if(StrToLower($type)=='read') {
+		Return (Isset($_COOKIE[$key]))?$_COOKIE[$key]:'';
+	}else{
+		SetType($exptime,'integer');
+		if($exptime<1) {
+			Setcookie($key,$val,0);
+		}else{
+			Setcookie($key,$val,time()+($exptime*24*3600));
+		}
+	}
+}
+#T=MYSQLI
+$Conn=Mysql_Connect('localhost','root','') Or Die('连接失败:'.mysql_error());
+Mysql_Query('Set Names UTF8'); //解决中文乱码问题
+Mysql_Select_DB('^!') Or Die('无法连接数据库,因为:'.mysql_error());
+//Mysql_Close($Conn);
+
+$Result=Mysql_Query("^!");
+$Num=Mysql_num_rows($Result);//得到Recordcount值
+Mysql_Free_result($^!);//释放内存
+$total=Mysql_num_rows(Mysql_query("SELECT * FROM ^!"));//得到记录总数
+
+/*--------search--------------------------------------------------------*/
+$DB=New DB_Class();
+$sKey=$_GET['sKey'];
+$sWhere=" ^! >= '".$sKey."' And  < '".$sKey."'";
+
+$Result=$DB->View("SELECT * FROM ^! WHERE".$sWhere." ORDER BY id DESC LIMIT [1],[2]",0);
+echo '<fieldset><legend>系统通过关键词共搜索到 ',$total,' 条记录</legend>';
+Foreach($Result as $key=>$Rs) {
+	echo '<div>ID:',$Rs[0],'&nbsp;&nbsp;&nbsp;';
+	echo '姓名:',$Rs['name'],'&nbsp;&nbsp;&nbsp;';
+	echo '密码:',$Rs['pass'],'&nbsp;&nbsp;&nbsp;';
+	echo '内容:',$Rs['content'],'&nbsp;&nbsp;&nbsp;';
+	echo '</div>',Chr(10);
+}Unset($Result);
+echo $DB->PagBar(1),'</fieldset>';
+/*-----Insert-----------------------------------------------------------*/
+"INSERT INTO ^! (name,content) VALUES ('".$."','".$."')";
+
+$DB->Exe("INSERT INTO ^! (name,content) VALUES ('".$."','".$."')");
+//$Result=Mysql_Query("INSERT INTO ^! (name,content) VALUES ('".$."','".$."')") Or Die('添加失败:'.Mysql_error());
+//echo '刚添加的数据编号是:',Mysql_Insert_Id();
+Global $DB;
+$Result=$DB->Exe("INSERT INTO ^! (,,,) VALUES ('".$."','".$."','".$."',".time().")");
+if($Result==1) {
+	Alert('信息已经添加成功!');
+}else{
+	echo Out($Result);
+}
+/*-----Update-----------------------------------------------------------*/
+$DB->Exe("UPDATE ^! SET ='".$."',=".$." WHERE id=".$."");
+Global $DB;
+$Result=$DB->Exe("UPDATE ^! SET Title='".$Title."',Name='".$Name."',Rule=".$Rule.",FileSysRoot='".$FileSysRoot."' WHERE id=".$id."");
+if($Result==1) {
+	Alert('用户信息已经修改成功!','?work=');
+}else{
+	echo Out($Result);
+}
+/*-----Delete-----------------------------------------------------------*/
+"DELETE FROM ^! WHERE id=".$."";
+$DB->Exe("DELETE FROM ^! WHERE id=".$."");
+/*-----Select-----------------------------------------------------------*/
+$Result=Mysql_Query("SELECT * FROM ^! WHERE = ORDER BY id DESC") Or Die(Mysql_error());
+$Num=Mysql_num_rows($Result);//得到记录总数
+While($rs=Mysql_Fetch_Array($Result)) {
+	echo '姓名:',$rs['name'],'<br>';
+	echo '姓名:',$rs[1],'<br>';
+}Mysql_Free_result($Result);//释放内存
+
+//$Rs=Mysql_Fetch_Array($Result);
+//echo $Rs['name'];
+
+Global $DB,$Manage;
+$Result=$DB->Get("SELECT * FROM ^! ORDER BY id DESC");
+if(Count($Result)<=0) {
+	Alert("没有发现记录!");
+}
+/*-----------page-----------------------------------------------------*/
+Global $DB,$Manage;
+
+$Result=$DB->View("SELECT * FROM ^! ORDER BY id DESC LIMIT [1],[2]",0);
+Foreach($Result as $key=>$Rs) {
+	echo '<tr>';
+	echo '<td>',$Rs['Title'],'</td>';
+	echo '<td>',$Rs['NickName'],'</td>';
+	echo '<td>',GetValue($Rs['Role'],"Title","adminrule"),'</td>';
+	echo '<td>',date('Y-m-d h:i:s', $Rs['AddTime']),'</td>';
+	echo '<td>',$Rs['FileSysRoot'],'</td>';
+	echo '</tr>';
+	$i++;
+}Unset($Result);
+echo '<tr class=',$trclass,'><td colspan="7">',$DB->PagBar(1),'</td></tr>';
+//=============================================================
+#T=FILE
+Mime_Content_type('^!');//得到mime类型
+
+$FileEx=Explode('.',$File);
+$FileEx=End($FileEx);
+
+$Dir='d:\\iso';
+if(!Is_dir($Dir)) {
+	echo '目录错误!';
+	Exit;
+}
+echo getcwd();	//输出当前目录
+if($DH=OpenDir($Dir)) {
+	$i=0;
+	While($File=ReadDir($DH)) {
+		echo $i,':',$File,'<br>',Chr(10);
+		$i++;
+	}
+}
+CloseDir($DH);
+//文件夹删除操作
+@RmDir('../^!/');
+//建立文件夹
+@MkDir('/path/to/my/dir', 0777);
+//让文件夹具备最大操作权限
+@Chmod('/somedir/somefile', 0777);
+
+//==============文件操作
+$files=Glob('*.{php,txt}', GLOB_BRACE);//查找文件
+print_r($files);
+
+$files=Glob('../images/a*.jpg');
+$files=array_map('realpath',$files);
+print_r($files);
+
+Is_dir($File_name);
+Is_file($File_name);
+Is_link($File_name);
+Is_readable($File_name);
+Is_writable($File_name);
+ReadFile($File_name);			//读取全部内容(其无须用Fopen打开即可读取)
+$Arr=File($File_name);			//将文本文件每一行作为数组的一列赋值给数组
+Rewind($File);				//指针返回第一行
+Fread($File,Filesize($File_name));	//二进制读取整个文件
+Fread($File,100);			//读取100个字节
+Fpassthru($File);			//从第100个字节处读取到文件末
+Fclose($File);
+//文件复制操作
+$File_name='.\\^!.txt';
+Copy($File_name,"$File_name.bak");
+//文件重命名操作
+$File_name='.\\^!.txt';
+Rename($File_name,'.\\a.txt');
+//文件删除操作
+@UnLink('../^!');
+//=============================================================
+#T=CLASS
+//$arr=get_declared_classes();
+//print_r($arr);//得到所有已定义的php类。
+Class ClassName{
+	Public static $^!='';
+	Private $=;
+
+	//方法,获取属性
+	function __get($property_name) {
+		if(isset($this->$property_name)) {
+			Return ($this->$property_name);
+		}else{
+			Return (NULL);
+		}
+	}
+
+	//方法,设置属性
+	function __set($property_name,$value) {
+		$this->property_name=$value;
+	}
+
+	//构造函数
+	function __construct() {
+		$this->=;
+	}
+
+	//析构函数
+	function __destruct() {
+	}
+}
+$C=&New ClassName();
+
+Class SYS_Config{
+	public static $DBHOST='localhost';
+	public static $DBUSER='root';
+	public static $DBPASS='';
+	public static $DBNAME='guest';
+	public static $DBNAME='guest';
+}
+
+//数据库操作类
+!Defined('SYS_SYS') && Exit('Access Denied!');
+
+//数据库操作类
+Class DB{
+	//属性
+	private $host;
+	private $user;
+	private $pass;
+	private $DBname;
+	private $Conn;
+	private $pconnect;
+	Public $p;		//現在是第幾頁
+	Public $count;	//一共有多少頁
+	Public $total;	//一共有多少條
+
+	//方法
+	//__get():获取属性
+	function __get($property_name){
+		if(isset($this->$property_name)){
+			Return ($this->$property_name);
+		}else{
+			Return (NULL);
+		}
+	}
+
+	//方法
+	//__set():设置属性
+	function __set($property_name,$value){
+		$this->property_name=$value;
+	}
+
+	//构造函数
+	//建立与数据库服务器的链接
+	function __construct(){
+		$this->host=$GLOBALS['SYS_DB']['HOST'];
+		$this->DBname=$GLOBALS['SYS_DB']['NAME'];
+		$this->user=$GLOBALS['SYS_DB']['USER'];
+		$this->pass=$GLOBALS['SYS_DB']['PASS'];
+		$this->pconnect=False;
+
+		//$this->Conn=@Mysql_connect($this->host,$this->user,$this->pass) Or Die ("Database server connection failed, check the Config configuration is correct!");
+
+		if($this->pconnect){
+			$this->Conn=@mysql_pconnect($this->host,$this->user,$this->pass) Or Die('Database server connection failed, check the Config configuration is correct!');
+		}else{
+			$this->Conn=@mysql_connect($this->host,$this->user,$this->pass,1) Or Die('Database server connection failed, check the Config configuration is correct!');
+		}
+
+		Mysql_query("SET NAMES 'UTF8'");
+		Mysql_Select_DB($this->DBname,$this->Conn) Or Die ('Open the database error, please check the database exists!');
+	}
+
+	//析构函数
+	//断开连接
+	function __destruct(){
+		if(IsSet($Arr)){
+			$Arr=NULL;
+		}
+		if(IsSet($Query)){
+			$Query=NULL;
+		}
+		if(IsSet($Rs)){
+			$Rs=NULL;
+		}
+	}
+
+	//增加,删除,修改
+	//參數:待執行Sql,是否返回,返回時是否過濾,獲取新增記錄的id
+	function Exe($Sql,$Ret=False,$Rep=True,$Getid=False){
+		//if(!DB::External()) {
+		//	Exit('數據來路不明,操作被終止!');
+		//}
+		$Query=Mysql_Query($Sql) Or Die (Mysql_error());
+		if($Ret==False){
+			Return $Query;
+		}else{
+			if($Getid){	//取得新增記錄的id
+				Return mysql_insert_id();
+			}else{
+				$Rs=Mysql_Fetch_Array($Query);
+				if(Is_Array($Rs) And $Rep==True){
+					$Rs=Array_Filter($Rs,'_nul');
+				}
+				Mysql_Free_result($Query);
+				Return $Rs;
+			}
+		}
+	}
+
+	//返回一行符合條件的記錄
+	function Get($Sql){
+		$Arr=array();
+		$Rs=Mysql_query($Sql) Or Die (Mysql_error());
+
+		if(Mysql_num_rows($Rs)<1){
+			Mysql_Free_result($Rs);
+			Return $Arr;
+			Exit();
+		}
+
+		$Arr=Mysql_fetch_Array($Rs);
+		Mysql_Free_result($Rs);
+		Return $Arr;
+	}
+
+	/**
+	函數:返回多行符合條件的記錄
+	參數:Sql語句,每頁顯示多少條(據此判斷是否需要分頁:False不分頁;0每頁個數用config的預設值;大於0為目前定義的值)
+	正常用法(不需要分頁的內容塊):
+		$Rv=DB::View("SELECT id From `sale` WHERE id>'0' LIMIT 0,10");
+		$Rv=$DB->View("SELECT id From `sale` WHERE id>'0'");
+		echo '<br>'.Strtr(Json_Encode($Rv),Array('},'=>'},<br>','['=>'[<br>',']'=>'<br>]')).'<br>';
+	分頁用法(此方法不可用DB::View的方式):
+		$Rv=$DB->View("SELECT id From `sale` WHERE id>'0' order by id desc LIMIT [1],[2]",0);
+		echo $DB->PagBar();
+		echo '<br>'.Strtr(Json_Encode($Rv),Array('},'=>'},<br>','['=>'[<br>',']'=>'<br>]')).'<br>';
+		echo $DB->PagBar(2);
+	/**/
+	function View($Sql,$size=False){
+		if($Sql=='') {Return Array();}
+
+		//如果需要分頁
+		if(Is_numeric($size) And $size>=0) {
+			//現在是第幾頁
+			$this->p=Toget("p");
+			if(!Is_numeric($this->p) Or $this->p<1){$this->p=1;}
+
+			//共有多少條
+			$Sql1=preg_replace('/ limit.*/i','',$Sql);
+			$this->total=Mysql_num_rows(Mysql_query($Sql1));Unset($Sql1);
+
+			//每頁多少條
+			$size=($size==0) ? $GLOBALS['SYS_PagNum'] : $size;
+
+			//共有多少頁
+			$this->count=Ceil($this->total/$size);
+
+			//==============计算提取位置
+			$this->p=Min($this->count,$this->p);			//找出最小值
+			if(($this->p-1)*$size>0){
+				$Start=($this->p-1)*$size;				//计算提取的开始位置
+			}else{
+				$Start=0;								//计算提取的开始位置
+			}
+
+			//替換$Sql語句內的值
+			$Sql=Strtr($Sql,Array('[1]'=>$Start,'[2]'=>$size));
+		}
+
+		$Arr=array();
+		$i=0;
+		//echo "<textarea style='width:97%;height:100px;border:1px solid #ccc'>",Chr(10),$Sql,Chr(10),"</textarea>";//Die();
+		$Rs=Mysql_query($Sql) Or Die (Mysql_error());
+		if(Mysql_num_rows($Rs)<1){
+			Mysql_Free_result($Rs);
+			Return $Arr;
+		}
+
+		While($Re=Mysql_fetch_Array($Rs)){
+			$Arr[$i++]=$Re;
+		}
+		Mysql_Free_result($Rs);
+		Unset($Sql,$size,$p,$num,$Start,$i,$Rs,$Re);
+		Return $Arr;
+	}
+
+	/**
+	函数:通用分页
+	参数:分頁类型,Url(如果不傳值則自動取值),共有多少頁,當前是第幾頁
+	用法:
+		$Rv=$DB->View("SELECT id From `sale` WHERE id>'0' order by id desc LIMIT [l1],[l2]",0);
+		echo $DB->PagBar();
+		echo '<br>'.Strtr(Json_Encode($Rv),Array('},'=>'},<br>','['=>'[<br>',']'=>'<br>]')).'<br>';
+		echo $DB->PagBar(2);
+	/**/
+	function PagBar($Typ=0,$url='',$count=0,$p=0){
+		$p=(Is_numeric($p) And $p>0 ) ? $p : $this->p;
+		$count=(Is_numeric($count) And $count>0) ? $count : $this->count;
+		/**
+			//@.php?p=2&a=pabcp
+			array(
+			  'path' => string '/@.php' (length=6)
+			  'query' => string 'p=2&a=pabcp' (length=11)
+			)
+		/**/
+		$url=(Trim($url)=='') ? $_SERVER["REQUEST_URI"] : $url;	//如果$Url未传值,则自動取值
+		$url=Parse_url($url);									//URL拆分成數組
+
+		//重整網址,去掉URL中頁碼傳遞的部份
+		if(IsSet($url['query'])) {	//=========有參數傳遞
+			$url['query']=Strtr('?'.$url['query'],Array('?p='.$p=>'?','&p='.$p=>''));
+			$url['query']=Str_iReplace('?&','?',$url['query']);
+			$url['query']=(StrLen(Trim($url['query']))>1) ? $url['query'].'&' : $url['query'];
+		}else{						//=========無參數傳遞
+			$url['query']='?';
+		}
+		$url=Implode('',$url);
+		//var_dump($url);
+
+		if($p<=3){
+			$s=1;
+			$e=($count>5)?5:$count;
+		}else{
+			$e=($p+2);
+			if($e>$count){
+				$s=(($count-5)>0)?($count-5):1;
+				$e=$count;
+			}else{
+				$s=($p-2);
+				$e=($p+2);
+			}
+		}
+		$Bar="\n<!--Created by ".$GLOBALS['SYS_Name']." (QQ:9256114 Mail:See7di@Gmail.com)-->\n";
+
+		Switch ($Typ){
+		Case 2:		//傳統用法
+			$Bar.="<a href='".$url."p=1'>First</a>";
+			if(($p-1)>0){
+				$Bar.="<a href='".$url."p=".($p-1)."'>Prev</a>";
+			}else{
+				$Bar.="<span>Prev</span>";
+			}
+			For($i=$s;$i<=$e;$i++){
+				if($i==$p){
+					$Bar.="<a href='javascript:void(null)' class='cur'>{$i}</a>";
+				}else{
+					$Bar.="<a href='".$url."p={$i}' class='num'>{$i}</a>";
+				}
+			}
+			if($p<$count){
+				$Bar.="<a href='".$url."p=".($p+1)."'>Next</a>";
+			}else{
+				$Bar.="<span>Next</span>";
+			}
+			$Bar.="<a href='".$url."p={$count}'>Last</a>";
+			Break;
+		Case 1:		//后臺調用
+			$Bar.="<style type='text/css'>
+				#Pag-bar{clear:both;}
+				#Pag-bar *{Font-size:12px;Font-family:verdana;}
+				#Pag-bar a{Border:1px solid #DDD;color:#555;margin:0 3px 0 0;padding:3px 6px;text-decoration:none;}
+				#Pag-bar .cur,#Pag-bar a:hover{background-color:#FF9000;border:1px solid #666;color:#FFF;}
+				#Pag-bar .cur{font-weight:bold;}
+			</style>";
+			$Bar.='<div id="Pag-bar">';
+			$Bar.="<a href='javascript:void(0)' onclick=Sx('p','1')>首頁</a>";
+			if(($p-1)>0){
+				$Bar.="<a href='javascript:void(0)' onclick=Sx('p','".($p-1)."')>上頁</a>";
+			}
+			For($i=$s;$i<=$e;$i++){
+				if($i==$p){
+					$Bar.="<a href='javascript:void(null)' class='cur'>{$i}</a>";
+				}else{
+					$Bar.="<a href='javascript:void(0)' onclick=Sx('p','".$i."')>{$i}</a>";
+				}
+			}
+			if($p<$count){
+				$Bar.="<a href='javascript:void(0)' onclick=Sx('p','".($p+1)."')>下頁</a>";
+			}
+			$Bar.="<a href='javascript:void(0)' onclick=Sx('p','".$count."')>尾頁</a>";
+			$Bar.='</div>';
+			Break;
+		Default:	//前臺調用
+			$Bar.="<a href='".Str_iReplace('.','1.',$url)."' onclick=\"Sx('p','1');return false;\">首頁</a>";
+			if(($p-1)>0){
+				$Bar.="<a href='".Str_iReplace('.',($p-1).'.',$url)."' onclick=\"Sx('p','".($p-1)."');return false;\">上頁</a>";
+			}
+			For($i=$s;$i<=$e;$i++){
+				if($i==$p){
+					$Bar.="<a href='javascript:void(null)' class='cur'>{$i}</a>";
+				}else{
+					$Bar.="<a href='".Str_iReplace('.',$i.'.',$url)."' onclick=\"Sx('p','".$i."');return false;\">{$i}</a>";
+				}
+			}
+			if($p<$count){
+				$Bar.="<a href='".Str_iReplace('.',($p+1).'.',$url)."' onclick=\"Sx('p','".($p+1)."');return false;\">下頁</a>";
+			}
+			$Bar.="<a href='".Str_iReplace('.',($count).'.',$url)."' onclick=\"Sx('p','".$count."');return false;\">尾頁</a>";
+			Break;
+		}
+		Unset($Typ,$e,$s,$p,$count,$url);
+		Return $Bar;
+	}
+
+	//验证站外提交
+	function External(){
+		$HOST = IsSet($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (IsSet($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+		$Host1 = StrToLower($HOST);
+		//var_dump($_SERVER);
+		$Host2 = (IsSet($_SERVER['HTTP_REFERER'])) ? StrToLower($_SERVER['HTTP_REFERER']) : '';
+		if(Trim($Host2)!='') {
+			$Host2 = Parse_Url($Host2);
+			$Host2 = $Host2['host'];
+		}
+		if($Host1==$Host2){
+			Return True;
+		}else{
+			Return False;
+		}
+	}
+
+	//函数:获取来访者真实IP
+	function user_Ip(){
+		if(Getenv('HTTP_CLIENT_IP')){
+			$ip = Getenv('HTTP_CLIENT_IP');
+		}elseif(Getenv('HTTP_X_FORWARDED_FOR')){
+			$ip = Getenv('HTTP_X_FORWARDED_FOR');
+		}elseif(Getenv('REMOTE_ADDR')){
+			$ip = Getenv('REMOTE_ADDR');
+		}else{
+			$ip = $HTTP_SERVER_VARS['REMOTE_ADDR'];
+		}
+		Return $ip;
+	}
+
+	//取得版本
+	function Version(){
+		$Rs = Mysql_query("SELECT VERSION();");
+		$row = mysql_fetch_array($Rs);
+		$mysql_version = $row[0];
+		$mysql_versions = explode(".",trim($mysql_version));
+		$mysql_version = number_format($mysql_versions[0].".".$mysql_versions[1],2);
+		Mysql_Free_result($Rs);
+		Return $mysql_version;
+	}
+}
+//=============================================================
+#T=IMAGE
+$src=ImageCreateFromJPEG('pic.jpg');
+
+$width=ImageSx($src);
+$height=ImageSy($src);
+$x=$width/2; $y=$height/2;
+$dst=ImageCreateTrueColor($x,$y);
+ImageCopyResampled($dst,$src,0,0,0,0,$x,$y,$width,$height);
+
+//header('Content-Type: image/jpeg');
+//ImageJPEG($dst,'',100); // Output to Browser
+
+ImageJpeg ($dst,'pic1.jpg');
+imagedestroy($dst);
+//=============================================================
+#T=XML
+$dom=New DomDocument();
+if(!File_Exists('xml.xml')) {
+	$xmlstr="<?xml version='1.0' encoding='GB2312'?><冯健></冯健>";
+
+	$dom->loadXML($xmlstr);
+	$dom->save("xml.xml");
+}else{
+	$dom->loadXML("xml.xml");
+}
+Print $dom->saveXML();
+#T=SOCKET
+$FP=FSockOpen('www.php.net',80,$errno,$errstr,30);
+if(!$FP) {
+	echo 'Find Error:',$errstr($errno),'<br>\n';
+}else{
+	fputs($FP,"GET / HTTP/1.0\r\nHost:www.example.com\r\n\r\n");
+	echo 'Output:<br>',Chr(10);
+	While(!feof($FP)) {
+		echo fgets($FP,128),'<br>--------<br>';
+	}
+	Fclose($FP);
+}
+//=============================================================
+#T=head
+OB_start('_gzip');
+
+//设置超时时间
+Set_time_limit(0);
+
+//程序错误输出方式
+Error_reporting(E_ALL|E_STRICT);
+//Error_reporting(E_ALL || ~E_NOTICE);//0;E_ALL;E_ALL || ~E_NOTICE
+//Error_reporting(E_ALL);
+
+//开启Session
+$sessionid=(Array_key_exists('sessionid',$_REQUEST))?$_REQUEST['sessionid']:'';
+if(StrLen($sessionid)>0){Session_Id($sessionid);}
+Session_start();
+
+
+if(!headers_sent()) {
+	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+	header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+	header('Cache-Control: no-store, no-cache, must-revalidate');
+	header('Content-type: text/html; charset=UTF-8');
+
+	//為后退操作服務
+	Header('Cache-control: private,must-revalidate');
+
+	//输出头部
+	Header('Content-type:text/html; charset=utf-8');
+
+	//输出404错误
+	Header('HTTP/1.0 404 Not Found');Die();
+
+	Header('Cache-control: private, must-revalidate');  //支持页面回跳
+	Header('Location:^!.php');
+	//Header('Content-type:text/xml');
+	Header('Content-type:text/html; charset=utf-8');
+}
+
+if(!isset($_SERVER['PHP_AUTH_USER']) Or $_SERVER['PHP_AUTH_USER']!='seven') {
+	Header('WWW-Authenticate: Basic realm="请登录系统"');
+	echo '{您无权使用系统!}<br>',Chr(10);
+}else{
+	echo $_SERVER['PHP_AUTH_USER'],'你好<br>',Chr(10);
+	echo '你输入的密码为',$_SERVER['PHP_AUTH_PW'],'<br>',Chr(10);
+}
+
+Unset($GLOBALS, $_ENV, $HTTP_GET_VARS, $HTTP_POST_VARS, $HTTP_COOKIE_VARS, $HTTP_SERVER_VARS, $HTTP_ENV_VARS);
+
+//取得初始參數
+$Config=Setting();
+function Setting() {
+	$Arr=Array();
+	$Rs=$DB->Get("SELECT * FROM config WHERE id=1");
+	if(Count($Rs)>0) {
+		$Arr[]=$Rs[0];
+	}
+	Return $Arr;
+}
+//=============================================================
+#T=memadd
+$mem->add('^!','123',MEMCACHE_COMPRESSED,0);
+#T=memset
+$mem->set('^!',$,MEMCACHE_COMPRESSED,0);
+#T=memget
+$mem->get('^!');
+#T=memdel
+$mem->delete('^!');
+#T=memclear
+$mem->flush();^!
+#T=memclose
+$mem->close();^!
+#T=MEMCACHE
+$mem = new Memcache;
+$mem->connect('127.0.0.1', 11211) Or die('Memcache連接失敗!');
+$mem->add('test','成功了!', MEMCACHE_COMPRESSED, 0);
+echo $mem->get('test');
+$mem->set('test','测试成功了!', MEMCACHE_COMPRESSED, 0);
+echo $mem->get('test');
+$mem->delete('test');
+$mem->close();
+
+$mem->connect();	//建立mem對象
+$mem->pconnect();	//創建一個mem的持久性鏈接對象
+$mem->add();		//添加一個值,如果已經存在則返回false
+$mem->set();		//添加一個值,如果存在則覆蓋
+$mem->get();		//獲取一個key的值
+$mem->delete();		//刪掉一個key值
+$mem->flush();		//清理所有緩存的數據
+$mem->decrement();	//對保存的某個key中的值進行減法操作
+$mem->increment();	//對保存的某個key中的值進行加法操作
+$mem->close();		//關閉mem對象
+$mem->debug();		//控制調試功能
+
+$mem->addServer();				//添加一個可以使用的服務器地址
+$mem->getExtendedStats();		//獲取進程池中所有進程的運行系統統計
+$mem->getStats();				//返回服務器的一些運行統計信息
+$mem->setServerParams();		//在運行時修改服務器的參數
+$mem->getServerStatus();		//獲取運行服務器的參數
+$mem->setCompressThreshold();	//對大於某一大小的數據進行壓縮
+$mem->getVersion();				//返回運行的mem的版本
+
+$mem = new Memcache;
+$mem->connect('127.0.0.1', 12000);
+//Memcache::set方法有四个参数，第一个参数是key，第二个参数是value，第三个参数可选，表示是否压缩保存 ，第四个参数可选，用来设置一个过期自动销毁的时间
+$mem->set('test','123',0,60);
+//Memcache::add方法的作用和Memcache::set方法类似，区别是如果 Memcache::add方法的返回值为false，表示这个key已经存在，而Memcache::set方法则会直接覆写
+$mem->add('test','123',0,60);
+//Memcache::get方法的作用是获取一个key值，Memcache::get方法有一个参数，表示key
+$mem->get('test');//输出为'123'
+//Memcache::replace 方法的作用是对一个已有的key进行覆写操作，Memcache::replace方法有四个参数，作用和Memcache::set方法的相同
+$mem->replace('test','456',0,60);
+//Memcache::delete方法的作用是删除一个key值，Memcache::delete方法有两个参数，第一个参数表示key，第二个参数可选，表示删除延迟的时间
+$mem->delete('test',60);
+
+$out = $mem->get('c');
+if($out=='') {//memcache內缓存不存在
+	$out = 'memcache里值是空的';
+	$mem->set('c','來自memcache的值:c', MEMCACHE_COMPRESSED, 0);
+}
+//=============================================================
+#T=MONGO
+//连接 localhost:27017
+$conn = new Mongo();
+//连接远程主机默认端口
+$conn = new Mongo('test.com');
+//连接远程主机22011端口
+$conn = new Mongo('test.com:22011');
+//MongoDB有用户名密码
+$conn = new Mongo("mongodb://username:username@localhost")
+//MongoDB有用户名密码并指定数据库名
+$conn = new Mongo("mongodb://username:username@localhost/blog");
+//多个服务器
+$conn = new Mongo("mongodb://localhost:27017,localhost:27018");
+
+
+//2、指定数据库和数据集名（表名）
+//选择数据库blog
+$db = $conn->blog;
+
+//制定结果集（表名：users）
+$collection = $db->users;
+
+//3、CRUD
+//新增
+$user = Array('name' => 'caleng', 'email' =>'admin@admin.com');
+$collection->insert($user);
+//修改
+$newdata = Array('$set' => Array("email" => "test@test.com"));
+$collection->update(Array("name" => "caleng"), $newdata);
+//删除
+$collection->remove(Array('name'=>'caleng'), Array("justOne" => true));
+//查找
+$cursor = $collection->find();
+var_dump($cursor);
+//查找一条
+$user = $collection->findOne(Array('name' => 'caleng'), Array('email'));
+var_dump($user);
+
+//4、关闭连接
+$conn->close();
+//=============================================================
+#T=UPLOAD
+echo '<form method="post" action="?action=doup" enctype="multipart/form-data">
+	<input type="hidden" name="MAX_FILE_SIZE" value="30000">
+	姓名:<input type="text" name="username" value="wef"><br>
+	文件:<input type="file" name="userfile"><br>
+	<input type="submit" value="开始上传"><br>
+</form>';
+
+$action=$_GET['action'];
+Switch($action) {
+Case 'doup':
+	$StrFileName=$_FILES['userfile']['name'];
+	$StrTempName=$_FILES['userfile']['tmp_name'];
+	echo $_POST['username'],'<br>';
+	echo $StrFileName,'<br>';
+	echo $_FILES['userfile']['type'],'<br>';
+	echo $_FILES['userfile']['size'],'<br>';
+	echo $StrTempName,'<br>';
+	echo $_FILES['userfile']['error'],'<br>';//0成功;1太大超过php.ini;2超过MAX_FILE_SIZE;3部分上传;4失败
+
+	$StrUPDir=getcwd().'\\';
+	echo $StrUPDir.$_POST['username'].$StrFileName;
+	if(!move_uploaded_file($StrTempName,$StrUPDir.$_POST['username'].$StrFileName)) {
+		echo '失败,错误为:',$_FILES['userfile']['error'],'<br>',Chr(10);
+	}else{
+		echo '{成功}<br>',Chr(10);
+	}
+//	Header('Location: ?action=');
+//	Break;
+}
+//=============================================================
+#T=CURL
+// 模拟请求数据
+function Curl($url,$postfields,$referer='',$cookie_jar='./cookie.txt'){
+	$Cur = curl_init();
+	$Opt = Array(
+		CURLOPT_URL => $url,
+		CURLOPT_HEADER => 1,
+		CURLOPT_NOBODY => 1,
+		CURLOPT_PORT => 80,	//端口
+		CURLOPT_POST => 1,	//发送一个常规的POST请求，类型为：application/x-www-form-urlencoded，就像表单提交的一样。
+		CURLOPT_POSTFIELDS => $postfields,//要传送的所有数据，如果要传送一个文件，需要一个@开头的文件名
+		CURLOPT_RETURNTRANSFER => 1,// 获取的信息以文件流的形式返回，而不是直接输出。
+
+		CURLOPT_SSL_VERifYHOST => 1,// 从证书中检查SSL加密算法是否存在
+		CURLOPT_SSL_VERifYPEER => 0,// 对认证证书来源的检查，0表示阻止对证书的合法性的检查。
+		//CURLOPT_COOKIE => GetCook($url),
+
+		//CURLOPT_USERAGENT => "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)",//模拟用户使用的浏览器，在HTTP请求中包含一个"user-agent"头的字符串。
+		CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1',
+		CURLOPT_FOLLOWLOCATION => 1,
+		CURLOPT_COOKIEJAR => Dirname(__FILE__).$cookie_jar,
+		CURLOPT_COOKIEFILE => Dirname(__FILE__).$cookie_jar,
+		CURLOPT_REFERER => $referer,
+	);
+	curl_setopt_array($Cur,$Opt);
+	$code = curl_exec($Cur);
+	curl_close($Cur);
+	Unset($Cur);
+	Return $code;
+}
+
+function GetCook($url) {
+	$Curl=curl_init($url);
+	curl_setopt($Curl,CURLOPT_HEADER,1);
+	curl_setopt($Curl,CURLOPT_RETURNTRANSFER,1);
+	$Cook=curl_exec($Curl);
+	curl_close($Curl);
+	$Out='';
+	preg_match("/ssid\=(.[^;]*)/i",$Cook,$Out);
+	Return $Out[1];
+}
+
+$url = "http://pcik.7di.net/pcik_in";
+$postfields='g=yes&username=see7di&password=www.7di.net999&id=&code=';
+$a=Curl($url,$postfields);
+unset($postfields,$url);
+
+echo "<textarea style='width:100%;height:200px'>",Chr(10),$a,Chr(10),"</textarea>";Die();
+//=============================================================
+#T=CAIJI
+set_time_limit(0);
+
+//cookie保存目录
+$cookie_jar = '/tmp/cookie.tmp';
+
+/*函数 ------------------------------------------------------------------------------------------------------------*/
+
+// 模拟请求数据
+function request($url,$postfields,$cookie_jar,$referer){
+	$ch = curl_init();
+	$options = array(
+		CURLOPT_URL => $url,
+		CURLOPT_HEADER => 0,
+		CURLOPT_NOBODY => 0,
+		CURLOPT_PORT => 80,
+		CURLOPT_POST => 1,
+		CURLOPT_POSTFIELDS => $postfields,
+		CURLOPT_RETURNTRANSFER => 1,
+		CURLOPT_FOLLOWLOCATION => 1,
+		CURLOPT_COOKIEJAR => $cookie_jar,
+		CURLOPT_COOKIEFILE => $cookie_jar,
+		CURLOPT_REFERER => $referer
+	);
+	curl_setopt_array($ch, $options);
+	$code = curl_exec($ch);
+	curl_close($ch);
+	Return $code;
+}
+
+//获取帖子列表
+function getThreadsList($code){
+	preg_match_all('/<!--[.|\r|\n]*?<a href=\"viewthread.php\?tid=(\d+)/',$code,$threads);
+	Return $threads[1];
+}
+
+//判断该帖子是否存在
+function isExits($code){
+	preg_match('/<p>指定的主题不存在或已被删除或正在被审核，请返回。<\/p> /',$code,$error);
+	Return isset($error[0])?false:true;
+}
+
+// 获取帖子标题
+function getTitle($code){
+	preg_match('/<h1>[^<\/h1>]*/',$code,$title_tmp);
+	$title = $title_tmp[0];
+	Return $title;
+}
+
+//获取帖子作者:
+function getAuthor($code){
+	preg_match('/<a href=\"space.php\?uid=\d+\" target=\"_blank\" id=\"userinfo\d+\" onmouseover=\"showMenu\(this\.id\)\">.+/',$code,$author_tmp);
+	$author = strip_tags($author_tmp[0]);
+	Return $author;
+}
+
+// 获取楼主发表的内容
+function getContents($code){
+	preg_match('/<div id=\"postmessage_\d+\" class=\"t_msgfont\">(.|\r|\n)*?<\/div>/',$code,$contents_tmp);
+	$contents = preg_replace('/images\//','http://bbs.war3.cn/images/',$contents_tmp[0]);
+	Return $contents;
+}
+
+//打印帖子标题
+function printTitle($title){
+	echo "<strong><h2>帖子标题:</h2>< /strong>",strip_tags($title),"<br/><br/>";
+}
+
+// 输出帖子作者
+function printAuthor($author){
+	echo "<strong><h2>帖子作者:</h2>< /strong>",strip_tags($author),"<br/><br/>";
+}
+
+// 打印帖子内容
+function printContents($contents){
+	echo "<strong><h2>作者发表的内容:</h2>",$contents,"< /strong><br/>";
+}
+
+//错误
+function printError(){
+	echo "<i>该帖子不存在!</i>";
+}
+
+/*函数列表 end---------------------------------------------------------------------------------------------------*/
+
+/* 登录论坛 begin*/
+$url = 'http://bbs.war3.cn/logging.php?action=login';
+$postfields='loginfield=username& amp;username=1nject10n&password=xxxxxx&questionid=0& cookietime=315360000&referer=http://bbs.war3.cn/&loginsubmit=提交 ';
+request($url,$postfields,$cookie_jar,'');
+unset($postfields,$url);
+/* 登录论坛 end*/
+
+
+/*获取帖子列表(位于第一页的帖子) begin*/
+$url = 'http://bbs.war3.cn/forumdisplay.php?fid=57';
+$code = request($url,'',$cookie_jar,'');
+$threadsList = getThreadsList($code);
+/*获取帖子列表 end*/
+
+//帖子序列
+$rows = 0;
+
+/* 循环抓取所有帖子源代码 begin*/
+Foreach($threadsList as $list){
+	$url = "http://bbs.war3.cn/viewthread.php?tid=$list";
+
+	if(isExits($code)){
+		$code = request($url,'',$cookie_jar,'');
+		$color = $rows%2==0?'#00CCFF':'#FFFF33';
+		echo "<div style='background-color:$color'>";
+		echo "<h1>第",($rows+1),"贴:</h1><br/>";
+		$author = getAuthor($code);
+		printAuthor($author);
+
+		$title = getTitle($code);
+		printTitle($title);
+
+		$contents = getContents($code);
+		printContents($contents);
+		echo "</div>";
+		$rows++;
+	}else{
+		printError();
+	}
+}
+//=============================================================
+#T=table
+<table width='100%' cellspacing='1' cellpadding='5' border='0' id='^!'>
+<thead id='title'>
+<tr><td></td></tr>
+</thead>
+<tbody id='list'>
+<tr>
+<th></th>
+<td></td>
+<td></td>
+<th></th>
+</tr>
+</tbody>
+</table>
+#T=include_once
+include_once('^!');
+#T=require
+require('^!');
+#T=require_once
+require_once('^!');
+#T=define
+define('^!','');
+#T=constant
+constant('^!');
+#T=case
+case '^!':
+	
+	break;
+#T=eof
+print <<<EOF
+^!
+EOF;
+#T=rem
+/* ^! */
+#T=_hcmt
+<!-- ^! -->
+#
+;;;;;;;;;HTML CODE;;;;;;;;;
+#T=_html
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="history" content="">
+<meta name="author" content="Verdana Core, phpdoc.net Inc.">
+<title>^!</title>
+</head>
+
+<body>
+</body>
+
+</html>
+#
+;head elements
+#T=_head
+<head>
+<title>^!</title>
+
+</head>
+#T=_meta
+<meta name='^!' content=''>
+#T=_css
+<link rel="stylesheet" type="text/css" href="^!">
+#T=_style
+<style type="text/css" title="">
+^!
+</style>
+#T=_script
+<script language="Javascript">
+<!--
+^!
+//-->
+</script>
+#T=_sptsrc
+<script language="JavaScript" src="^!"></script>
+#
+;table element
+#T=_table
+<table align="center" width= border=0 cellspacing=0 cellpadding=0>
+ <tr>
+  <td>
+   ^!
+  </td>
+ </tr>
+</table>
+#T=_td
+  <td>
+   ^!
+  </td>
+#T=_td2
+<td>^!</td>
+#T=_th
+<th>
+  ^!
+</th>
+#T=_th2
+<th>^!</th>
+#T=_tr
+<tr>
+  <td>^!</td>
+</tr>
+#T=_tr2
+<tr>
+  ^!
+</tr>
+#
+;text directive
+#T=_h1
+<h1>^!</h1>
+#T=_h2
+<h2>^!</h2>
+#T=_h3
+<h3>^!</h3>
+#T=_h4
+<h4>^!</h4>
+#T=_h5
+<h5>^!</h5>
+#T=_h6
+<h6>^!</h6>
+#T=_p
+<p>^!</p>
+#T=_b
+<b>^!</b>
+#T=_u
+<u>^!</u>
+#T=_i
+<i>^!</i>
+#T=_blockquote
+<blockquote>^!</blockquote>
+#T=_center
+<center>^!</center>
+#T=_code
+<code>^!</code>
+#T=_cite
+<cite></cite>
+#T=_del
+<del>^!</del>
+#T=_dfn
+<dfn>^!</dfn>
+#T=_div
+<div ^!></div>
+#T=_em
+<em>^!</em>
+#T=_fieldset
+<fieldset>
+	<legend></legend>
+</fieldset>
+#T=_font
+<font ^!></font>
+#T=_ins
+<ins>^!</ins>
+#T=_kbd
+<kbd>^!</kbd>
+#T=_label
+<label>^!</label>
+#T=_legend
+<legend>^!</legend>
+#T=_menu
+<menu>^!</menu>
+#T=_pre
+<pre>^!</pre>
+#T=_samp
+<samp></samp>
+#T=_small
+<small>^!</small>
+#T=_span
+<span ^!></span>
+#T=_strike
+<strike>^!</strike>
+#T=_strong
+<strong>^!</strong>
+#T=_sub
+<sub>^!</sub>
+#T=_sup
+<sup>^!</sup>
+#
+;list
+#T=_ul
+<ul>
+	<li>^!
+	<li>
+</ul>
+#T=_ol
+<ol>
+	<li>^!
+	<li>
+</ol>
+#
+;frame elements
+#T=_frameset
+<frameset rows="," cols=",">
+	<frame src="" name="">
+	<frame src="" name="">
+</frameset>
+#T=_frame
+<frame src="^!" name="">
+#T=_iframe
+<iframe name="^!" src="" width="" height="" scrolling="no" frameborder=0></iframe>
+#
+;form elements
+#T=_button
+<input type="button" name="^!" value="" class="">
+#T=_checkbox
+<input type="checkbox" name="^!" value="">
+#T=_form
+<form method=post action="">
+^!
+</form>
+#T=_hidden
+<input type="hidden" name="^!" value="">
+#T=_image
+<input type="image" src="^!">
+#T=_option
+<option value="^!"></option>
+#T=_password
+<input type="password" name="^!" class="">
+#T=_radio
+<input type="radio" name="^!" value="">
+#T=_reset
+<input type="reset" name="^!" value="" class="">
+#T=_select
+<select name="">
+	^!
+</select>
+#T=_text
+<input type="text" name="^!" value="" class="">
+#T=_textarea
+<textarea name="^!" rows="" cols=""></textarea>
+#T=_submit
+<input type="submit" name="^!" value="" class="">
+#
+; images elements
+#T=_img
+<img src='^!' border='0' alt=''>
+#T=_map
+<map name="^!">
+	<area shape="" href="" coords="" alt="">
+</map>
+#
+;others
+#T=_applet
+<applet code="^!" width="" height="">
+
+</applet>
+#T=_object
+<object id="^!" width="" height="" classid="">
+
+</object>
+#T=_param
+<param name="^!" value="">
+#T=_nb
+&nbsp;
+#T=_br
+<br>
+#T=_hr
+<hr color='^!' width= size=1>
+#
+;link
+#T=_a
+<a href="^!"></a>
+#T=_a2
+<a href="^!" target=""></a>
+#
+; added by VESPASSASSINA; Slightly modified with cursor positions
+#T=$HTTP
+$HTTP_*_VARS[];
+#T=header
+header('^! : ');
+#T=nocache
+header('Cache-Control: no-cache, must-revalidate');
+header('Pragma: no-cache');
+#T=location
+header('location:^!');
+#T=mysql_connect
+mysql_connect($host,$user,$pass) or die (print '');
+#T=mysql_select_db
+mysql_select_db('^!') or die (print '');
+
+mysql_close();
+#T=die
+die (print '^!');
+#T=mysql_query
+mysql_query($^!) or die (print '');
+#T=ob
+ob_start();
+	^!
+
+ob_end_flush();
+#T=setcookie
+setcookie('^!'=$);
+
+
+#T=_GET
+$_GET[^!]
+#T=_POST
+$_POST[^!]
+#T=_COOKIE
+$_COOKIE[^!]
+#T=_SERVER
+$_SERVER[^!]
+#T=_ENV
+$_ENV[^!]
+#T=_REQUEST
+$_REQUEST[^!]
+#T=_SESSION
+$_SESSION[^!]
+#T=HTTP_
+$HTTP_^!_VARS
+#T=apache_lookup_uri
+apache_lookup_uri(^!)
+#T=apache_note
+apache_note(^!)
+#T=ascii2ebcdic
+ascii2ebcdic(^!)
+#T=ebcdic2ascii
+ebcdic2ascii(^!)
+#T=getallheaders
+getallheaders(^!)
+#T=virtual
+virtual(^!)
+#T=apache_child_terminate
+apache_child_terminate(^!)
+#T=apache_setenv
+apache_setenv(^!)
+#T=array 
+array(^!)
+#T=array_change_key_case 
+array_change_key_case(^!)
+#T=array_chunk 
+array_chunk(^!)
+#T=array_count_values 
+array_count_values(^!)
+#T=array_diff 
+array_diff(^!)
+#T=array_filter 
+array_filter(^!)
+#T=array_flip 
+array_flip(^!)
+#T=array_fill 
+array_fill(^!)
+#T=array_intersect 
+array_intersect(^!)
+#T=array_key_exists 
+array_key_exists(^!)
+#T=array_keys 
+array_keys(^!)
+#T=array_map 
+array_map(^!)
+#T=array_merge 
+array_merge(^!)
+#T=array_merge_recursive 
+array_merge_recursive(^!)
+#T=array_multisort 
+array_multisort(^!)
+#T=array_pad 
+array_pad(^!)
+#T=array_pop 
+array_pop(^!)
+#T=array_push 
+array_push(^!)
+#T=array_rand 
+array_rand(^!)
+#T=array_reverse 
+array_reverse(^!)
+#T=array_reduce 
+array_reduce(^!)
+#T=array_shift 
+array_shift(^!)
+#T=array_slice 
+array_slice(^!)
+#T=array_splice 
+array_splice(^!)
+#T=array_sum 
+array_sum(^!)
+#T=array_unique 
+array_unique(^!)
+#T=array_unshift 
+array_unshift(^!)
+#T=array_values 
+array_values(^!)
+#T=array_walk 
+array_walk(^!)
+#T=arsort 
+arsort(^!)
+#T=asort 
+asort(^!)
+#T=compact 
+compact(^!)
+#T=count 
+count(^!)
+#T=current 
+current(^!)
+#T=each 
+each(^!)
+#T=end 
+end(^!)
+#T=extract 
+extract(^!)
+#T=in_array 
+in_array(^!)
+#T=array_search 
+array_search(^!)
+#T=key 
+key(^!)
+#T=krsort 
+krsort(^!)
+#T=ksort 
+ksort(^!)
+#T=list 
+list(^!)
+#T=natsort 
+natsort(^!)
+#T=natcasesort 
+natcasesort(^!)
+#T=next 
+next(^!)
+#T=pos 
+pos(^!)
+#T=prev 
+prev(^!)
+#T=range 
+range(^!)
+#T=reset 
+reset(^!)
+#T=rsort 
+rsort(^!)
+#T=shuffle 
+shuffle(^!)
+#T=sizeof 
+sizeof(^!)
+#T=sort 
+sort(^!)
+#T=uasort 
+uasort(^!)
+#T=uksort 
+uksort(^!)
+#T=usort 
+usort(^!)
+#T=aspell_new
+aspell_new(^!)
+#T=aspell_check
+aspell_check(^!)
+#T=aspell_check_raw
+aspell_check_raw(^!)
+#T=aspell_suggest
+aspell_suggest(^!)
+#T=bcadd 
+bcadd(^!)
+#T=bccomp 
+bccomp(^!)
+#T=bcdiv 
+bcdiv(^!)
+#T=bcmod 
+bcmod(^!)
+#T=bcmul 
+bcmul(^!)
+#T=bcpow 
+bcpow(^!)
+#T=bcscale 
+bcscale(^!)
+#T=bcsqrt 
+bcsqrt(^!)
+#T=bcsub 
+bcsub(^!)
+#T=bzclose 
+bzclose(^!)
+#T=bzcompress 
+bzcompress(^!)
+#T=bzdecompress 
+bzdecompress(^!)
+#T=bzerrno 
+bzerrno(^!)
+#T=bzerror 
+bzerror(^!)
+#T=bzerrstr 
+bzerrstr(^!)
+#T=bzflush 
+bzflush(^!)
+#T=bzopen 
+bzopen(^!)
+#T=bzread 
+bzread(^!)
+#T=bzwrite 
+bzwrite(^!)
+#T=JDToGregorian 
+JDToGregorian(^!)
+#T=GregorianToJD 
+GregorianToJD(^!)
+#T=JDToJulian 
+JDToJulian(^!)
+#T=JulianToJD 
+JulianToJD(^!)
+#T=JDToJewish 
+JDToJewish(^!)
+#T=JewishToJD 
+JewishToJD(^!)
+#T=JDToFrench 
+JDToFrench(^!)
+#T=FrenchToJD 
+FrenchToJD(^!)
+#T=JDMonthName 
+JDMonthName(^!)
+#T=JDDayOfWeek 
+JDDayOfWeek(^!)
+#T=easter_date 
+easter_date(^!)
+#T=easter_days 
+easter_days(^!)
+#T=unixtojd 
+unixtojd(^!)
+#T=jdtounix 
+jdtounix(^!)
+#T=cal_days_in_month
+cal_days_in_month(^!)
+#T=cal_to_jd
+cal_to_jd(^!)
+#T=cal_from_jd
+cal_from_jd(^!)
+#T=cal_info
+cal_info(^!)
+#T=ccvs_init 
+ccvs_init(^!)
+#T=ccvs_done 
+ccvs_done(^!)
+#T=ccvs_new 
+ccvs_new(^!)
+#T=ccvs_add 
+ccvs_add(^!)
+#T=ccvs_delete 
+ccvs_delete(^!)
+#T=ccvs_auth 
+ccvs_auth(^!)
+#T=ccvs_return 
+ccvs_return(^!)
+#T=ccvs_reverse 
+ccvs_reverse(^!)
+#T=ccvs_sale 
+ccvs_sale(^!)
+#T=ccvs_void 
+ccvs_void(^!)
+#T=ccvs_status 
+ccvs_status(^!)
+#T=ccvs_count 
+ccvs_count(^!)
+#T=ccvs_lookup 
+ccvs_lookup(^!)
+#T=ccvs_report 
+ccvs_report(^!)
+#T=ccvs_command 
+ccvs_command(^!)
+#T=ccvs_textvalue 
+ccvs_textvalue(^!)
+#T=COM 
+COM(^!)
+#T=VARIANT 
+VARIANT(^!)
+#T=com_load 
+com_load(^!)
+#T=com_invoke 
+com_invoke(^!)
+#T=com_propget 
+com_propget(^!)
+#T=com_get 
+com_get(^!)
+#T=com_propput 
+com_propput(^!)
+#T=com_propset 
+com_propset(^!)
+#T=com_set 
+com_set(^!)
+#T=com_addref 
+com_addref(^!)
+#T=com_release
+com_release(^!)
+#T=com_isenum
+com_isenum(^!)
+#T=com_load_typelib
+com_load_typelib(^!)
+#T=call_user_method_array 
+call_user_method_array(^!)
+#T=call_user_method 
+call_user_method(^!)
+#T=class_exists 
+class_exists(^!)
+#T=get_class 
+get_class(^!)
+#T=get_class_methods 
+get_class_methods(^!)
+#T=get_class_vars 
+get_class_vars(^!)
+#T=get_declared_classes 
+get_declared_classes(^!)
+#T=get_object_vars 
+get_object_vars(^!)
+#T=get_parent_class 
+get_parent_class(^!)
+#T=is_subclass_of 
+is_subclass_of(^!)
+#T=method_exists 
+method_exists(^!)
+#T=cpdf_add_annotation 
+cpdf_add_annotation(^!)
+#T=cpdf_add_outline 
+cpdf_add_outline(^!)
+#T=cpdf_arc 
+cpdf_arc(^!)
+#T=cpdf_begin_text 
+cpdf_begin_text(^!)
+#T=cpdf_circle 
+cpdf_circle(^!)
+#T=cpdf_clip 
+cpdf_clip(^!)
+#T=cpdf_close 
+cpdf_close(^!)
+#T=cpdf_closepath 
+cpdf_closepath(^!)
+#T=cpdf_closepath_fill_stroke 
+cpdf_closepath_fill_stroke(^!)
+#T=cpdf_closepath_stroke 
+cpdf_closepath_stroke(^!)
+#T=cpdf_continue_text 
+cpdf_continue_text(^!)
+#T=cpdf_curveto 
+cpdf_curveto(^!)
+#T=cpdf_end_text 
+cpdf_end_text(^!)
+#T=cpdf_fill 
+cpdf_fill(^!)
+#T=cpdf_fill_stroke 
+cpdf_fill_stroke(^!)
+#T=cpdf_finalize 
+cpdf_finalize(^!)
+#T=cpdf_finalize_page 
+cpdf_finalize_page(^!)
+#T=cpdf_global_set_document_limits 
+cpdf_global_set_document_limits(^!)
+#T=cpdf_import_jpeg 
+cpdf_import_jpeg(^!)
+#T=cpdf_lineto 
+cpdf_lineto(^!)
+#T=cpdf_moveto 
+cpdf_moveto(^!)
+#T=cpdf_newpath 
+cpdf_newpath(^!)
+#T=cpdf_open 
+cpdf_open(^!)
+#T=cpdf_output_buffer 
+cpdf_output_buffer(^!)
+#T=cpdf_page_init 
+cpdf_page_init(^!)
+#T=cpdf_place_inline_image 
+cpdf_place_inline_image(^!)
+#T=cpdf_rect 
+cpdf_rect(^!)
+#T=cpdf_restore 
+cpdf_restore(^!)
+#T=cpdf_rlineto 
+cpdf_rlineto(^!)
+#T=cpdf_rmoveto 
+cpdf_rmoveto(^!)
+#T=cpdf_rotate 
+cpdf_rotate(^!)
+#T=cpdf_rotate_text 
+cpdf_rotate_text(^!)
+#T=cpdf_save 
+cpdf_save(^!)
+#T=cpdf_save_to_file 
+cpdf_save_to_file(^!)
+#T=cpdf_scale 
+cpdf_scale(^!)
+#T=cpdf_set_char_spacing 
+cpdf_set_char_spacing(^!)
+#T=cpdf_set_creator 
+cpdf_set_creator(^!)
+#T=cpdf_set_current_page 
+cpdf_set_current_page(^!)
+#T=cpdf_set_font 
+cpdf_set_font(^!)
+#T=cpdf_set_horiz_scaling 
+cpdf_set_horiz_scaling(^!)
+#T=cpdf_set_keywords 
+cpdf_set_keywords(^!)
+#T=cpdf_set_leading 
+cpdf_set_leading(^!)
+#T=cpdf_set_page_animation 
+cpdf_set_page_animation(^!)
+#T=cpdf_set_subject 
+cpdf_set_subject(^!)
+#T=cpdf_set_text_matrix 
+cpdf_set_text_matrix(^!)
+#T=cpdf_set_text_pos 
+cpdf_set_text_pos(^!)
+#T=cpdf_set_text_rendering 
+cpdf_set_text_rendering(^!)
+#T=cpdf_set_text_rise 
+cpdf_set_text_rise(^!)
+#T=cpdf_set_title 
+cpdf_set_title(^!)
+#T=cpdf_set_word_spacing 
+cpdf_set_word_spacing(^!)
+#T=cpdf_setdash 
+cpdf_setdash(^!)
+#T=cpdf_setflat 
+cpdf_setflat(^!)
+#T=cpdf_setgray 
+cpdf_setgray(^!)
+#T=cpdf_setgray_fill 
+cpdf_setgray_fill(^!)
+#T=cpdf_setgray_stroke 
+cpdf_setgray_stroke(^!)
+#T=cpdf_setlinecap 
+cpdf_setlinecap(^!)
+#T=cpdf_setlinejoin 
+cpdf_setlinejoin(^!)
+#T=cpdf_setlinewidth 
+cpdf_setlinewidth(^!)
+#T=cpdf_setmiterlimit 
+cpdf_setmiterlimit(^!)
+#T=cpdf_setrgbcolor 
+cpdf_setrgbcolor(^!)
+#T=cpdf_setrgbcolor_fill 
+cpdf_setrgbcolor_fill(^!)
+#T=cpdf_setrgbcolor_stroke 
+cpdf_setrgbcolor_stroke(^!)
+#T=cpdf_show 
+cpdf_show(^!)
+#T=cpdf_show_xy 
+cpdf_show_xy(^!)
+#T=cpdf_stringwidth 
+cpdf_stringwidth(^!)
+#T=cpdf_set_font_directories 
+cpdf_set_font_directories(^!)
+#T=cpdf_set_font_map_file 
+cpdf_set_font_map_file(^!)
+#T=cpdf_set_viewer_preferences 
+cpdf_set_viewer_preferences(^!)
+#T=cpdf_stroke 
+cpdf_stroke(^!)
+#T=cpdf_text 
+cpdf_text(^!)
+#T=cpdf_translate 
+cpdf_translate(^!)
+#T=cpdf_set_action_url 
+cpdf_set_action_url(^!)
+#T=crack_opendict
+crack_opendict(^!)
+#T=crack_closedict
+crack_closedict(^!)
+#T=crack_check
+crack_check(^!)
+#T=crack_getlastmessage
+crack_getlastmessage(^!)
+#T=curl_init 
+curl_init(^!)
+#T=curl_setopt 
+curl_setopt(^!)
+#T=curl_exec 
+curl_exec(^!)
+#T=curl_close 
+curl_close(^!)
+#T=curl_version
+curl_version(^!)
+#T=curl_errno
+curl_errno(^!)
+#T=curl_error
+curl_error(^!)
+#T=curl_getinfo
+curl_getinfo(^!)
+#T=cybercash_encr 
+cybercash_encr(^!)
+#T=cybercash_decr 
+cybercash_decr(^!)
+#T=cybercash_base64_encode 
+cybercash_base64_encode(^!)
+#T=cybercash_base64_decode 
+cybercash_base64_decode(^!)
+#T=cybermut_creerformulairecm 
+cybermut_creerformulairecm(^!)
+#T=cybermut_testmac 
+cybermut_testmac(^!)
+#T=cybermut_creerreponsecm 
+cybermut_creerreponsecm(^!)
+#T=cyrus_connect
+cyrus_connect(^!)
+#T=cyrus_authenticate
+cyrus_authenticate(^!)
+#T=cyrus_bind
+cyrus_bind(^!)
+#T=cyrus_unbind
+cyrus_unbind(^!)
+#T=cyrus_query
+cyrus_query(^!)
+#T=cyrus_close
+cyrus_close(^!)
+#T=ctype_alnum 
+ctype_alnum(^!)
+#T=ctype_alpha 
+ctype_alpha(^!)
+#T=ctype_cntrl 
+ctype_cntrl(^!)
+#T=ctype_digit 
+ctype_digit(^!)
+#T=ctype_lower 
+ctype_lower(^!)
+#T=ctype_graph 
+ctype_graph(^!)
+#T=ctype_print 
+ctype_print(^!)
+#T=ctype_punct 
+ctype_punct(^!)
+#T=ctype_space 
+ctype_space(^!)
+#T=ctype_upper 
+ctype_upper(^!)
+#T=ctype_xdigit 
+ctype_xdigit(^!)
+#T=dba_close
+dba_close(^!)
+#T=dba_delete
+dba_delete(^!)
+#T=dba_exists
+dba_exists(^!)
+#T=dba_fetch
+dba_fetch(^!)
+#T=dba_firstkey
+dba_firstkey(^!)
+#T=dba_insert
+dba_insert(^!)
+#T=dba_nextkey
+dba_nextkey(^!)
+#T=dba_popen
+dba_popen(^!)
+#T=dba_open
+dba_open(^!)
+#T=dba_optimize
+dba_optimize(^!)
+#T=dba_replace
+dba_replace(^!)
+#T=dba_sync
+dba_sync(^!)
+#T=checkdate 
+checkdate(^!)
+#T=date 
+date(^!)
+#T=getdate 
+getdate(^!)
+#T=gettimeofday 
+gettimeofday(^!)
+#T=gmdate 
+gmdate(^!)
+#T=gmmktime 
+gmmktime(^!)
+#T=gmstrftime 
+gmstrftime(^!)
+#T=localtime 
+localtime(^!)
+#T=microtime 
+microtime(^!)
+#T=mktime 
+mktime(^!)
+#T=strftime 
+strftime(^!)
+#T=time 
+time(^!)
+#T=strtotime 
+strtotime(^!)
+#T=dbase_create 
+dbase_create(^!)
+#T=dbase_open 
+dbase_open(^!)
+#T=dbase_close 
+dbase_close(^!)
+#T=dbase_pack 
+dbase_pack(^!)
+#T=dbase_add_record 
+dbase_add_record(^!)
+#T=dbase_replace_record 
+dbase_replace_record(^!)
+#T=dbase_delete_record 
+dbase_delete_record(^!)
+#T=dbase_get_record 
+dbase_get_record(^!)
+#T=dbase_get_record_with_names 
+dbase_get_record_with_names(^!)
+#T=dbase_numfields 
+dbase_numfields(^!)
+#T=dbase_numrecords 
+dbase_numrecords(^!)
+#T=dbmopen 
+dbmopen(^!)
+#T=dbmclose 
+dbmclose(^!)
+#T=dbmexists 
+dbmexists(^!)
+#T=dbmfetch 
+dbmfetch(^!)
+#T=dbminsert 
+dbminsert(^!)
+#T=dbmreplace 
+dbmreplace(^!)
+#T=dbmdelete 
+dbmdelete(^!)
+#T=dbmfirstkey 
+dbmfirstkey(^!)
+#T=dbmnextkey 
+dbmnextkey(^!)
+#T=dblist 
+dblist(^!)
+#T=dbx_close 
+dbx_close(^!)
+#T=dbx_connect 
+dbx_connect(^!)
+#T=dbx_error 
+dbx_error(^!)
+#T=dbx_query 
+dbx_query(^!)
+#T=dbx_sort 
+dbx_sort(^!)
+#T=dbx_compare 
+dbx_compare(^!)
+#T=dbplus_add 
+dbplus_add(^!)
+#T=dbplus_aql 
+dbplus_aql(^!)
+#T=dbplus_chdir 
+dbplus_chdir(^!)
+#T=dbplus_close 
+dbplus_close(^!)
+#T=dbplus_curr 
+dbplus_curr(^!)
+#T=dbplus_errcode 
+dbplus_errcode(^!)
+#T=dbplus_errno 
+dbplus_errno(^!)
+#T=dbplus_find 
+dbplus_find(^!)
+#T=dbplus_first 
+dbplus_first(^!)
+#T=dbplus_flush 
+dbplus_flush(^!)
+#T=dbplus_freealllocks 
+dbplus_freealllocks(^!)
+#T=dbplus_freelock 
+dbplus_freelock(^!)
+#T=dbplus_freerlocks 
+dbplus_freerlocks(^!)
+#T=dbplus_getlock 
+dbplus_getlock(^!)
+#T=dbplus_getunique 
+dbplus_getunique(^!)
+#T=dbplus_info 
+dbplus_info(^!)
+#T=dbplus_last 
+dbplus_last(^!)
+#T=dbplus_lockrel 
+dbplus_lockrel(^!)
+#T=dbplus_next 
+dbplus_next(^!)
+#T=dbplus_open 
+dbplus_open(^!)
+#T=dbplus_prev 
+dbplus_prev(^!)
+#T=dbplus_rchperm 
+dbplus_rchperm(^!)
+#T=dbplus_rcreate 
+dbplus_rcreate(^!)
+#T=dbplus_rcrtexact 
+dbplus_rcrtexact(^!)
+#T=dbplus_rcrtlike 
+dbplus_rcrtlike(^!)
+#T=dbplus_resolve 
+dbplus_resolve(^!)
+#T=dbplus_rkeys 
+dbplus_rkeys(^!)
+#T=dbplus_restorepos 
+dbplus_restorepos(^!)
+#T=dbplus_ropen 
+dbplus_ropen(^!)
+#T=dbplus_rquery 
+dbplus_rquery(^!)
+#T=dbplus_rrename 
+dbplus_rrename(^!)
+#T=dbplus_rsecindex 
+dbplus_rsecindex(^!)
+#T=dbplus_runlink 
+dbplus_runlink(^!)
+#T=dbplus_rzap 
+dbplus_rzap(^!)
+#T=dbplus_savepos 
+dbplus_savepos(^!)
+#T=dbplus_setindex 
+dbplus_setindex(^!)
+#T=dbplus_setindexbynumber 
+dbplus_setindexbynumber(^!)
+#T=dbplus_sql 
+dbplus_sql(^!)
+#T=dbplus_tcl 
+dbplus_tcl(^!)
+#T=dbplus_tremove 
+dbplus_tremove(^!)
+#T=dbplus_undo 
+dbplus_undo(^!)
+#T=dbplus_undoprepare 
+dbplus_undoprepare(^!)
+#T=dbplus_unlockrel 
+dbplus_unlockrel(^!)
+#T=dbplus_unselect 
+dbplus_unselect(^!)
+#T=dbplus_update 
+dbplus_update(^!)
+#T=dbplus_xlockrel 
+dbplus_xlockrel(^!)
+#T=dbplus_xunlockrel 
+dbplus_xunlockrel(^!)
+#T=dio_open
+dio_open(^!)
+#T=dio_read
+dio_read(^!)
+#T=dio_write
+dio_write(^!)
+#T=dio_truncate
+dio_truncate(^!)
+#T=dio_stat
+dio_stat(^!)
+#T=dio_seek
+dio_seek(^!)
+#T=dio_fcntl
+dio_fcntl(^!)
+#T=dio_close
+dio_close(^!)
+#T=chroot 
+chroot(^!)
+#T=chdir 
+chdir(^!)
+#T=dir 
+dir(^!)
+#T=closedir 
+closedir(^!)
+#T=getcwd 
+getcwd(^!)
+#T=opendir 
+opendir(^!)
+#T=readdir 
+readdir(^!)
+#T=rewinddir 
+rewinddir(^!)
+#T=xmldoc 
+xmldoc(^!)
+#T=xmldocfile 
+xmldocfile(^!)
+#T=xmltree 
+xmltree(^!)
+#T=domxml_root 
+domxml_root(^!)
+#T=domxml_add_root 
+domxml_add_root(^!)
+#T=domxml_dumpmem 
+domxml_dumpmem(^!)
+#T=domxml_attributes 
+domxml_attributes(^!)
+#T=domxml_get_attribute 
+domxml_get_attribute(^!)
+#T=domxml_set_attribute 
+domxml_set_attribute(^!)
+#T=domxml_children
+domxml_children(^!)
+#T=domxml_new_child
+domxml_new_child(^!)
+#T=domxml_new_xmldoc
+domxml_new_xmldoc(^!)
+#T=xpath_new_context 
+xpath_new_context(^!)
+#T=xpath_eval 
+xpath_eval(^!)
+#T=domxml_node
+domxml_node(^!)
+#T=domxml_node_set_content
+domxml_node_set_content(^!)
+#T=domxml_node_unlink_node
+domxml_node_unlink_node(^!)
+#T=xpath_eval_expression
+xpath_eval_expression(^!)
+#T=domxml_version
+domxml_version(^!)
+#T=xptr_new_context
+xptr_new_context(^!)
+#T=xptr_eval
+xptr_eval(^!)
+#T=dotnet_load
+dotnet_load(^!)
+#T=error_log 
+error_log(^!)
+#T=error_reporting 
+error_reporting(^!)
+#T=restore_error_handler 
+restore_error_handler(^!)
+#T=set_error_handler 
+set_error_handler(^!)
+#T=trigger_error 
+trigger_error(^!)
+#T=user_error 
+user_error(^!)
+#T=fbsql_affected_rows 
+fbsql_affected_rows(^!)
+#T=fbsql_autocommit 
+fbsql_autocommit(^!)
+#T=fbsql_change_user 
+fbsql_change_user(^!)
+#T=fbsql_close 
+fbsql_close(^!)
+#T=fbsql_commit 
+fbsql_commit(^!)
+#T=fbsql_connect 
+fbsql_connect(^!)
+#T=fbsql_create_db 
+fbsql_create_db(^!)
+#T=fbsql_create_blob 
+fbsql_create_blob(^!)
+#T=fbsql_create_clob 
+fbsql_create_clob(^!)
+#T=fbsql_database_password 
+fbsql_database_password(^!)
+#T=fbsql_data_seek 
+fbsql_data_seek(^!)
+#T=fbsql_db_query 
+fbsql_db_query(^!)
+#T=fbsql_db_status 
+fbsql_db_status(^!)
+#T=fbsql_drop_db 
+fbsql_drop_db(^!)
+#T=fbsql_errno 
+fbsql_errno(^!)
+#T=fbsql_error 
+fbsql_error(^!)
+#T=fbsql_fetch_array 
+fbsql_fetch_array(^!)
+#T=fbsql_fetch_assoc 
+fbsql_fetch_assoc(^!)
+#T=fbsql_fetch_field 
+fbsql_fetch_field(^!)
+#T=fbsql_fetch_lengths 
+fbsql_fetch_lengths(^!)
+#T=fbsql_fetch_object 
+fbsql_fetch_object(^!)
+#T=fbsql_fetch_row 
+fbsql_fetch_row(^!)
+#T=fbsql_field_flags 
+fbsql_field_flags(^!)
+#T=fbsql_field_name 
+fbsql_field_name(^!)
+#T=fbsql_field_len 
+fbsql_field_len(^!)
+#T=fbsql_field_seek 
+fbsql_field_seek(^!)
+#T=fbsql_field_table 
+fbsql_field_table(^!)
+#T=fbsql_field_type 
+fbsql_field_type(^!)
+#T=fbsql_free_result 
+fbsql_free_result(^!)
+#T=fbsql_insert_id 
+fbsql_insert_id(^!)
+#T=fbsql_list_dbs 
+fbsql_list_dbs(^!)
+#T=fbsql_list_fields 
+fbsql_list_fields(^!)
+#T=fbsql_list_tables 
+fbsql_list_tables(^!)
+#T=fbsql_next_result 
+fbsql_next_result(^!)
+#T=fbsql_num_fields 
+fbsql_num_fields(^!)
+#T=fbsql_num_rows 
+fbsql_num_rows(^!)
+#T=fbsql_pconnect 
+fbsql_pconnect(^!)
+#T=fbsql_query 
+fbsql_query(^!)
+#T=fbsql_read_blob 
+fbsql_read_blob(^!)
+#T=fbsql_read_clob 
+fbsql_read_clob(^!)
+#T=fbsql_result 
+fbsql_result(^!)
+#T=fbsql_rollback 
+fbsql_rollback(^!)
+#T=fbsql_set_lob_mode 
+fbsql_set_lob_mode(^!)
+#T=fbsql_select_db 
+fbsql_select_db(^!)
+#T=fbsql_start_db 
+fbsql_start_db(^!)
+#T=fbsql_stop_db 
+fbsql_stop_db(^!)
+#T=fbsql_tablename 
+fbsql_tablename(^!)
+#T=fbsql_warnings 
+fbsql_warnings(^!)
+#T=fbsql_database 
+fbsql_database(^!)
+#T=fbsql_get_autostart_info 
+fbsql_get_autostart_info(^!)
+#T=fbsql_hostname 
+fbsql_hostname(^!)
+#T=fbsql_password 
+fbsql_password(^!)
+#T=fbsql_set_transaction 
+fbsql_set_transaction(^!)
+#T=fbsql_username 
+fbsql_username(^!)
+#T=filepro 
+filepro(^!)
+#T=filepro_fieldname 
+filepro_fieldname(^!)
+#T=filepro_fieldtype 
+filepro_fieldtype(^!)
+#T=filepro_fieldwidth 
+filepro_fieldwidth(^!)
+#T=filepro_retrieve 
+filepro_retrieve(^!)
+#T=filepro_fieldcount 
+filepro_fieldcount(^!)
+#T=filepro_rowcount 
+filepro_rowcount(^!)
+#T=basename 
+basename(^!)
+#T=chgrp 
+chgrp(^!)
+#T=chmod 
+chmod(^!)
+#T=chown 
+chown(^!)
+#T=clearstatcache 
+clearstatcache(^!)
+#T=copy 
+copy(^!)
+#T=delete 
+delete(^!)
+#T=dirname 
+dirname(^!)
+#T=disk_free_space 
+disk_free_space(^!)
+#T=diskfreespace 
+diskfreespace(^!)
+#T=disk_total_space 
+disk_total_space(^!)
+#T=fclose 
+fclose(^!)
+#T=feof 
+feof(^!)
+#T=fflush 
+fflush(^!)
+#T=fgetc 
+fgetc(^!)
+#T=fgetcsv 
+fgetcsv(^!)
+#T=fgets 
+fgets(^!)
+#T=fgetss 
+fgetss(^!)
+#T=file 
+file(^!)
+#T=file_exists 
+file_exists(^!)
+#T=fileatime 
+fileatime(^!)
+#T=filectime 
+filectime(^!)
+#T=filegroup 
+filegroup(^!)
+#T=fileinode 
+fileinode(^!)
+#T=filemtime 
+filemtime(^!)
+#T=fileowner 
+fileowner(^!)
+#T=fileperms 
+fileperms(^!)
+#T=filesize 
+filesize(^!)
+#T=filetype 
+filetype(^!)
+#T=flock 
+flock(^!)
+#T=fopen 
+fopen(^!)
+#T=fpassthru 
+fpassthru(^!)
+#T=fputs 
+fputs(^!)
+#T=fread 
+fread(^!)
+#T=fscanf 
+fscanf(^!)
+#T=fseek 
+fseek(^!)
+#T=fstat 
+fstat(^!)
+#T=ftell 
+ftell(^!)
+#T=ftruncate 
+ftruncate(^!)
+#T=fwrite 
+fwrite(^!)
+#T=set_file_buffer 
+set_file_buffer(^!)
+#T=is_dir 
+is_dir(^!)
+#T=is_executable 
+is_executable(^!)
+#T=is_file 
+is_file(^!)
+#T=is_link 
+is_link(^!)
+#T=is_readable 
+is_readable(^!)
+#T=is_writable 
+is_writable(^!)
+#T=is_writeable 
+is_writeable(^!)
+#T=is_uploaded_file 
+is_uploaded_file(^!)
+#T=link 
+link(^!)
+#T=linkinfo 
+linkinfo(^!)
+#T=mkdir 
+mkdir(^!)
+#T=move_uploaded_file 
+move_uploaded_file(^!)
+#T=parse_ini_file 
+parse_ini_file(^!)
+#T=pathinfo 
+pathinfo(^!)
+#T=pclose 
+pclose(^!)
+#T=popen 
+popen(^!)
+#T=readfile 
+readfile(^!)
+#T=readlink 
+readlink(^!)
+#T=rename 
+rename(^!)
+#T=rewind 
+rewind(^!)
+#T=rmdir 
+rmdir(^!)
+#T=stat 
+stat(^!)
+#T=lstat 
+lstat(^!)
+#T=realpath 
+realpath(^!)
+#T=symlink 
+symlink(^!)
+#T=tempnam 
+tempnam(^!)
+#T=tmpfile 
+tmpfile(^!)
+#T=touch 
+touch(^!)
+#T=umask 
+umask(^!)
+#T=unlink 
+unlink(^!)
+#T=fdf_open 
+fdf_open(^!)
+#T=fdf_close 
+fdf_close(^!)
+#T=fdf_create 
+fdf_create(^!)
+#T=fdf_save 
+fdf_save(^!)
+#T=fdf_get_value 
+fdf_get_value(^!)
+#T=fdf_set_value 
+fdf_set_value(^!)
+#T=fdf_next_field_name 
+fdf_next_field_name(^!)
+#T=fdf_set_ap 
+fdf_set_ap(^!)
+#T=fdf_set_status 
+fdf_set_status(^!)
+#T=fdf_get_status 
+fdf_get_status(^!)
+#T=fdf_set_file 
+fdf_set_file(^!)
+#T=fdf_get_file 
+fdf_get_file(^!)
+#T=fdf_set_flags 
+fdf_set_flags(^!)
+#T=fdf_set_opt 
+fdf_set_opt(^!)
+#T=fdf_set_submit_form_action 
+fdf_set_submit_form_action(^!)
+#T=fdf_set_javascript_action 
+fdf_set_javascript_action(^!)
+#T=fdf_set_encoding
+fdf_set_encoding(^!)
+#T=fdf_add_template
+fdf_add_template(^!)
+#T=fribidi_log2vis -- Convert a logical string to a visual one 
+fribidi_log2vis -- Convert a logical string to a visual one(^!)
+#T=ftp_connect 
+ftp_connect(^!)
+#T=ftp_login 
+ftp_login(^!)
+#T=ftp_pwd 
+ftp_pwd(^!)
+#T=ftp_cdup 
+ftp_cdup(^!)
+#T=ftp_chdir 
+ftp_chdir(^!)
+#T=ftp_mkdir 
+ftp_mkdir(^!)
+#T=ftp_rmdir 
+ftp_rmdir(^!)
+#T=ftp_nlist 
+ftp_nlist(^!)
+#T=ftp_rawlist 
+ftp_rawlist(^!)
+#T=ftp_systype 
+ftp_systype(^!)
+#T=ftp_pasv 
+ftp_pasv(^!)
+#T=ftp_get 
+ftp_get(^!)
+#T=ftp_fget 
+ftp_fget(^!)
+#T=ftp_put 
+ftp_put(^!)
+#T=ftp_fput 
+ftp_fput(^!)
+#T=ftp_size 
+ftp_size(^!)
+#T=ftp_mdtm 
+ftp_mdtm(^!)
+#T=ftp_rename 
+ftp_rename(^!)
+#T=ftp_delete 
+ftp_delete(^!)
+#T=ftp_site 
+ftp_site(^!)
+#T=ftp_quit
+ftp_quit(^!)
+#T=ftp_exec
+ftp_exec(^!)
+#T=call_user_func_array 
+call_user_func_array(^!)
+#T=call_user_func 
+call_user_func(^!)
+#T=create_function 
+create_function(^!)
+#T=func_get_arg 
+func_get_arg(^!)
+#T=func_get_args 
+func_get_args(^!)
+#T=func_num_args 
+func_num_args(^!)
+#T=function_exists 
+function_exists(^!)
+#T=get_defined_functions 
+get_defined_functions(^!)
+#T=register_shutdown_function 
+register_shutdown_function(^!)
+#T=register_tick_function 
+register_tick_function(^!)
+#T=unregister_tick_function 
+unregister_tick_function(^!)
+#T=bindtextdomain
+bindtextdomain(^!)
+#T=bind_textdomain_codeset
+bind_textdomain_codeset(^!)
+#T=dcgettext
+dcgettext(^!)
+#T=dcngettext
+dcngettext(^!)
+#T=dgettext
+dgettext(^!)
+#T=dcngettext
+dcngettext(^!)
+#T=gettext
+gettext(^!)
+#T=ngettext
+ngettext(^!)
+#T=textdomain
+textdomain(^!)
+#T=gmp_init 
+gmp_init(^!)
+#T=gmp_intval 
+gmp_intval(^!)
+#T=gmp_strval 
+gmp_strval(^!)
+#T=gmp_add 
+gmp_add(^!)
+#T=gmp_sub 
+gmp_sub(^!)
+#T=gmp_mul 
+gmp_mul(^!)
+#T=gmp_div_q 
+gmp_div_q(^!)
+#T=gmp_div_r 
+gmp_div_r(^!)
+#T=gmp_div_qr 
+gmp_div_qr(^!)
+#T=gmp_div 
+gmp_div(^!)
+#T=gmp_mod 
+gmp_mod(^!)
+#T=gmp_divexact 
+gmp_divexact(^!)
+#T=gmp_cmp 
+gmp_cmp(^!)
+#T=gmp_neg 
+gmp_neg(^!)
+#T=gmp_com 
+gmp_com(^!)
+#T=gmp_abs 
+gmp_abs(^!)
+#T=gmp_sign 
+gmp_sign(^!)
+#T=gmp_fact 
+gmp_fact(^!)
+#T=gmp_sqrt 
+gmp_sqrt(^!)
+#T=gmp_sqrtrm 
+gmp_sqrtrm(^!)
+#T=gmp_perfect_square 
+gmp_perfect_square(^!)
+#T=gmp_pow 
+gmp_pow(^!)
+#T=gmp_powm 
+gmp_powm(^!)
+#T=gmp_prob_prime 
+gmp_prob_prime(^!)
+#T=gmp_gcd 
+gmp_gcd(^!)
+#T=gmp_gcdext 
+gmp_gcdext(^!)
+#T=gmp_invert 
+gmp_invert(^!)
+#T=gmp_legendre 
+gmp_legendre(^!)
+#T=gmp_jacobi 
+gmp_jacobi(^!)
+#T=gmp_random 
+gmp_random(^!)
+#T=gmp_and 
+gmp_and(^!)
+#T=gmp_or 
+gmp_or(^!)
+#T=gmp_xor 
+gmp_xor(^!)
+#T=gmp_setbit 
+gmp_setbit(^!)
+#T=gmp_clrbit 
+gmp_clrbit(^!)
+#T=gmp_scan0 
+gmp_scan0(^!)
+#T=gmp_scan1 
+gmp_scan1(^!)
+#T=gmp_popcount 
+gmp_popcount(^!)
+#T=gmp_hamdist 
+gmp_hamdist(^!)
+#T=header 
+header(^!)
+#T=headers_sent 
+headers_sent(^!)
+#T=setcookie 
+setcookie(^!)
+#T=hw_Array2Objrec 
+hw_Array2Objrec(^!)
+#T=hw_Children 
+hw_Children(^!)
+#T=hw_ChildrenObj 
+hw_ChildrenObj(^!)
+#T=hw_Close 
+hw_Close(^!)
+#T=hw_Connect 
+hw_Connect(^!)
+#T=hw_Cp 
+hw_Cp(^!)
+#T=hw_Deleteobject 
+hw_Deleteobject(^!)
+#T=hw_DocByAnchor 
+hw_DocByAnchor(^!)
+#T=hw_DocByAnchorObj 
+hw_DocByAnchorObj(^!)
+#T=hw_Document_Attributes 
+hw_Document_Attributes(^!)
+#T=hw_Document_BodyTag 
+hw_Document_BodyTag(^!)
+#T=hw_Document_Content 
+hw_Document_Content(^!)
+#T=hw_Document_SetContent 
+hw_Document_SetContent(^!)
+#T=hw_Document_Size 
+hw_Document_Size(^!)
+#T=hw_ErrorMsg 
+hw_ErrorMsg(^!)
+#T=hw_EditText 
+hw_EditText(^!)
+#T=hw_Error 
+hw_Error(^!)
+#T=hw_Free_Document 
+hw_Free_Document(^!)
+#T=hw_GetParents 
+hw_GetParents(^!)
+#T=hw_GetParentsObj 
+hw_GetParentsObj(^!)
+#T=hw_GetChildColl 
+hw_GetChildColl(^!)
+#T=hw_GetChildCollObj 
+hw_GetChildCollObj(^!)
+#T=hw_GetRemote 
+hw_GetRemote(^!)
+#T=hw_GetRemoteChildren 
+hw_GetRemoteChildren(^!)
+#T=hw_GetSrcByDestObj 
+hw_GetSrcByDestObj(^!)
+#T=hw_GetObject 
+hw_GetObject(^!)
+#T=hw_GetAndLock 
+hw_GetAndLock(^!)
+#T=hw_GetText 
+hw_GetText(^!)
+#T=hw_GetObjectByQuery 
+hw_GetObjectByQuery(^!)
+#T=hw_GetObjectByQueryObj 
+hw_GetObjectByQueryObj(^!)
+#T=hw_GetObjectByQueryColl 
+hw_GetObjectByQueryColl(^!)
+#T=hw_GetObjectByQueryCollObj 
+hw_GetObjectByQueryCollObj(^!)
+#T=hw_GetChildDocColl 
+hw_GetChildDocColl(^!)
+#T=hw_GetChildDocCollObj 
+hw_GetChildDocCollObj(^!)
+#T=hw_GetAnchors 
+hw_GetAnchors(^!)
+#T=hw_GetAnchorsObj 
+hw_GetAnchorsObj(^!)
+#T=hw_Mv 
+hw_Mv(^!)
+#T=hw_Identify 
+hw_Identify(^!)
+#T=hw_InCollections 
+hw_InCollections(^!)
+#T=hw_Info 
+hw_Info(^!)
+#T=hw_InsColl 
+hw_InsColl(^!)
+#T=hw_InsDoc 
+hw_InsDoc(^!)
+#T=hw_InsertDocument 
+hw_InsertDocument(^!)
+#T=hw_InsertObject 
+hw_InsertObject(^!)
+#T=hw_mapid 
+hw_mapid(^!)
+#T=hw_Modifyobject 
+hw_Modifyobject(^!)
+#T=hw_New_Document 
+hw_New_Document(^!)
+#T=hw_Objrec2Array 
+hw_Objrec2Array(^!)
+#T=hw_Output_Document 
+hw_Output_Document(^!)
+#T=hw_pConnect 
+hw_pConnect(^!)
+#T=hw_PipeDocument 
+hw_PipeDocument(^!)
+#T=hw_Root 
+hw_Root(^!)
+#T=hw_Unlock 
+hw_Unlock(^!)
+#T=hw_Who 
+hw_Who(^!)
+#T=hw_getusername 
+hw_getusername(^!)
+#T=hw_stat 
+hw_stat(^!)
+#T=hw_setlinkroot 
+hw_setlinkroot(^!)
+#T=hw_connection_info 
+hw_connection_info(^!)
+#T=hw_dummy 
+hw_dummy(^!)
+#T=hw_insertanchors 
+hw_insertanchors(^!)
+#T=hw_getrellink 
+hw_getrellink(^!)
+#T=hw_changeobject 
+hw_changeobject(^!)
+#T=icap_open 
+icap_open(^!)
+#T=icap_close 
+icap_close(^!)
+#T=icap_fetch_event 
+icap_fetch_event(^!)
+#T=icap_list_events 
+icap_list_events(^!)
+#T=icap_store_event 
+icap_store_event(^!)
+#T=icap_delete_event 
+icap_delete_event(^!)
+#T=icap_snooze 
+icap_snooze(^!)
+#T=icap_list_alarms
+icap_list_alarms(^!)
+#T=icap_create_calendar
+icap_create_calendar(^!)
+#T=icap_rename_calendar
+icap_rename_calendar(^!)
+#T=icap_delete_calendar
+icap_delete_calendar(^!)
+#T=icap_reopen
+icap_reopen(^!)
+#T=iconv
+iconv(^!)
+#T=iconv_get_encoding
+iconv_get_encoding(^!)
+#T=iconv_set_encoding 
+iconv_set_encoding(^!)
+#T=ob_iconv_handler
+ob_iconv_handler(^!)
+#T=GetImageSize 
+GetImageSize(^!)
+#T=Image2WBMP 
+Image2WBMP(^!)
+#T=ImageAlphaBlending 
+ImageAlphaBlending(^!)
+#T=ImageArc 
+ImageArc(^!)
+#T=ImageFilledArc 
+ImageFilledArc(^!)
+#T=ImageEllipse 
+ImageEllipse(^!)
+#T=ImageFilledEllipse 
+ImageFilledEllipse(^!)
+#T=ImageChar 
+ImageChar(^!)
+#T=ImageCharUp 
+ImageCharUp(^!)
+#T=ImageColorAllocate 
+ImageColorAllocate(^!)
+#T=ImageColorDeAllocate 
+ImageColorDeAllocate(^!)
+#T=ImageColorAt 
+ImageColorAt(^!)
+#T=ImageColorClosest 
+ImageColorClosest(^!)
+#T=ImageColorClosestAlpha 
+ImageColorClosestAlpha(^!)
+#T=ImageColorClosestThwb 
+ImageColorClosestThwb(^!)
+#T=ImageColorExact 
+ImageColorExact(^!)
+#T=ImageColorExactAlpha 
+ImageColorExactAlpha(^!)
+#T=ImageColorResolve 
+ImageColorResolve(^!)
+#T=ImageColorResolveAlpha 
+ImageColorResolveAlpha(^!)
+#T=ImageGammaCorrect 
+ImageGammaCorrect(^!)
+#T=ImageColorSet 
+ImageColorSet(^!)
+#T=ImageColorsForIndex 
+ImageColorsForIndex(^!)
+#T=ImageColorsTotal 
+ImageColorsTotal(^!)
+#T=ImageColorTransparent 
+ImageColorTransparent(^!)
+#T=ImageCopy 
+ImageCopy(^!)
+#T=ImageCopyMerge 
+ImageCopyMerge(^!)
+#T=ImageCopyMergeGray 
+ImageCopyMergeGray(^!)
+#T=ImageCopyResized 
+ImageCopyResized(^!)
+#T=ImageCopyResampled 
+ImageCopyResampled(^!)
+#T=ImageCreate 
+ImageCreate(^!)
+#T=ImageCreateTrueColor 
+ImageCreateTrueColor(^!)
+#T=ImageTrueColorToPalette 
+ImageTrueColorToPalette(^!)
+#T=ImageCreateFromGD 
+ImageCreateFromGD(^!)
+#T=ImageCreateFromGD2 
+ImageCreateFromGD2(^!)
+#T=ImageCreateFromGD2Part 
+ImageCreateFromGD2Part(^!)
+#T=ImageCreateFromGif 
+ImageCreateFromGif(^!)
+#T=ImageCreateFromJPEG 
+ImageCreateFromJPEG(^!)
+#T=ImageCreateFromPNG 
+ImageCreateFromPNG(^!)
+#T=ImageCreateFromWBMP 
+ImageCreateFromWBMP(^!)
+#T=ImageCreateFromString 
+ImageCreateFromString(^!)
+#T=ImageCreateFromXBM 
+ImageCreateFromXBM(^!)
+#T=ImageCreateFromXPM 
+ImageCreateFromXPM(^!)
+#T=ImageDashedLine 
+ImageDashedLine(^!)
+#T=ImageDestroy 
+ImageDestroy(^!)
+#T=ImageFill 
+ImageFill(^!)
+#T=ImageFilledPolygon 
+ImageFilledPolygon(^!)
+#T=ImageFilledRectangle 
+ImageFilledRectangle(^!)
+#T=ImageFillToBorder 
+ImageFillToBorder(^!)
+#T=ImageFontHeight 
+ImageFontHeight(^!)
+#T=ImageFontWidth 
+ImageFontWidth(^!)
+#T=ImageGD 
+ImageGD(^!)
+#T=ImageGD2 
+ImageGD2(^!)
+#T=ImageGif 
+ImageGif(^!)
+#T=ImagePNG 
+ImagePNG(^!)
+#T=ImageJPEG 
+ImageJPEG(^!)
+#T=ImageWBMP 
+ImageWBMP(^!)
+#T=ImageInterlace 
+ImageInterlace(^!)
+#T=ImageLine 
+ImageLine(^!)
+#T=ImageLoadFont 
+ImageLoadFont(^!)
+#T=ImagePaletteCopy 
+ImagePaletteCopy(^!)
+#T=ImagePolygon 
+ImagePolygon(^!)
+#T=ImagePSBBox 
+ImagePSBBox(^!)
+#T=ImagePSEncodeFont 
+ImagePSEncodeFont(^!)
+#T=ImagePSFreeFont 
+ImagePSFreeFont(^!)
+#T=ImagePSLoadFont 
+ImagePSLoadFont(^!)
+#T=ImagePsExtendFont 
+ImagePsExtendFont(^!)
+#T=ImagePsSlantFont 
+ImagePsSlantFont(^!)
+#T=ImagePSText 
+ImagePSText(^!)
+#T=ImageRectangle 
+ImageRectangle(^!)
+#T=ImageSetPixel 
+ImageSetPixel(^!)
+#T=ImageSetBrush 
+ImageSetBrush(^!)
+#T=ImageSetStyle 
+ImageSetStyle(^!)
+#T=ImageSetTile 
+ImageSetTile(^!)
+#T=ImageSetThickness 
+ImageSetThickness(^!)
+#T=ImageString 
+ImageString(^!)
+#T=ImageStringUp 
+ImageStringUp(^!)
+#T=ImageSX 
+ImageSX(^!)
+#T=ImageSY 
+ImageSY(^!)
+#T=ImageTTFBBox 
+ImageTTFBBox(^!)
+#T=ImageFtBBox 
+ImageFtBBox(^!)
+#T=ImageTTFText 
+ImageTTFText(^!)
+#T=ImageFtText 
+ImageFtText(^!)
+#T=ImageTypes 
+ImageTypes(^!)
+#T=JPEG2WBMP 
+JPEG2WBMP(^!)
+#T=PNG2WBMP 
+PNG2WBMP(^!)
+#T=read_exif_data 
+read_exif_data(^!)
+#T=iptcembed 
+iptcembed(^!)
+#T=imap_8bit 
+imap_8bit(^!)
+#T=imap_alerts 
+imap_alerts(^!)
+#T=imap_append 
+imap_append(^!)
+#T=imap_base64 
+imap_base64(^!)
+#T=imap_binary 
+imap_binary(^!)
+#T=imap_body 
+imap_body(^!)
+#T=imap_bodystruct 
+imap_bodystruct(^!)
+#T=imap_check 
+imap_check(^!)
+#T=imap_clearflag_full 
+imap_clearflag_full(^!)
+#T=imap_close 
+imap_close(^!)
+#T=imap_createmailbox 
+imap_createmailbox(^!)
+#T=imap_delete 
+imap_delete(^!)
+#T=imap_deletemailbox 
+imap_deletemailbox(^!)
+#T=imap_errors 
+imap_errors(^!)
+#T=imap_expunge 
+imap_expunge(^!)
+#T=imap_fetch_overview 
+imap_fetch_overview(^!)
+#T=imap_fetchbody 
+imap_fetchbody(^!)
+#T=imap_fetchheader 
+imap_fetchheader(^!)
+#T=imap_fetchstructure 
+imap_fetchstructure(^!)
+#T=imap_get_quota 
+imap_get_quota(^!)
+#T=imap_getmailboxes 
+imap_getmailboxes(^!)
+#T=imap_getsubscribed 
+imap_getsubscribed(^!)
+#T=imap_header 
+imap_header(^!)
+#T=imap_headerinfo 
+imap_headerinfo(^!)
+#T=imap_headers 
+imap_headers(^!)
+#T=imap_last_error 
+imap_last_error(^!)
+#T=imap_listmailbox 
+imap_listmailbox(^!)
+#T=imap_listsubscribed 
+imap_listsubscribed(^!)
+#T=imap_mail 
+imap_mail(^!)
+#T=imap_mail_compose 
+imap_mail_compose(^!)
+#T=imap_mail_copy 
+imap_mail_copy(^!)
+#T=imap_mail_move 
+imap_mail_move(^!)
+#T=imap_mailboxmsginfo 
+imap_mailboxmsginfo(^!)
+#T=imap_mime_header_decode 
+imap_mime_header_decode(^!)
+#T=imap_msgno 
+imap_msgno(^!)
+#T=imap_num_msg 
+imap_num_msg(^!)
+#T=imap_num_recent 
+imap_num_recent(^!)
+#T=imap_open 
+imap_open(^!)
+#T=imap_ping 
+imap_ping(^!)
+#T=imap_popen 
+imap_popen(^!)
+#T=imap_qprint 
+imap_qprint(^!)
+#T=imap_renamemailbox 
+imap_renamemailbox(^!)
+#T=imap_reopen 
+imap_reopen(^!)
+#T=imap_rfc822_parse_adrlist 
+imap_rfc822_parse_adrlist(^!)
+#T=imap_rfc822_parse_headers 
+imap_rfc822_parse_headers(^!)
+#T=imap_rfc822_write_address 
+imap_rfc822_write_address(^!)
+#T=imap_scanmailbox 
+imap_scanmailbox(^!)
+#T=imap_search 
+imap_search(^!)
+#T=imap_setacl 
+imap_setacl(^!)
+#T=imap_set_quota 
+imap_set_quota(^!)
+#T=imap_setflag_full 
+imap_setflag_full(^!)
+#T=imap_sort 
+imap_sort(^!)
+#T=imap_status 
+imap_status(^!)
+#T=imap_subscribe 
+imap_subscribe(^!)
+#T=imap_uid 
+imap_uid(^!)
+#T=imap_undelete 
+imap_undelete(^!)
+#T=imap_unsubscribe 
+imap_unsubscribe(^!)
+#T=imap_utf7_decode 
+imap_utf7_decode(^!)
+#T=imap_utf7_encode 
+imap_utf7_encode(^!)
+#T=imap_utf8 
+imap_utf8(^!)
+#T=imap_thread 
+imap_thread(^!)
+#T=ifx_connect 
+ifx_connect(^!)
+#T=ifx_pconnect 
+ifx_pconnect(^!)
+#T=ifx_close 
+ifx_close(^!)
+#T=ifx_query 
+ifx_query(^!)
+#T=ifx_prepare 
+ifx_prepare(^!)
+#T=ifx_do 
+ifx_do(^!)
+#T=ifx_error 
+ifx_error(^!)
+#T=ifx_errormsg 
+ifx_errormsg(^!)
+#T=ifx_affected_rows 
+ifx_affected_rows(^!)
+#T=ifx_getsqlca 
+ifx_getsqlca(^!)
+#T=ifx_fetch_row 
+ifx_fetch_row(^!)
+#T=ifx_htmltbl_result 
+ifx_htmltbl_result(^!)
+#T=ifx_fieldtypes 
+ifx_fieldtypes(^!)
+#T=ifx_fieldproperties 
+ifx_fieldproperties(^!)
+#T=ifx_num_fields 
+ifx_num_fields(^!)
+#T=ifx_num_rows 
+ifx_num_rows(^!)
+#T=ifx_free_result 
+ifx_free_result(^!)
+#T=ifx_create_char 
+ifx_create_char(^!)
+#T=ifx_free_char 
+ifx_free_char(^!)
+#T=ifx_update_char 
+ifx_update_char(^!)
+#T=ifx_get_char 
+ifx_get_char(^!)
+#T=ifx_create_blob 
+ifx_create_blob(^!)
+#T=ifx_copy_blob 
+ifx_copy_blob(^!)
+#T=ifx_free_blob 
+ifx_free_blob(^!)
+#T=ifx_get_blob 
+ifx_get_blob(^!)
+#T=ifx_update_blob 
+ifx_update_blob(^!)
+#T=ifx_blobinfile_mode 
+ifx_blobinfile_mode(^!)
+#T=ifx_textasvarchar 
+ifx_textasvarchar(^!)
+#T=ifx_byteasvarchar 
+ifx_byteasvarchar(^!)
+#T=ifx_nullformat 
+ifx_nullformat(^!)
+#T=ifxus_create_slob 
+ifxus_create_slob(^!)
+#T=ifxus_free_slob 
+ifxus_free_slob(^!)
+#T=ifxus_close_slob 
+ifxus_close_slob(^!)
+#T=ifxus_open_slob 
+ifxus_open_slob(^!)
+#T=ifxus_tell_slob 
+ifxus_tell_slob(^!)
+#T=ifxus_seek_slob 
+ifxus_seek_slob(^!)
+#T=ifxus_read_slob 
+ifxus_read_slob(^!)
+#T=ifxus_write_slob 
+ifxus_write_slob(^!)
+#T=ibase_connect 
+ibase_connect(^!)
+#T=ibase_pconnect 
+ibase_pconnect(^!)
+#T=ibase_close 
+ibase_close(^!)
+#T=ibase_query 
+ibase_query(^!)
+#T=ibase_fetch_row 
+ibase_fetch_row(^!)
+#T=ibase_fetch_object 
+ibase_fetch_object(^!)
+#T=ibase_field_info 
+ibase_field_info(^!)
+#T=ibase_free_result 
+ibase_free_result(^!)
+#T=ibase_prepare 
+ibase_prepare(^!)
+#T=ibase_execute 
+ibase_execute(^!)
+#T=ibase_trans 
+ibase_trans(^!)
+#T=ibase_commit 
+ibase_commit(^!)
+#T=ibase_rollback 
+ibase_rollback(^!)
+#T=ibase_free_query 
+ibase_free_query(^!)
+#T=ibase_timefmt 
+ibase_timefmt(^!)
+#T=ibase_num_fields 
+ibase_num_fields(^!)
+#T=ibase_errmsg
+ibase_errmsg(^!)
+#T=ibase_blob_add
+ibase_blob_add(^!)
+#T=ibase_blob_cancel
+ibase_blob_cancel(^!)
+#T=ibase_blob_close
+ibase_blob_close(^!)
+#T=ibase_blob_create
+ibase_blob_create(^!)
+#T=ibase_blob_echo
+ibase_blob_echo(^!)
+#T=ibase_blob_get
+ibase_blob_get(^!)
+#T=ibase_blob_import
+ibase_blob_import(^!)
+#T=ibase_blob_info
+ibase_blob_info(^!)
+#T=ibase_blob_open
+ibase_blob_open(^!)
+#T=ingres_connect 
+ingres_connect(^!)
+#T=ingres_pconnect 
+ingres_pconnect(^!)
+#T=ingres_close 
+ingres_close(^!)
+#T=ingres_query 
+ingres_query(^!)
+#T=ingres_num_rows 
+ingres_num_rows(^!)
+#T=ingres_num_fields 
+ingres_num_fields(^!)
+#T=ingres_field_name 
+ingres_field_name(^!)
+#T=ingres_field_type 
+ingres_field_type(^!)
+#T=ingres_field_nullable 
+ingres_field_nullable(^!)
+#T=ingres_field_length 
+ingres_field_length(^!)
+#T=ingres_field_precision 
+ingres_field_precision(^!)
+#T=ingres_field_scale 
+ingres_field_scale(^!)
+#T=ingres_fetch_array 
+ingres_fetch_array(^!)
+#T=ingres_fetch_row 
+ingres_fetch_row(^!)
+#T=ingres_fetch_object 
+ingres_fetch_object(^!)
+#T=ingres_rollback 
+ingres_rollback(^!)
+#T=ingres_commit 
+ingres_commit(^!)
+#T=ingres_autocommit 
+ingres_autocommit(^!)
+#T=ircg_pconnect 
+ircg_pconnect(^!)
+#T=ircg_fetch_error_msg 
+ircg_fetch_error_msg(^!)
+#T=ircg_set_current 
+ircg_set_current(^!)
+#T=ircg_join 
+ircg_join(^!)
+#T=ircg_part 
+ircg_part(^!)
+#T=ircg_msg 
+ircg_msg(^!)
+#T=ircg_notice 
+ircg_notice(^!)
+#T=ircg_nick 
+ircg_nick(^!)
+#T=ircg_topic 
+ircg_topic(^!)
+#T=ircg_channel_mode 
+ircg_channel_mode(^!)
+#T=ircg_html_encode 
+ircg_html_encode(^!)
+#T=ircg_whois 
+ircg_whois(^!)
+#T=ircg_kick 
+ircg_kick(^!)
+#T=ircg_ignore_add 
+ircg_ignore_add(^!)
+#T=ircg_ignore_del 
+ircg_ignore_del(^!)
+#T=ircg_disconnect 
+ircg_disconnect(^!)
+#T=ircg_is_conn_alive 
+ircg_is_conn_alive(^!)
+#T=ircg_lookup_format_messages 
+ircg_lookup_format_messages(^!)
+#T=ircg_register_format_messages
+ircg_register_format_messages(^!)
+#T=ircg_set_on_die
+ircg_set_on_die(^!)
+#T=ircg_set_fil
+ircg_set_fil(^!)
+#T=ircg_get_username
+ircg_get_username(^!)
+#T=ircg_nickname_escape
+ircg_nickname_escape(^!)
+#T=ircg_nickname_escape
+ircg_nickname_escape(^!)
+#T=java_last_exception_clear 
+java_last_exception_clear(^!)
+#T=java_last_exception_get 
+java_last_exception_get(^!)
+#T=ldap_add 
+ldap_add(^!)
+#T=ldap_bind 
+ldap_bind(^!)
+#T=ldap_close 
+ldap_close(^!)
+#T=ldap_compare 
+ldap_compare(^!)
+#T=ldap_connect 
+ldap_connect(^!)
+#T=ldap_count_entries 
+ldap_count_entries(^!)
+#T=ldap_delete 
+ldap_delete(^!)
+#T=ldap_dn2ufn 
+ldap_dn2ufn(^!)
+#T=ldap_err2str 
+ldap_err2str(^!)
+#T=ldap_errno 
+ldap_errno(^!)
+#T=ldap_error 
+ldap_error(^!)
+#T=ldap_explode_dn 
+ldap_explode_dn(^!)
+#T=ldap_first_attribute 
+ldap_first_attribute(^!)
+#T=ldap_first_entry 
+ldap_first_entry(^!)
+#T=ldap_free_result 
+ldap_free_result(^!)
+#T=ldap_get_attributes 
+ldap_get_attributes(^!)
+#T=ldap_get_dn 
+ldap_get_dn(^!)
+#T=ldap_get_entries 
+ldap_get_entries(^!)
+#T=ldap_get_option 
+ldap_get_option(^!)
+#T=ldap_get_values 
+ldap_get_values(^!)
+#T=ldap_get_values_len 
+ldap_get_values_len(^!)
+#T=ldap_list 
+ldap_list(^!)
+#T=ldap_modify 
+ldap_modify(^!)
+#T=ldap_mod_add 
+ldap_mod_add(^!)
+#T=ldap_mod_del 
+ldap_mod_del(^!)
+#T=ldap_mod_replace 
+ldap_mod_replace(^!)
+#T=ldap_next_attribute 
+ldap_next_attribute(^!)
+#T=ldap_next_entry 
+ldap_next_entry(^!)
+#T=ldap_read 
+ldap_read(^!)
+#T=ldap_rename 
+ldap_rename(^!)
+#T=ldap_search 
+ldap_search(^!)
+#T=ldap_set_option 
+ldap_set_option(^!)
+#T=ldap_unbind
+ldap_unbind(^!)
+#T=ldap_8859_to_t61
+ldap_8859_to_t61(^!)
+#T=ldap_first_reference
+ldap_first_reference(^!)
+#T=ldap_next_reference
+ldap_next_reference(^!)
+#T=ldap_parse_reference
+ldap_parse_reference(^!)
+#T=ldap_parse_result
+ldap_parse_result(^!)
+#T=ldap_set_rebind_proc
+ldap_set_rebind_proc(^!)
+#T=ldap_sort
+ldap_sort(^!)
+#T=ldap_start_tls
+ldap_start_tls(^!)
+#T=ldap_t61_to_8859
+ldap_t61_to_8859(^!)
+#T=mail
+mail(^!)
+#T=ezmlm_hash 
+ezmlm_hash(^!)
+#T=mailparse_uudecode_all 
+mailparse_uudecode_all(^!)
+#T=mailparse_rfc822_parse_addresses 
+mailparse_rfc822_parse_addresses(^!)
+#T=mailparse_determine_best_xfer_encoding 
+mailparse_determine_best_xfer_encoding(^!)
+#T=mailparse_stream_encode 
+mailparse_stream_encode(^!)
+#T=mailparse_msg_parse 
+mailparse_msg_parse(^!)
+#T=mailparse_msg_parse_file 
+mailparse_msg_parse_file(^!)
+#T=mailparse_msg_free 
+mailparse_msg_free(^!)
+#T=mailparse_msg_create 
+mailparse_msg_create(^!)
+#T=mailparse_msg_get_structure 
+mailparse_msg_get_structure(^!)
+#T=mailparse_msg_extract_part 
+mailparse_msg_extract_part(^!)
+#T=mailparse_msg_extract_part_file 
+mailparse_msg_extract_part_file(^!)
+#T=mailparse_msg_get_part_data 
+mailparse_msg_get_part_data(^!)
+#T=mailparse_msg_get_part 
+mailparse_msg_get_part(^!)
+#T=abs 
+abs(^!)
+#T=acos 
+acos(^!)
+#T=acosh 
+acosh(^!)
+#T=asin 
+asin(^!)
+#T=asinh 
+asinh(^!)
+#T=atan 
+atan(^!)
+#T=atanh 
+atanh(^!)
+#T=atan2 
+atan2(^!)
+#T=base_convert 
+base_convert(^!)
+#T=bindec 
+bindec(^!)
+#T=ceil 
+ceil(^!)
+#T=cos
+cos(^!)
+#T=cosh
+cosh(^!)
+#T=decbin 
+decbin(^!)
+#T=dechex 
+dechex(^!)
+#T=decoct 
+decoct(^!)
+#T=deg2rad 
+deg2rad(^!)
+#T=exp
+exp(^!)
+#T=floor
+floor(^!)
+#T=getrandmax 
+getrandmax(^!)
+#T=hexdec 
+hexdec(^!)
+#T=lcg_value 
+lcg_value(^!)
+#T=hypot
+hypot(^!)
+#T=lcg_value
+lcg_value(^!)
+#T=log
+log(^!)
+#T=log10
+log10(^!)
+#T=log1p
+log1p(^!)
+#T=max 
+max(^!)
+#T=min 
+min(^!)
+#T=mt_rand
+mt_rand(^!)
+#T=mt_srand
+mt_srand(^!)
+#T=mt_getrandmax
+mt_getrandmax(^!)
+#T=number_format
+number_format(^!)
+#T=octdec
+octdec(^!)
+#T=pi
+pi(^!)
+#T=pow
+pow(^!)
+#T=rad2deg
+rad2deg(^!)
+#T=rand
+rand(^!)
+#T=round
+round(^!)
+#T=sin
+sin(^!)
+#T=sinh
+sinh(^!)
+#T=sqrt
+sqrt(^!)
+#T=srand
+srand(^!)
+#T=tan
+tan(^!)
+#T=tanh
+tanh(^!)
+#T=mb_language 
+mb_language(^!)
+#T=mb_parse_str 
+mb_parse_str(^!)
+#T=mb_internal_encoding 
+mb_internal_encoding(^!)
+#T=mb_http_input 
+mb_http_input(^!)
+#T=mb_http_output 
+mb_http_output(^!)
+#T=mb_detect_order 
+mb_detect_order(^!)
+#T=mb_substitute_character 
+mb_substitute_character(^!)
+#T=mb_output_handler 
+mb_output_handler(^!)
+#T=mb_preferred_mime_name 
+mb_preferred_mime_name(^!)
+#T=mb_strlen 
+mb_strlen(^!)
+#T=mb_strpos 
+mb_strpos(^!)
+#T=mb_strrpos 
+mb_strrpos(^!)
+#T=mb_substr 
+mb_substr(^!)
+#T=mb_strcut 
+mb_strcut(^!)
+#T=mb_strwidth 
+mb_strwidth(^!)
+#T=mb_strimwidth 
+mb_strimwidth(^!)
+#T=mb_convert_encoding 
+mb_convert_encoding(^!)
+#T=mb_detect_encoding 
+mb_detect_encoding(^!)
+#T=mb_convert_kana 
+mb_convert_kana(^!)
+#T=mb_encode_mimeheader 
+mb_encode_mimeheader(^!)
+#T=mb_decode_mimeheader 
+mb_decode_mimeheader(^!)
+#T=mb_convert_variables 
+mb_convert_variables(^!)
+#T=mb_encode_numericentity 
+mb_encode_numericentity(^!)
+#T=mb_decode_numericentity 
+mb_decode_numericentity(^!)
+#T=mb_send_mail 
+mb_send_mail(^!)
+#T=mcal_open 
+mcal_open(^!)
+#T=mcal_popen 
+mcal_popen(^!)
+#T=mcal_reopen 
+mcal_reopen(^!)
+#T=mcal_close 
+mcal_close(^!)
+#T=mcal_create_calendar 
+mcal_create_calendar(^!)
+#T=mcal_rename_calendar 
+mcal_rename_calendar(^!)
+#T=mcal_delete_calendar 
+mcal_delete_calendar(^!)
+#T=mcal_fetch_event 
+mcal_fetch_event(^!)
+#T=mcal_list_events 
+mcal_list_events(^!)
+#T=mcal_append_event 
+mcal_append_event(^!)
+#T=mcal_store_event 
+mcal_store_event(^!)
+#T=mcal_delete_event 
+mcal_delete_event(^!)
+#T=mcal_snooze 
+mcal_snooze(^!)
+#T=mcal_list_alarms 
+mcal_list_alarms(^!)
+#T=mcal_event_init 
+mcal_event_init(^!)
+#T=mcal_event_set_category 
+mcal_event_set_category(^!)
+#T=mcal_event_set_title 
+mcal_event_set_title(^!)
+#T=mcal_event_set_description 
+mcal_event_set_description(^!)
+#T=mcal_event_set_start 
+mcal_event_set_start(^!)
+#T=mcal_event_set_end 
+mcal_event_set_end(^!)
+#T=mcal_event_set_alarm 
+mcal_event_set_alarm(^!)
+#T=mcal_event_set_class 
+mcal_event_set_class(^!)
+#T=mcal_is_leap_year 
+mcal_is_leap_year(^!)
+#T=mcal_days_in_month 
+mcal_days_in_month(^!)
+#T=mcal_date_valid 
+mcal_date_valid(^!)
+#T=mcal_time_valid 
+mcal_time_valid(^!)
+#T=mcal_day_of_week 
+mcal_day_of_week(^!)
+#T=mcal_day_of_year 
+mcal_day_of_year(^!)
+#T=mcal_date_compare 
+mcal_date_compare(^!)
+#T=mcal_next_recurrence 
+mcal_next_recurrence(^!)
+#T=mcal_event_set_recur_none 
+mcal_event_set_recur_none(^!)
+#T=mcal_event_set_recur_daily 
+mcal_event_set_recur_daily(^!)
+#T=mcal_event_set_recur_weekly 
+mcal_event_set_recur_weekly(^!)
+#T=mcal_event_set_recur_monthly_mday 
+mcal_event_set_recur_monthly_mday(^!)
+#T=mcal_event_set_recur_monthly_wday 
+mcal_event_set_recur_monthly_wday(^!)
+#T=mcal_event_set_recur_yearly 
+mcal_event_set_recur_yearly(^!)
+#T=mcal_fetch_current_stream_event 
+mcal_fetch_current_stream_event(^!)
+#T=mcal_event_add_attribute 
+mcal_event_add_attribute(^!)
+#T=mcal_expunge
+mcal_expunge(^!)
+#T=mcal_week_of_year
+mcal_week_of_year(^!)
+#T=mcrypt_get_cipher_name 
+mcrypt_get_cipher_name(^!)
+#T=mcrypt_get_block_size 
+mcrypt_get_block_size(^!)
+#T=mcrypt_get_key_size 
+mcrypt_get_key_size(^!)
+#T=mcrypt_create_iv 
+mcrypt_create_iv(^!)
+#T=mcrypt_cbc 
+mcrypt_cbc(^!)
+#T=mcrypt_cfb 
+mcrypt_cfb(^!)
+#T=mcrypt_ecb 
+mcrypt_ecb(^!)
+#T=mcrypt_ofb 
+mcrypt_ofb(^!)
+#T=mcrypt_list_algorithms 
+mcrypt_list_algorithms(^!)
+#T=mcrypt_list_modes 
+mcrypt_list_modes(^!)
+#T=mcrypt_get_iv_size 
+mcrypt_get_iv_size(^!)
+#T=mcrypt_encrypt 
+mcrypt_encrypt(^!)
+#T=mcrypt_decrypt 
+mcrypt_decrypt(^!)
+#T=mcrypt_module_open 
+mcrypt_module_open(^!)
+#T=mcrypt_generic_init 
+mcrypt_generic_init(^!)
+#T=mcrypt_generic 
+mcrypt_generic(^!)
+#T=mdecrypt_generic 
+mdecrypt_generic(^!)
+#T=mcrypt_generic_end 
+mcrypt_generic_end(^!)
+#T=mcrypt_enc_self_test 
+mcrypt_enc_self_test(^!)
+#T=mcrypt_enc_is_block_algorithm_mode 
+mcrypt_enc_is_block_algorithm_mode(^!)
+#T=mcrypt_enc_is_block_algorithm 
+mcrypt_enc_is_block_algorithm(^!)
+#T=mcrypt_enc_is_block_mode 
+mcrypt_enc_is_block_mode(^!)
+#T=mcrypt_enc_get_block_size 
+mcrypt_enc_get_block_size(^!)
+#T=mcrypt_enc_get_key_size 
+mcrypt_enc_get_key_size(^!)
+#T=mcrypt_enc_get_supported_key_sizes 
+mcrypt_enc_get_supported_key_sizes(^!)
+#T=mcrypt_enc_get_iv_size 
+mcrypt_enc_get_iv_size(^!)
+#T=mcrypt_enc_get_algorithms_name 
+mcrypt_enc_get_algorithms_name(^!)
+#T=mcrypt_enc_get_modes_name 
+mcrypt_enc_get_modes_name(^!)
+#T=mcrypt_module_self_test 
+mcrypt_module_self_test(^!)
+#T=mcrypt_module_is_block_algorithm_mode 
+mcrypt_module_is_block_algorithm_mode(^!)
+#T=mcrypt_module_is_block_algorithm 
+mcrypt_module_is_block_algorithm(^!)
+#T=mcrypt_module_is_block_mode 
+mcrypt_module_is_block_mode(^!)
+#T=mcrypt_module_get_algo_block_size 
+mcrypt_module_get_algo_block_size(^!)
+#T=mcrypt_module_get_algo_key_size 
+mcrypt_module_get_algo_key_size(^!)
+#T=mcrypt_module_get_algo_supported_key_sizes 
+mcrypt_module_get_algo_supported_key_sizes(^!)
+#T=mhash_get_hash_name 
+mhash_get_hash_name(^!)
+#T=mhash_get_block_size 
+mhash_get_block_size(^!)
+#T=mhash_count 
+mhash_count(^!)
+#T=mhash 
+mhash(^!)
+#T=mhash_keygen_s2k 
+mhash_keygen_s2k(^!)
+#T=mssql_close 
+mssql_close(^!)
+#T=mssql_connect 
+mssql_connect(^!)
+#T=mssql_data_seek 
+mssql_data_seek(^!)
+#T=mssql_fetch_array 
+mssql_fetch_array(^!)
+#T=mssql_fetch_field 
+mssql_fetch_field(^!)
+#T=mssql_fetch_object 
+mssql_fetch_object(^!)
+#T=mssql_fetch_row 
+mssql_fetch_row(^!)
+#T=mssql_field_length 
+mssql_field_length(^!)
+#T=mssql_field_name 
+mssql_field_name(^!)
+#T=mssql_field_seek 
+mssql_field_seek(^!)
+#T=mssql_field_type 
+mssql_field_type(^!)
+#T=mssql_free_result 
+mssql_free_result(^!)
+#T=mssql_get_last_message 
+mssql_get_last_message(^!)
+#T=mssql_min_error_severity 
+mssql_min_error_severity(^!)
+#T=mssql_min_message_severity 
+mssql_min_message_severity(^!)
+#T=mssql_next_result 
+mssql_next_result(^!)
+#T=mssql_num_fields 
+mssql_num_fields(^!)
+#T=mssql_num_rows 
+mssql_num_rows(^!)
+#T=mssql_pconnect 
+mssql_pconnect(^!)
+#T=mssql_query 
+mssql_query(^!)
+#T=mssql_result 
+mssql_result(^!)
+#T=mssql_select_db
+mssql_select_db(^!)
+#T=mssql_bind
+mssql_bind(^!)
+#T=mssql_execute
+mssql_execute(^!)
+#T=mssql_fetch_assoc
+mssql_fetch_assoc(^!)
+#T=mssql_fetch_batch
+mssql_fetch_batch(^!)
+#T=mssql_guid_string
+mssql_guid_string(^!)
+#T=mssql_init
+mssql_init(^!)
+#T=mssql_rows_affected
+mssql_rows_affected(^!)
+#T=ming_setcubicthreshold 
+ming_setcubicthreshold(^!)
+#T=ming_setscale 
+ming_setscale(^!)
+#T=ming_useswfversion 
+ming_useswfversion(^!)
+#T=swfbutton_keypress 
+swfbutton_keypress(^!)
+#T=SWFMovie 
+SWFMovie(^!)
+#T=SWFMovie->output 
+SWFMovie->output(^!)
+#T=SWFMovie->save 
+SWFMovie->save(^!)
+#T=SWFMovie->add 
+SWFMovie->add(^!)
+#T=SWFMovie->remove 
+SWFMovie->remove(^!)
+#T=SWFMovie->setbackground 
+SWFMovie->setbackground(^!)
+#T=SWFMovie->setrate 
+SWFMovie->setrate(^!)
+#T=SWFMovie->setdimension 
+SWFMovie->setdimension(^!)
+#T=SWFMovie->setframes 
+SWFMovie->setframes(^!)
+#T=SWFMovie->nextframe 
+SWFMovie->nextframe(^!)
+#T=SWFMovie->streammp3 
+SWFMovie->streammp3(^!)
+#T=SWFDisplayItem 
+SWFDisplayItem(^!)
+#T=SWFDisplayItem->moveTo 
+SWFDisplayItem->moveTo(^!)
+#T=SWFDisplayItem->move 
+SWFDisplayItem->move(^!)
+#T=SWFDisplayItem->scaleTo 
+SWFDisplayItem->scaleTo(^!)
+#T=SWFDisplayItem->scale 
+SWFDisplayItem->scale(^!)
+#T=SWFDisplayItem->rotateTo 
+SWFDisplayItem->rotateTo(^!)
+#T=SWFDisplayItem->Rotate 
+SWFDisplayItem->Rotate(^!)
+#T=SWFDisplayItem->skewXTo 
+SWFDisplayItem->skewXTo(^!)
+#T=SWFDisplayItem->skewX 
+SWFDisplayItem->skewX(^!)
+#T=SWFDisplayItem->skewYTo 
+SWFDisplayItem->skewYTo(^!)
+#T=SWFDisplayItem->skewY 
+SWFDisplayItem->skewY(^!)
+#T=SWFDisplayItem->setDepth 
+SWFDisplayItem->setDepth(^!)
+#T=SWFDisplayItem->remove 
+SWFDisplayItem->remove(^!)
+#T=SWFDisplayItem->setName 
+SWFDisplayItem->setName(^!)
+#T=SWFDisplayItem->setRatio 
+SWFDisplayItem->setRatio(^!)
+#T=SWFDisplayItem->addColor 
+SWFDisplayItem->addColor(^!)
+#T=SWFDisplayItem->multColor 
+SWFDisplayItem->multColor(^!)
+#T=SWFShape 
+SWFShape(^!)
+#T=SWFShape->setLine 
+SWFShape->setLine(^!)
+#T=SWFShape->addFill 
+SWFShape->addFill(^!)
+#T=SWFShape->setLeftFill 
+SWFShape->setLeftFill(^!)
+#T=SWFShape->setRightFill 
+SWFShape->setRightFill(^!)
+#T=SWFShape->movePenTo 
+SWFShape->movePenTo(^!)
+#T=SWFShape->movePen 
+SWFShape->movePen(^!)
+#T=SWFShape->drawLineTo 
+SWFShape->drawLineTo(^!)
+#T=SWFShape->drawLine 
+SWFShape->drawLine(^!)
+#T=SWFShape->drawCurveTo 
+SWFShape->drawCurveTo(^!)
+#T=SWFShape->drawCurve 
+SWFShape->drawCurve(^!)
+#T=SWFGradient 
+SWFGradient(^!)
+#T=SWFGradient->addEntry 
+SWFGradient->addEntry(^!)
+#T=SWFBitmap 
+SWFBitmap(^!)
+#T=SWFBitmap->getWidth 
+SWFBitmap->getWidth(^!)
+#T=SWFBitmap->getHeight 
+SWFBitmap->getHeight(^!)
+#T=SWFFill 
+SWFFill(^!)
+#T=SWFFill->moveTo 
+SWFFill->moveTo(^!)
+#T=SWFFill->scaleTo 
+SWFFill->scaleTo(^!)
+#T=SWFFill->rotateTo 
+SWFFill->rotateTo(^!)
+#T=SWFFill->skewXTo 
+SWFFill->skewXTo(^!)
+#T=SWFFill->skewYTo 
+SWFFill->skewYTo(^!)
+#T=SWFMorph 
+SWFMorph(^!)
+#T=SWFMorph->getshape1 
+SWFMorph->getshape1(^!)
+#T=SWFMorph->getshape2 
+SWFMorph->getshape2(^!)
+#T=SWFText 
+SWFText(^!)
+#T=SWFText->setFont 
+SWFText->setFont(^!)
+#T=SWFText->setHeight 
+SWFText->setHeight(^!)
+#T=SWFText->setSpacing 
+SWFText->setSpacing(^!)
+#T=SWFText->setColor 
+SWFText->setColor(^!)
+#T=SWFText->moveTo 
+SWFText->moveTo(^!)
+#T=SWFText->addString 
+SWFText->addString(^!)
+#T=SWFText->getWidth 
+SWFText->getWidth(^!)
+#T=SWFFont 
+SWFFont(^!)
+#T=swffont->getwidth 
+swffont->getwidth(^!)
+#T=SWFTextField 
+SWFTextField(^!)
+#T=SWFTextField->setFont 
+SWFTextField->setFont(^!)
+#T=SWFTextField->setbounds 
+SWFTextField->setbounds(^!)
+#T=SWFTextField->align 
+SWFTextField->align(^!)
+#T=SWFTextField->setHeight 
+SWFTextField->setHeight(^!)
+#T=SWFTextField->setLeftMargin 
+SWFTextField->setLeftMargin(^!)
+#T=SWFTextField->setrightMargin 
+SWFTextField->setrightMargin(^!)
+#T=SWFTextField->setMargins 
+SWFTextField->setMargins(^!)
+#T=SWFTextField->setindentation 
+SWFTextField->setindentation(^!)
+#T=SWFTextField->setLineSpacing 
+SWFTextField->setLineSpacing(^!)
+#T=SWFTextField->setcolor 
+SWFTextField->setcolor(^!)
+#T=SWFTextField->setname 
+SWFTextField->setname(^!)
+#T=SWFTextField->addstring 
+SWFTextField->addstring(^!)
+#T=SWFSprite 
+SWFSprite(^!)
+#T=SWFSprite->add 
+SWFSprite->add(^!)
+#T=SWFSprite->remove 
+SWFSprite->remove(^!)
+#T=SWFSprite->setframes 
+SWFSprite->setframes(^!)
+#T=SWFSprite->nextframe 
+SWFSprite->nextframe(^!)
+#T=SWFbutton 
+SWFbutton(^!)
+#T=SWFbutton->addShape 
+SWFbutton->addShape(^!)
+#T=SWFbutton->setUp 
+SWFbutton->setUp(^!)
+#T=SWFbutton->setOver 
+SWFbutton->setOver(^!)
+#T=SWFbutton->setdown 
+SWFbutton->setdown(^!)
+#T=SWFbutton->setHit 
+SWFbutton->setHit(^!)
+#T=SWFbutton->addAction 
+SWFbutton->addAction(^!)
+#T=SWFbutton->setAction 
+SWFbutton->setAction(^!)
+#T=SWFAction 
+SWFAction(^!)
+#T=connection_aborted 
+connection_aborted(^!)
+#T=connection_status 
+connection_status(^!)
+#T=connection_timeout 
+connection_timeout(^!)
+#T=constant 
+constant(^!)
+#T=define 
+define(^!)
+#T=defined 
+defined(^!)
+#T=die 
+die(^!)
+#T=eval 
+eval(^!)
+#T=exit 
+exit(^!)
+#T=get_browser 
+get_browser(^!)
+#T=highlight_file 
+highlight_file(^!)
+#T=highlight_string 
+highlight_string(^!)
+#T=ignore_user_abort 
+ignore_user_abort(^!)
+#T=iptcparse 
+iptcparse(^!)
+#T=leak 
+leak(^!)
+#T=pack 
+pack(^!)
+#T=show_source 
+show_source(^!)
+#T=sleep 
+sleep(^!)
+#T=uniqid 
+uniqid(^!)
+#T=unpack 
+unpack(^!)
+#T=usleep 
+usleep(^!)
+#T=udm_add_search_limit 
+udm_add_search_limit(^!)
+#T=udm_alloc_agent 
+udm_alloc_agent(^!)
+#T=udm_api_version 
+udm_api_version(^!)
+#T=udm_cat_path 
+udm_cat_path(^!)
+#T=udm_cat_list 
+udm_cat_list(^!)
+#T=udm_clear_search_limits 
+udm_clear_search_limits(^!)
+#T=udm_errno 
+udm_errno(^!)
+#T=udm_error 
+udm_error(^!)
+#T=udm_find 
+udm_find(^!)
+#T=udm_free_agent 
+udm_free_agent(^!)
+#T=udm_free_ispell_data 
+udm_free_ispell_data(^!)
+#T=udm_free_res 
+udm_free_res(^!)
+#T=udm_get_doc_count 
+udm_get_doc_count(^!)
+#T=udm_get_res_field 
+udm_get_res_field(^!)
+#T=udm_get_res_param 
+udm_get_res_param(^!)
+#T=udm_load_ispell_data 
+udm_load_ispell_data(^!)
+#T=udm_set_agent_param
+udm_set_agent_param(^!)
+#T=udm_check_charset
+udm_check_charset(^!)
+#T=udm_check_stored
+udm_check_stored(^!)
+#T=udm_close_stored
+udm_close_stored(^!)
+#T=udm_crc32
+udm_crc32(^!)
+#T=udm_open_stored
+udm_open_stored(^!)
+#T=msql 
+msql(^!)
+#T=msql_affected_rows 
+msql_affected_rows(^!)
+#T=msql_close 
+msql_close(^!)
+#T=msql_connect 
+msql_connect(^!)
+#T=msql_create_db 
+msql_create_db(^!)
+#T=msql_createdb 
+msql_createdb(^!)
+#T=msql_data_seek 
+msql_data_seek(^!)
+#T=msql_dbname 
+msql_dbname(^!)
+#T=msql_drop_db 
+msql_drop_db(^!)
+#T=msql_dropdb 
+msql_dropdb(^!)
+#T=msql_error 
+msql_error(^!)
+#T=msql_fetch_array 
+msql_fetch_array(^!)
+#T=msql_fetch_field 
+msql_fetch_field(^!)
+#T=msql_fetch_object 
+msql_fetch_object(^!)
+#T=msql_fetch_row 
+msql_fetch_row(^!)
+#T=msql_fieldname 
+msql_fieldname(^!)
+#T=msql_field_seek 
+msql_field_seek(^!)
+#T=msql_fieldtable 
+msql_fieldtable(^!)
+#T=msql_fieldtype 
+msql_fieldtype(^!)
+#T=msql_fieldflags 
+msql_fieldflags(^!)
+#T=msql_fieldlen 
+msql_fieldlen(^!)
+#T=msql_free_result 
+msql_free_result(^!)
+#T=msql_freeresult 
+msql_freeresult(^!)
+#T=msql_list_fields 
+msql_list_fields(^!)
+#T=msql_listfields 
+msql_listfields(^!)
+#T=msql_list_dbs 
+msql_list_dbs(^!)
+#T=msql_listdbs 
+msql_listdbs(^!)
+#T=msql_list_tables 
+msql_list_tables(^!)
+#T=msql_listtables 
+msql_listtables(^!)
+#T=msql_num_fields 
+msql_num_fields(^!)
+#T=msql_num_rows 
+msql_num_rows(^!)
+#T=msql_numfields 
+msql_numfields(^!)
+#T=msql_numrows 
+msql_numrows(^!)
+#T=msql_pconnect 
+msql_pconnect(^!)
+#T=msql_query 
+msql_query(^!)
+#T=msql_regcase 
+msql_regcase(^!)
+#T=msql_result 
+msql_result(^!)
+#T=msql_select_db 
+msql_select_db(^!)
+#T=msql_selectdb 
+msql_selectdb(^!)
+#T=msql_tablename 
+msql_tablename(^!)
+#T=mysql_affected_rows 
+mysql_affected_rows(^!)
+#T=mysql_change_user 
+mysql_change_user(^!)
+#T=mysql_close 
+mysql_close(^!)
+#T=mysql_connect 
+mysql_connect(^!)
+#T=mysql_create_db 
+mysql_create_db(^!)
+#T=mysql_data_seek 
+mysql_data_seek(^!)
+#T=mysql_db_name 
+mysql_db_name(^!)
+#T=mysql_db_query 
+mysql_db_query(^!)
+#T=mysql_drop_db 
+mysql_drop_db(^!)
+#T=mysql_errno 
+mysql_errno(^!)
+#T=mysql_error 
+mysql_error(^!)
+#T=mysql_escape_string 
+mysql_escape_string(^!)
+#T=mysql_fetch_array 
+mysql_fetch_array(^!)
+#T=mysql_fetch_assoc 
+mysql_fetch_assoc(^!)
+#T=mysql_fetch_field 
+mysql_fetch_field(^!)
+#T=mysql_fetch_lengths 
+mysql_fetch_lengths(^!)
+#T=mysql_fetch_object 
+mysql_fetch_object(^!)
+#T=mysql_fetch_row 
+mysql_fetch_row(^!)
+#T=mysql_field_flags 
+mysql_field_flags(^!)
+#T=mysql_field_name 
+mysql_field_name(^!)
+#T=mysql_field_len 
+mysql_field_len(^!)
+#T=mysql_field_seek 
+mysql_field_seek(^!)
+#T=mysql_field_table 
+mysql_field_table(^!)
+#T=mysql_field_type 
+mysql_field_type(^!)
+#T=mysql_free_result 
+mysql_free_result(^!)
+#T=mysql_insert_id 
+mysql_insert_id(^!)
+#T=mysql_list_dbs 
+mysql_list_dbs(^!)
+#T=mysql_list_fields 
+mysql_list_fields(^!)
+#T=mysql_list_tables 
+mysql_list_tables(^!)
+#T=mysql_num_fields 
+mysql_num_fields(^!)
+#T=mysql_num_rows 
+mysql_num_rows(^!)
+#T=mysql_pconnect 
+mysql_pconnect(^!)
+#T=mysql_query 
+mysql_query(^!)
+#T=mysql_unbuffered_query 
+mysql_unbuffered_query(^!)
+#T=mysql_result 
+mysql_result(^!)
+#T=mysql_select_db 
+mysql_select_db(^!)
+#T=mysql_tablename 
+mysql_tablename(^!)
+#T=mysql_get_client_info 
+mysql_get_client_info(^!)
+#T=mysql_get_host_info 
+mysql_get_host_info(^!)
+#T=mysql_get_proto_info 
+mysql_get_proto_info(^!)
+#T=mysql_get_server_info 
+mysql_get_server_info(^!)
+#T=msession_connect
+msession_connect(^!)
+#T=msession_disconnect
+msession_disconnect(^!)
+#T=msession_count
+msession_count(^!)
+#T=msession_create
+msession_create(^!)
+#T=msession_destroy
+msession_destroy(^!)
+#T=msession_lock
+msession_lock(^!)
+#T=msession_unlock
+msession_unlock(^!)
+#T=msession_set
+msession_set(^!)
+#T=msession_get
+msession_get(^!)
+#T=msession_uniq
+msession_uniq(^!)
+#T=msession_randstr
+msession_randstr(^!)
+#T=msession_find
+msession_find(^!)
+#T=msession_list
+msession_list(^!)
+#T=msession_get_array
+msession_get_array(^!)
+#T=msession_set_array
+msession_set_array(^!)
+#T=msession_listvar
+msession_listvar(^!)
+#T=msession_timeout
+msession_timeout(^!)
+#T=msession_inc
+msession_inc(^!)
+#T=msession_getdata
+msession_getdata(^!)
+#T=msession_setdata
+msession_setdata(^!)
+#T=msession_plugin
+msession_plugin(^!)
+#T=muscat_setup
+muscat_setup(^!)
+#T=muscat_setup_net
+muscat_setup_net(^!)
+#T=muscat_give
+muscat_give(^!)
+#T=muscat_get
+muscat_get(^!)
+#T=muscat_close
+muscat_close(^!)
+#T=checkdnsrr 
+checkdnsrr(^!)
+#T=closelog 
+closelog(^!)
+#T=debugger_off 
+debugger_off(^!)
+#T=debugger_on 
+debugger_on(^!)
+#T=define_syslog_variables 
+define_syslog_variables(^!)
+#T=fsockopen 
+fsockopen(^!)
+#T=gethostbyaddr 
+gethostbyaddr(^!)
+#T=gethostbyname 
+gethostbyname(^!)
+#T=gethostbynamel 
+gethostbynamel(^!)
+#T=getmxrr 
+getmxrr(^!)
+#T=getprotobyname 
+getprotobyname(^!)
+#T=getprotobynumber 
+getprotobynumber(^!)
+#T=getservbyname 
+getservbyname(^!)
+#T=getservbyport 
+getservbyport(^!)
+#T=ip2long 
+ip2long(^!)
+#T=long2ip 
+long2ip(^!)
+#T=openlog 
+openlog(^!)
+#T=pfsockopen 
+pfsockopen(^!)
+#T=socket_get_status 
+socket_get_status(^!)
+#T=socket_set_blocking 
+socket_set_blocking(^!)
+#T=socket_set_timeout 
+socket_set_timeout(^!)
+#T=syslog 
+syslog(^!)
+#T=ncurses_can_change_color 
+ncurses_can_change_color(^!)
+#T=ncurses_cbreak 
+ncurses_cbreak(^!)
+#T=ncurses_clear 
+ncurses_clear(^!)
+#T=ncurses_clrtobot 
+ncurses_clrtobot(^!)
+#T=ncurses_clrtoeol 
+ncurses_clrtoeol(^!)
+#T=ncurses_def_prog_mode 
+ncurses_def_prog_mode(^!)
+#T=ncurses_def_shell_mode 
+ncurses_def_shell_mode(^!)
+#T=ncurses_delch 
+ncurses_delch(^!)
+#T=ncurses_deleteln 
+ncurses_deleteln(^!)
+#T=ncurses_doupdate 
+ncurses_doupdate(^!)
+#T=ncurses_echo 
+ncurses_echo(^!)
+#T=ncurses_erase 
+ncurses_erase(^!)
+#T=ncurses_erasechar 
+ncurses_erasechar(^!)
+#T=ncurses_flash 
+ncurses_flash(^!)
+#T=ncurses_flushinp 
+ncurses_flushinp(^!)
+#T=ncurses_has_colors 
+ncurses_has_colors(^!)
+#T=ncurses_has_ic 
+ncurses_has_ic(^!)
+#T=ncurses_has_il 
+ncurses_has_il(^!)
+#T=ncurses_inch 
+ncurses_inch(^!)
+#T=ncurses_insertln 
+ncurses_insertln(^!)
+#T=ncurses_isendwin 
+ncurses_isendwin(^!)
+#T=ncurses_killchar 
+ncurses_killchar(^!)
+#T=ncurses_nl 
+ncurses_nl(^!)
+#T=ncurses_nocbreak 
+ncurses_nocbreak(^!)
+#T=ncurses_noecho 
+ncurses_noecho(^!)
+#T=ncurses_nonl 
+ncurses_nonl(^!)
+#T=ncurses_noraw 
+ncurses_noraw(^!)
+#T=ncurses_raw 
+ncurses_raw(^!)
+#T=ncurses_resetty 
+ncurses_resetty(^!)
+#T=ncurses_savetty 
+ncurses_savetty(^!)
+#T=ncurses_slk_attr 
+ncurses_slk_attr(^!)
+#T=ncurses_slk_clear 
+ncurses_slk_clear(^!)
+#T=ncurses_slk_noutrefresh 
+ncurses_slk_noutrefresh(^!)
+#T=ncurses_slk_refresh 
+ncurses_slk_refresh(^!)
+#T=ncurses_slk_restore 
+ncurses_slk_restore(^!)
+#T=ncurses_slk_touch 
+ncurses_slk_touch(^!)
+#T=ncurses_termattrs 
+ncurses_termattrs(^!)
+#T=ncurses_use_default_colors 
+ncurses_use_default_colors(^!)
+#T=ncurses_addch 
+ncurses_addch(^!)
+#T=ncurses_addchnstr 
+ncurses_addchnstr(^!)
+#T=ncurses_addchstr 
+ncurses_addchstr(^!)
+#T=ncurses_addnstr 
+ncurses_addnstr(^!)
+#T=ncurses_addstr 
+ncurses_addstr(^!)
+#T=ncurses_assume_default_colors 
+ncurses_assume_default_colors(^!)
+#T=ncurses_attroff 
+ncurses_attroff(^!)
+#T=ncurses_attron 
+ncurses_attron(^!)
+#T=ncurses_attrset 
+ncurses_attrset(^!)
+#T=ncurses_baudrate 
+ncurses_baudrate(^!)
+#T=ncurses_beep 
+ncurses_beep(^!)
+#T=ncurses_bkgd 
+ncurses_bkgd(^!)
+#T=ncurses_border 
+ncurses_border(^!)
+#T=ncurses_color_set 
+ncurses_color_set(^!)
+#T=ncurses_curs_set 
+ncurses_curs_set(^!)
+#T=ncurses_define_key 
+ncurses_define_key(^!)
+#T=ncurses_delay_output 
+ncurses_delay_output(^!)
+#T=ncurses_delwin 
+ncurses_delwin(^!)
+#T=ncurses_echochar 
+ncurses_echochar(^!)
+#T=ncurses_end 
+ncurses_end(^!)
+#T=ncurses_filter 
+ncurses_filter(^!)
+#T=ncurses_getch 
+ncurses_getch(^!)
+#T=ncurses_halfdelay 
+ncurses_halfdelay(^!)
+#T=ncurses_has_key 
+ncurses_has_key(^!)
+#T=ncurses_hline 
+ncurses_hline(^!)
+#T=ncurses_init 
+ncurses_init(^!)
+#T=ncurses_init_color 
+ncurses_init_color(^!)
+#T=ncurses_init_pair 
+ncurses_init_pair(^!)
+#T=ncurses_insch 
+ncurses_insch(^!)
+#T=ncurses_insdelln 
+ncurses_insdelln(^!)
+#T=ncurses_insstr 
+ncurses_insstr(^!)
+#T=ncurses_instr 
+ncurses_instr(^!)
+#T=ncurses_keyok 
+ncurses_keyok(^!)
+#T=ncurses_mouseinterval 
+ncurses_mouseinterval(^!)
+#T=ncurses_move 
+ncurses_move(^!)
+#T=ncurses_mvaddch 
+ncurses_mvaddch(^!)
+#T=ncurses_mvaddchnstr 
+ncurses_mvaddchnstr(^!)
+#T=ncurses_mvaddchstr 
+ncurses_mvaddchstr(^!)
+#T=ncurses_mvaddnstr 
+ncurses_mvaddnstr(^!)
+#T=ncurses_mvaddstr 
+ncurses_mvaddstr(^!)
+#T=ncurses_mvcur 
+ncurses_mvcur(^!)
+#T=ncurses_mvdelch 
+ncurses_mvdelch(^!)
+#T=ncurses_mvgetch 
+ncurses_mvgetch(^!)
+#T=ncurses_mvhline 
+ncurses_mvhline(^!)
+#T=ncurses_mvinch 
+ncurses_mvinch(^!)
+#T=ncurses_mvvline 
+ncurses_mvvline(^!)
+#T=ncurses_mvwaddstr 
+ncurses_mvwaddstr(^!)
+#T=ncurses_napms 
+ncurses_napms(^!)
+#T=ncurses_newwin 
+ncurses_newwin(^!)
+#T=ncurses_noqiflush 
+ncurses_noqiflush(^!)
+#T=ncurses_putp 
+ncurses_putp(^!)
+#T=ncurses_qiflush 
+ncurses_qiflush(^!)
+#T=ncurses_refresh 
+ncurses_refresh(^!)
+#T=ncurses_scr_dump 
+ncurses_scr_dump(^!)
+#T=ncurses_scr_init 
+ncurses_scr_init(^!)
+#T=ncurses_scr_restore 
+ncurses_scr_restore(^!)
+#T=ncurses_scr_set 
+ncurses_scr_set(^!)
+#T=ncurses_scrl 
+ncurses_scrl(^!)
+#T=ncurses_slk_attroff 
+ncurses_slk_attroff(^!)
+#T=ncurses_slk_attron 
+ncurses_slk_attron(^!)
+#T=ncurses_slk_attrset 
+ncurses_slk_attrset(^!)
+#T=ncurses_slk_color 
+ncurses_slk_color(^!)
+#T=ncurses_slk_init 
+ncurses_slk_init(^!)
+#T=ncurses_standend 
+ncurses_standend(^!)
+#T=ncurses_standout 
+ncurses_standout(^!)
+#T=ncurses_start_color 
+ncurses_start_color(^!)
+#T=ncurses_typeahead 
+ncurses_typeahead(^!)
+#T=ncurses_ungetch 
+ncurses_ungetch(^!)
+#T=ncurses_use_extended_names 
+ncurses_use_extended_names(^!)
+#T=ncurses_vidattr 
+ncurses_vidattr(^!)
+#T=ncurses_vline 
+ncurses_vline(^!)
+#T=ncurses_wrefresh 
+ncurses_wrefresh(^!)
+#T=ncurses_bkgdset 
+ncurses_bkgdset(^!)
+#T=ncurses_timeout 
+ncurses_timeout(^!)
+#T=ncurses_use_env 
+ncurses_use_env(^!)
+#T=notes_create_db
+notes_create_db(^!)
+#T=notes_drop_db
+notes_drop_db(^!)
+#T=notes_version
+notes_version(^!)
+#T=notes_create_note
+notes_create_note(^!)
+#T=notes_mark_read
+notes_mark_read(^!)
+#T=notes_mark_unread
+notes_mark_unread(^!)
+#T=notes_unread
+notes_unread(^!)
+#T=notes_header_info
+notes_header_info(^!)
+#T=notes_body
+notes_body(^!)
+#T=notes_find_note
+notes_find_note(^!)
+#T=notes_nav_create
+notes_nav_create(^!)
+#T=notes_search
+notes_search(^!)
+#T=notes_copy_db
+notes_copy_db(^!)
+#T=notes_list_msgs
+notes_list_msgs(^!)
+#T=odbc_autocommit 
+odbc_autocommit(^!)
+#T=odbc_binmode 
+odbc_binmode(^!)
+#T=odbc_close 
+odbc_close(^!)
+#T=odbc_close_all 
+odbc_close_all(^!)
+#T=odbc_commit 
+odbc_commit(^!)
+#T=odbc_connect 
+odbc_connect(^!)
+#T=odbc_cursor 
+odbc_cursor(^!)
+#T=odbc_do 
+odbc_do(^!)
+#T=odbc_error 
+odbc_error(^!)
+#T=odbc_errormsg 
+odbc_errormsg(^!)
+#T=odbc_exec 
+odbc_exec(^!)
+#T=odbc_execute 
+odbc_execute(^!)
+#T=odbc_fetch_into 
+odbc_fetch_into(^!)
+#T=odbc_fetch_row 
+odbc_fetch_row(^!)
+#T=odbc_field_name 
+odbc_field_name(^!)
+#T=odbc_field_num 
+odbc_field_num(^!)
+#T=odbc_field_type 
+odbc_field_type(^!)
+#T=odbc_field_len 
+odbc_field_len(^!)
+#T=odbc_field_precision 
+odbc_field_precision(^!)
+#T=odbc_field_scale 
+odbc_field_scale(^!)
+#T=odbc_free_result 
+odbc_free_result(^!)
+#T=odbc_longreadlen 
+odbc_longreadlen(^!)
+#T=odbc_num_fields 
+odbc_num_fields(^!)
+#T=odbc_pconnect 
+odbc_pconnect(^!)
+#T=odbc_prepare 
+odbc_prepare(^!)
+#T=odbc_num_rows 
+odbc_num_rows(^!)
+#T=odbc_result 
+odbc_result(^!)
+#T=odbc_result_all 
+odbc_result_all(^!)
+#T=odbc_rollback 
+odbc_rollback(^!)
+#T=odbc_setoption 
+odbc_setoption(^!)
+#T=odbc_tables 
+odbc_tables(^!)
+#T=odbc_tableprivileges 
+odbc_tableprivileges(^!)
+#T=odbc_columns 
+odbc_columns(^!)
+#T=odbc_columnprivileges 
+odbc_columnprivileges(^!)
+#T=odbc_gettypeinfo 
+odbc_gettypeinfo(^!)
+#T=odbc_primarykeys 
+odbc_primarykeys(^!)
+#T=odbc_foreignkeys 
+odbc_foreignkeys(^!)
+#T=odbc_procedures 
+odbc_procedures(^!)
+#T=odbc_procedurecolumns 
+odbc_procedurecolumns(^!)
+#T=odbc_specialcolumns 
+odbc_specialcolumns(^!)
+#T=odbc_statistics 
+odbc_statistics(^!)
+#T=OCIDefineByName 
+OCIDefineByName(^!)
+#T=OCIBindByName 
+OCIBindByName(^!)
+#T=OCILogon 
+OCILogon(^!)
+#T=OCIPLogon 
+OCIPLogon(^!)
+#T=OCINLogon 
+OCINLogon(^!)
+#T=OCILogOff 
+OCILogOff(^!)
+#T=OCIExecute 
+OCIExecute(^!)
+#T=OCICommit 
+OCICommit(^!)
+#T=OCIRollback 
+OCIRollback(^!)
+#T=OCINewDescriptor 
+OCINewDescriptor(^!)
+#T=OCIRowCount 
+OCIRowCount(^!)
+#T=OCINumCols 
+OCINumCols(^!)
+#T=OCIResult 
+OCIResult(^!)
+#T=OCifetch 
+OCifetch(^!)
+#T=OCifetchInto 
+OCifetchInto(^!)
+#T=OCifetchStatement 
+OCifetchStatement(^!)
+#T=OCIColumnIsNULL 
+OCIColumnIsNULL(^!)
+#T=OCIColumnName 
+OCIColumnName(^!)
+#T=OCIColumnSize 
+OCIColumnSize(^!)
+#T=OCIColumnType 
+OCIColumnType(^!)
+#T=OCIServerVersion 
+OCIServerVersion(^!)
+#T=OCIStatementType 
+OCIStatementType(^!)
+#T=OCINewCursor 
+OCINewCursor(^!)
+#T=OCifreeStatement 
+OCifreeStatement(^!)
+#T=OCifreeCursor 
+OCifreeCursor(^!)
+#T=OCifreeDesc 
+OCifreeDesc(^!)
+#T=OCIParse 
+OCIParse(^!)
+#T=OCIError 
+OCIError(^!)
+#T=OCIInternalDebug 
+OCIInternalDebug(^!)
+#T=OCICancel 
+OCICancel(^!)
+#T=OCISetPrefetch 
+OCISetPrefetch(^!)
+#T=OCIWriteLobToFile 
+OCIWriteLobToFile(^!)
+#T=OCISaveLobFile 
+OCISaveLobFile(^!)
+#T=OCISaveLob 
+OCISaveLob(^!)
+#T=OCILoadLob 
+OCILoadLob(^!)
+#T=OCIColumnScale 
+OCIColumnScale(^!)
+#T=OCIColumnPrecision 
+OCIColumnPrecision(^!)
+#T=OCIColumnTypeRaw 
+OCIColumnTypeRaw(^!)
+#T=OCINewCollection 
+OCINewCollection(^!)
+#T=OCifreeCollection 
+OCifreeCollection(^!)
+#T=OCICollAssign 
+OCICollAssign(^!)
+#T=OCICollAssignElem 
+OCICollAssignElem(^!)
+#T=OCICollGetElem 
+OCICollGetElem(^!)
+#T=OCICollMax 
+OCICollMax(^!)
+#T=OCICollSize 
+OCICollSize(^!)
+#T=OCICollTrim 
+OCICollTrim(^!)
+#T=openssl_error_string 
+openssl_error_string(^!)
+#T=openssl_free_key 
+openssl_free_key(^!)
+#T=openssl_get_privatekey 
+openssl_get_privatekey(^!)
+#T=openssl_get_publickey 
+openssl_get_publickey(^!)
+#T=openssl_open 
+openssl_open(^!)
+#T=openssl_seal 
+openssl_seal(^!)
+#T=openssl_sign 
+openssl_sign(^!)
+#T=openssl_verify 
+openssl_verify(^!)
+#T=openssl_pkcs7_decrypt 
+openssl_pkcs7_decrypt(^!)
+#T=openssl_pkcs7_encrypt 
+openssl_pkcs7_encrypt(^!)
+#T=openssl_pkcs7_sign 
+openssl_pkcs7_sign(^!)
+#T=openssl_pkcs7_verify 
+openssl_pkcs7_verify(^!)
+#T=openssl_x509_checkpurpose 
+openssl_x509_checkpurpose(^!)
+#T=openssl_x509_free 
+openssl_x509_free(^!)
+#T=openssl_x509_parse 
+openssl_x509_parse(^!)
+#T=openssl_x509_read
+openssl_x509_read(^!)
+#T=openssl_x509_export_to_file
+openssl_x509_export_to_file(^!)
+#T=openssl_x509_export
+openssl_x509_export(^!)
+#T=openssl_x509_check_private_key
+openssl_x509_check_private_key(^!)
+#T=openssl_csr_export_to_file
+openssl_csr_export_to_file(^!)
+#T=openssl_csr_export
+openssl_csr_export(^!)
+#T=openssl_csr_sign
+openssl_csr_sign(^!)
+#T=openssl_csr_new
+openssl_csr_new(^!)
+#T=openssl_pkey_new
+openssl_pkey_new(^!)
+#T=openssl_pkey_export_to_file
+openssl_pkey_export_to_file(^!)
+#T=openssl_pkey_export
+openssl_pkey_export(^!)
+#T=openssl_private_encrypt
+openssl_private_encrypt(^!)
+#T=openssl_private_decrypt
+openssl_private_decrypt(^!)
+#T=openssl_public_encrypt
+openssl_public_encrypt(^!)
+#T=openssl_public_decrypt
+openssl_public_decrypt(^!)
+#T=Ora_Bind 
+Ora_Bind(^!)
+#T=Ora_Close 
+Ora_Close(^!)
+#T=Ora_ColumnName 
+Ora_ColumnName(^!)
+#T=Ora_ColumnSize 
+Ora_ColumnSize(^!)
+#T=Ora_ColumnType 
+Ora_ColumnType(^!)
+#T=Ora_Commit 
+Ora_Commit(^!)
+#T=Ora_CommitOff 
+Ora_CommitOff(^!)
+#T=Ora_CommitOn 
+Ora_CommitOn(^!)
+#T=Ora_Do 
+Ora_Do(^!)
+#T=Ora_Error 
+Ora_Error(^!)
+#T=Ora_ErrorCode 
+Ora_ErrorCode(^!)
+#T=Ora_Exec 
+Ora_Exec(^!)
+#T=Ora_Fetch 
+Ora_Fetch(^!)
+#T=Ora_Fetch_Into 
+Ora_Fetch_Into(^!)
+#T=Ora_GetColumn 
+Ora_GetColumn(^!)
+#T=Ora_Logoff 
+Ora_Logoff(^!)
+#T=Ora_Logon 
+Ora_Logon(^!)
+#T=Ora_pLogon 
+Ora_pLogon(^!)
+#T=Ora_Numcols 
+Ora_Numcols(^!)
+#T=Ora_Numrows 
+Ora_Numrows(^!)
+#T=Ora_Open 
+Ora_Open(^!)
+#T=Ora_Parse 
+Ora_Parse(^!)
+#T=Ora_Rollback 
+Ora_Rollback(^!)
+#T=ovrimos_connect 
+ovrimos_connect(^!)
+#T=ovrimos_close 
+ovrimos_close(^!)
+#T=ovrimos_longreadlen 
+ovrimos_longreadlen(^!)
+#T=ovrimos_prepare 
+ovrimos_prepare(^!)
+#T=ovrimos_execute 
+ovrimos_execute(^!)
+#T=ovrimos_cursor 
+ovrimos_cursor(^!)
+#T=ovrimos_exec 
+ovrimos_exec(^!)
+#T=ovrimos_fetch_into 
+ovrimos_fetch_into(^!)
+#T=ovrimos_fetch_row 
+ovrimos_fetch_row(^!)
+#T=ovrimos_result 
+ovrimos_result(^!)
+#T=ovrimos_result_all 
+ovrimos_result_all(^!)
+#T=ovrimos_num_rows 
+ovrimos_num_rows(^!)
+#T=ovrimos_num_fields 
+ovrimos_num_fields(^!)
+#T=ovrimos_field_name 
+ovrimos_field_name(^!)
+#T=ovrimos_field_type 
+ovrimos_field_type(^!)
+#T=ovrimos_field_len 
+ovrimos_field_len(^!)
+#T=ovrimos_field_num 
+ovrimos_field_num(^!)
+#T=ovrimos_free_result 
+ovrimos_free_result(^!)
+#T=ovrimos_commit 
+ovrimos_commit(^!)
+#T=ovrimos_rollback 
+ovrimos_rollback(^!)
+#T=flush 
+flush(^!)
+#T=ob_start 
+ob_start(^!)
+#T=ob_get_contents 
+ob_get_contents(^!)
+#T=ob_get_length 
+ob_get_length(^!)
+#T=ob_get_level 
+ob_get_level(^!)
+#T=ob_gzhandler 
+ob_gzhandler(^!)
+#T=ob_flush 
+ob_flush(^!)
+#T=ob_clean 
+ob_clean(^!)
+#T=ob_end_flush 
+ob_end_flush(^!)
+#T=ob_end_clean 
+ob_end_clean(^!)
+#T=ob_implicit_flush 
+ob_implicit_flush(^!)
+#T=overload 
+overload(^!)
+#T=pdf_add_annotation 
+pdf_add_annotation(^!)
+#T=pdf_add_bookmark 
+pdf_add_bookmark(^!)
+#T=pdf_add_launchlink 
+pdf_add_launchlink(^!)
+#T=pdf_add_locallink 
+pdf_add_locallink(^!)
+#T=pdf_add_note 
+pdf_add_note(^!)
+#T=pdf_add_outline 
+pdf_add_outline(^!)
+#T=pdf_add_pdflink 
+pdf_add_pdflink(^!)
+#T=pdf_add_thumbnail 
+pdf_add_thumbnail(^!)
+#T=pdf_add_weblink 
+pdf_add_weblink(^!)
+#T=pdf_arc 
+pdf_arc(^!)
+#T=pdf_arcn 
+pdf_arcn(^!)
+#T=pdf_attach_file 
+pdf_attach_file(^!)
+#T=pdf_begin_page 
+pdf_begin_page(^!)
+#T=pdf_begin_pattern 
+pdf_begin_pattern(^!)
+#T=pdf_begin_template 
+pdf_begin_template(^!)
+#T=pdf_circle 
+pdf_circle(^!)
+#T=pdf_clip 
+pdf_clip(^!)
+#T=pdf_close 
+pdf_close(^!)
+#T=pdf_closepath 
+pdf_closepath(^!)
+#T=pdf_closepath_fill_stroke 
+pdf_closepath_fill_stroke(^!)
+#T=pdf_closepath_stroke 
+pdf_closepath_stroke(^!)
+#T=pdf_close_image 
+pdf_close_image(^!)
+#T=pdf_close_pdi 
+pdf_close_pdi(^!)
+#T=pdf_close_pdi_page 
+pdf_close_pdi_page(^!)
+#T=pdf_concat 
+pdf_concat(^!)
+#T=pdf_continue_text 
+pdf_continue_text(^!)
+#T=pdf_curveto 
+pdf_curveto(^!)
+#T=pdf_delete 
+pdf_delete(^!)
+#T=pdf_end_page 
+pdf_end_page(^!)
+#T=pdf_endpath 
+pdf_endpath(^!)
+#T=pdf_end_pattern 
+pdf_end_pattern(^!)
+#T=pdf_end_template 
+pdf_end_template(^!)
+#T=pdf_fill 
+pdf_fill(^!)
+#T=pdf_fill_stroke 
+pdf_fill_stroke(^!)
+#T=pdf_findfont 
+pdf_findfont(^!)
+#T=pdf_get_buffer 
+pdf_get_buffer(^!)
+#T=pdf_get_font 
+pdf_get_font(^!)
+#T=pdf_get_fontname 
+pdf_get_fontname(^!)
+#T=pdf_get_fontsize 
+pdf_get_fontsize(^!)
+#T=pdf_get_image_height 
+pdf_get_image_height(^!)
+#T=pdf_get_image_width 
+pdf_get_image_width(^!)
+#T=pdf_get_parameter 
+pdf_get_parameter(^!)
+#T=pdf_get_pdi_parameter 
+pdf_get_pdi_parameter(^!)
+#T=pdf_get_pdi_value 
+pdf_get_pdi_value(^!)
+#T=pdf_get_majorversion 
+pdf_get_majorversion(^!)
+#T=pdf_get_minorversion 
+pdf_get_minorversion(^!)
+#T=pdf_get_value 
+pdf_get_value(^!)
+#T=pdf_initgraphics 
+pdf_initgraphics(^!)
+#T=pdf_lineto 
+pdf_lineto(^!)
+#T=pdf_makespotcolor 
+pdf_makespotcolor(^!)
+#T=pdf_moveto 
+pdf_moveto(^!)
+#T=pdf_new 
+pdf_new(^!)
+#T=pdf_open 
+pdf_open(^!)
+#T=pdf_open_CCITT 
+pdf_open_CCITT(^!)
+#T=pdf_open_file 
+pdf_open_file(^!)
+#T=pdf_open_gif 
+pdf_open_gif(^!)
+#T=pdf_open_image 
+pdf_open_image(^!)
+#T=pdf_open_image_file 
+pdf_open_image_file(^!)
+#T=pdf_open_jpeg 
+pdf_open_jpeg(^!)
+#T=pdf_open_memory_image 
+pdf_open_memory_image(^!)
+#T=pdf_open_pdi 
+pdf_open_pdi(^!)
+#T=pdf_open_pdi_page 
+pdf_open_pdi_page(^!)
+#T=pdf_open_png 
+pdf_open_png(^!)
+#T=pdf_open_tiff 
+pdf_open_tiff(^!)
+#T=pdf_place_image 
+pdf_place_image(^!)
+#T=pdf_place_pdi_page 
+pdf_place_pdi_page(^!)
+#T=pdf_rect 
+pdf_rect(^!)
+#T=pdf_restore 
+pdf_restore(^!)
+#T=pdf_rotate 
+pdf_rotate(^!)
+#T=pdf_save 
+pdf_save(^!)
+#T=pdf_scale 
+pdf_scale(^!)
+#T=pdf_setcolor 
+pdf_setcolor(^!)
+#T=pdf_setdash 
+pdf_setdash(^!)
+#T=pdf_setflat 
+pdf_setflat(^!)
+#T=pdf_setfont 
+pdf_setfont(^!)
+#T=pdf_setgray 
+pdf_setgray(^!)
+#T=pdf_setgray_fill 
+pdf_setgray_fill(^!)
+#T=pdf_setgray_stroke 
+pdf_setgray_stroke(^!)
+#T=pdf_setlinecap 
+pdf_setlinecap(^!)
+#T=pdf_setlinejoin 
+pdf_setlinejoin(^!)
+#T=pdf_setlinewidth 
+pdf_setlinewidth(^!)
+#T=pdf_setmatrix 
+pdf_setmatrix(^!)
+#T=pdf_setmiterlimit 
+pdf_setmiterlimit(^!)
+#T=pdf_setpolydash 
+pdf_setpolydash(^!)
+#T=pdf_setrgbcolor 
+pdf_setrgbcolor(^!)
+#T=pdf_setrgbcolor_fill 
+pdf_setrgbcolor_fill(^!)
+#T=pdf_setrgbcolor_stroke 
+pdf_setrgbcolor_stroke(^!)
+#T=pdf_set_border_color 
+pdf_set_border_color(^!)
+#T=pdf_set_border_dash 
+pdf_set_border_dash(^!)
+#T=pdf_set_border_style 
+pdf_set_border_style(^!)
+#T=pdf_set_char_spacing 
+pdf_set_char_spacing(^!)
+#T=pdf_set_duration 
+pdf_set_duration(^!)
+#T=pdf_set_font 
+pdf_set_font(^!)
+#T=pdf_set_horiz_scaling 
+pdf_set_horiz_scaling(^!)
+#T=pdf_set_info 
+pdf_set_info(^!)
+#T=pdf_set_info_author 
+pdf_set_info_author(^!)
+#T=pdf_set_info_creator 
+pdf_set_info_creator(^!)
+#T=pdf_set_info_keywords 
+pdf_set_info_keywords(^!)
+#T=pdf_set_info_subject 
+pdf_set_info_subject(^!)
+#T=pdf_set_info_title 
+pdf_set_info_title(^!)
+#T=pdf_set_leading 
+pdf_set_leading(^!)
+#T=pdf_set_parameter 
+pdf_set_parameter(^!)
+#T=pdf_set_text_pos 
+pdf_set_text_pos(^!)
+#T=pdf_set_text_rendering 
+pdf_set_text_rendering(^!)
+#T=pdf_set_text_rise 
+pdf_set_text_rise(^!)
+#T=pdf_set_text_matrix 
+pdf_set_text_matrix(^!)
+#T=pdf_set_value 
+pdf_set_value(^!)
+#T=pdf_set_word_spacing 
+pdf_set_word_spacing(^!)
+#T=pdf_show 
+pdf_show(^!)
+#T=pdf_show_boxed 
+pdf_show_boxed(^!)
+#T=pdf_show_xy 
+pdf_show_xy(^!)
+#T=pdf_skew 
+pdf_skew(^!)
+#T=pdf_stringwidth 
+pdf_stringwidth(^!)
+#T=pdf_stroke 
+pdf_stroke(^!)
+#T=pdf_translate 
+pdf_translate(^!)
+#T=pfpro_init 
+pfpro_init(^!)
+#T=pfpro_cleanup 
+pfpro_cleanup(^!)
+#T=pfpro_process 
+pfpro_process(^!)
+#T=pfpro_process_raw 
+pfpro_process_raw(^!)
+#T=pfpro_version 
+pfpro_version(^!)
+#T=assert 
+assert(^!)
+#T=assert_options 
+assert_options(^!)
+#T=extension_loaded 
+extension_loaded(^!)
+#T=dl 
+dl(^!)
+#T=getenv 
+getenv(^!)
+#T=get_cfg_var 
+get_cfg_var(^!)
+#T=get_current_user 
+get_current_user(^!)
+#T=get_defined_constants 
+get_defined_constants(^!)
+#T=get_extension_funcs 
+get_extension_funcs(^!)
+#T=getmygid 
+getmygid(^!)
+#T=get_included_files 
+get_included_files(^!)
+#T=get_loaded_extensions 
+get_loaded_extensions(^!)
+#T=get_magic_quotes_gpc 
+get_magic_quotes_gpc(^!)
+#T=get_magic_quotes_runtime 
+get_magic_quotes_runtime(^!)
+#T=getlastmod 
+getlastmod(^!)
+#T=getmyinode 
+getmyinode(^!)
+#T=getmypid 
+getmypid(^!)
+#T=getmyuid 
+getmyuid(^!)
+#T=get_required_files 
+get_required_files(^!)
+#T=getrusage 
+getrusage(^!)
+#T=ini_alter 
+ini_alter(^!)
+#T=ini_get 
+ini_get(^!)
+#T=ini_get_all 
+ini_get_all(^!)
+#T=ini_restore 
+ini_restore(^!)
+#T=ini_set 
+ini_set(^!)
+#T=phpcredits 
+phpcredits(^!)
+#T=phpinfo 
+phpinfo(^!)
+#T=phpversion 
+phpversion(^!)
+#T=php_logo_guid 
+php_logo_guid(^!)
+#T=php_sapi_name 
+php_sapi_name(^!)
+#T=php_uname 
+php_uname(^!)
+#T=putenv 
+putenv(^!)
+#T=set_magic_quotes_runtime 
+set_magic_quotes_runtime(^!)
+#T=set_time_limit 
+set_time_limit(^!)
+#T=version_compare 
+version_compare(^!)
+#T=zend_logo_guid 
+zend_logo_guid(^!)
+#T=zend_version 
+zend_version(^!)
+#T=posix_kill 
+posix_kill(^!)
+#T=posix_getpid 
+posix_getpid(^!)
+#T=posix_getppid 
+posix_getppid(^!)
+#T=posix_getuid 
+posix_getuid(^!)
+#T=posix_geteuid 
+posix_geteuid(^!)
+#T=posix_getgid 
+posix_getgid(^!)
+#T=posix_getegid 
+posix_getegid(^!)
+#T=posix_setuid 
+posix_setuid(^!)
+#T=posix_setgid 
+posix_setgid(^!)
+#T=posix_getgroups 
+posix_getgroups(^!)
+#T=posix_getlogin 
+posix_getlogin(^!)
+#T=posix_getpgrp 
+posix_getpgrp(^!)
+#T=posix_setsid 
+posix_setsid(^!)
+#T=posix_setpgid 
+posix_setpgid(^!)
+#T=posix_getpgid 
+posix_getpgid(^!)
+#T=posix_getsid 
+posix_getsid(^!)
+#T=posix_uname 
+posix_uname(^!)
+#T=posix_times 
+posix_times(^!)
+#T=posix_ctermid 
+posix_ctermid(^!)
+#T=posix_ttyname 
+posix_ttyname(^!)
+#T=posix_isatty 
+posix_isatty(^!)
+#T=posix_getcwd 
+posix_getcwd(^!)
+#T=posix_mkfifo 
+posix_mkfifo(^!)
+#T=posix_getgrnam 
+posix_getgrnam(^!)
+#T=posix_getgrgid 
+posix_getgrgid(^!)
+#T=posix_getpwnam 
+posix_getpwnam(^!)
+#T=posix_getpwuid 
+posix_getpwuid(^!)
+#T=posix_getrlimit 
+posix_getrlimit(^!)
+#T=pg_close 
+pg_close(^!)
+#T=pg_cmdtuples 
+pg_cmdtuples(^!)
+#T=pg_connect 
+pg_connect(^!)
+#T=pg_dbname 
+pg_dbname(^!)
+#T=pg_end_copy 
+pg_end_copy(^!)
+#T=pg_errormessage 
+pg_errormessage(^!)
+#T=pg_exec 
+pg_exec(^!)
+#T=pg_fetch_array 
+pg_fetch_array(^!)
+#T=pg_fetch_object 
+pg_fetch_object(^!)
+#T=pg_fetch_row 
+pg_fetch_row(^!)
+#T=pg_fieldisnull 
+pg_fieldisnull(^!)
+#T=pg_fieldname 
+pg_fieldname(^!)
+#T=pg_fieldnum 
+pg_fieldnum(^!)
+#T=pg_fieldprtlen 
+pg_fieldprtlen(^!)
+#T=pg_fieldsize 
+pg_fieldsize(^!)
+#T=pg_fieldtype 
+pg_fieldtype(^!)
+#T=pg_freeresult 
+pg_freeresult(^!)
+#T=pg_getlastoid 
+pg_getlastoid(^!)
+#T=pg_host 
+pg_host(^!)
+#T=pg_last_notice 
+pg_last_notice(^!)
+#T=pg_loclose 
+pg_loclose(^!)
+#T=pg_locreate 
+pg_locreate(^!)
+#T=pg_loexport 
+pg_loexport(^!)
+#T=pg_loimport 
+pg_loimport(^!)
+#T=pg_loopen 
+pg_loopen(^!)
+#T=pg_loread 
+pg_loread(^!)
+#T=pg_loreadall 
+pg_loreadall(^!)
+#T=pg_lounlink 
+pg_lounlink(^!)
+#T=pg_lowrite 
+pg_lowrite(^!)
+#T=pg_numfields 
+pg_numfields(^!)
+#T=pg_numrows 
+pg_numrows(^!)
+#T=pg_options 
+pg_options(^!)
+#T=pg_pconnect 
+pg_pconnect(^!)
+#T=pg_port 
+pg_port(^!)
+#T=pg_put_line 
+pg_put_line(^!)
+#T=pg_result 
+pg_result(^!)
+#T=pg_set_client_encoding 
+pg_set_client_encoding(^!)
+#T=pg_client_encoding 
+pg_client_encoding(^!)
+#T=pg_trace 
+pg_trace(^!)
+#T=pg_tty 
+pg_tty(^!)
+#T=pg_untrace 
+pg_untrace(^!)
+#T=pg_get_result 
+pg_get_result(^!)
+#T=pg_request_cancel 
+pg_request_cancel(^!)
+#T=pg_is_busy 
+pg_is_busy(^!)
+#T=pg_send_query 
+pg_send_query(^!)
+#T=pg_cancel_query 
+pg_cancel_query(^!)
+#T=pg_connection_busy 
+pg_connection_busy(^!)
+#T=pg_connection_reset 
+pg_connection_reset(^!)
+#T=pg_connection_status 
+pg_connection_status(^!)
+#T=pg_copy_from 
+pg_copy_from(^!)
+#T=pg_copy_to 
+pg_copy_to(^!)
+#T=pg_escape_bytea 
+pg_escape_bytea(^!)
+#T=pg_escape_string 
+pg_escape_string(^!)
+#T=pg_lo_close 
+pg_lo_close(^!)
+#T=pg_lo_seek 
+pg_lo_seek(^!)
+#T=pg_lo_tell 
+pg_lo_tell(^!)
+#T=pg_result_error 
+pg_result_error(^!)
+#T=pg_result_status 
+pg_result_status(^!)
+#T=escapeshellarg 
+escapeshellarg(^!)
+#T=escapeshellcmd 
+escapeshellcmd(^!)
+#T=exec 
+exec(^!)
+#T=passthru 
+passthru(^!)
+#T=system
+system(^!)
+#T=shell_exec
+shell_exec(^!)
+#T=printer_open 
+printer_open(^!)
+#T=printer_abort 
+printer_abort(^!)
+#T=printer_close 
+printer_close(^!)
+#T=printer_write 
+printer_write(^!)
+#T=printer_list 
+printer_list(^!)
+#T=printer_set_option 
+printer_set_option(^!)
+#T=printer_get_option 
+printer_get_option(^!)
+#T=printer_create_dc 
+printer_create_dc(^!)
+#T=printer_delete_dc 
+printer_delete_dc(^!)
+#T=printer_start_doc 
+printer_start_doc(^!)
+#T=printer_end_doc 
+printer_end_doc(^!)
+#T=printer_start_page 
+printer_start_page(^!)
+#T=printer_end_page 
+printer_end_page(^!)
+#T=printer_create_pen 
+printer_create_pen(^!)
+#T=printer_delete_pen 
+printer_delete_pen(^!)
+#T=printer_select_pen 
+printer_select_pen(^!)
+#T=printer_create_brush 
+printer_create_brush(^!)
+#T=printer_delete_brush 
+printer_delete_brush(^!)
+#T=printer_select_brush 
+printer_select_brush(^!)
+#T=printer_create_font 
+printer_create_font(^!)
+#T=printer_delete_font 
+printer_delete_font(^!)
+#T=printer_select_font 
+printer_select_font(^!)
+#T=printer_logical_fontheight 
+printer_logical_fontheight(^!)
+#T=printer_draw_roundrect 
+printer_draw_roundrect(^!)
+#T=printer_draw_rectangle 
+printer_draw_rectangle(^!)
+#T=printer_draw_elipse 
+printer_draw_elipse(^!)
+#T=printer_draw_text 
+printer_draw_text(^!)
+#T=printer_draw_line 
+printer_draw_line(^!)
+#T=printer_draw_chord 
+printer_draw_chord(^!)
+#T=printer_draw_pie 
+printer_draw_pie(^!)
+#T=printer_draw_bmp 
+printer_draw_bmp(^!)
+#T=pspell_add_to_personal 
+pspell_add_to_personal(^!)
+#T=pspell_add_to_session 
+pspell_add_to_session(^!)
+#T=pspell_check 
+pspell_check(^!)
+#T=pspell_clear_session 
+pspell_clear_session(^!)
+#T=pspell_config_create 
+pspell_config_create(^!)
+#T=pspell_config_ignore 
+pspell_config_ignore(^!)
+#T=pspell_config_mode 
+pspell_config_mode(^!)
+#T=pspell_config_personal 
+pspell_config_personal(^!)
+#T=pspell_config_repl 
+pspell_config_repl(^!)
+#T=pspell_config_runtogether 
+pspell_config_runtogether(^!)
+#T=pspell_config_save_repl 
+pspell_config_save_repl(^!)
+#T=pspell_new 
+pspell_new(^!)
+#T=pspell_new_config 
+pspell_new_config(^!)
+#T=pspell_new_personal 
+pspell_new_personal(^!)
+#T=pspell_save_wordlist 
+pspell_save_wordlist(^!)
+#T=pspell_store_replacement 
+pspell_store_replacement(^!)
+#T=pspell_suggest 
+pspell_suggest(^!)
+#T=readline 
+readline(^!)
+#T=readline_add_history 
+readline_add_history(^!)
+#T=readline_clear_history 
+readline_clear_history(^!)
+#T=readline_completion_function 
+readline_completion_function(^!)
+#T=readline_info 
+readline_info(^!)
+#T=readline_list_history 
+readline_list_history(^!)
+#T=readline_read_history 
+readline_read_history(^!)
+#T=readline_write_history 
+readline_write_history(^!)
+#T=recode_string 
+recode_string(^!)
+#T=recode 
+recode(^!)
+#T=recode_file 
+recode_file(^!)
+#T=preg_match 
+preg_match(^!)
+#T=preg_match_all 
+preg_match_all(^!)
+#T=preg_replace 
+preg_replace(^!)
+#T=preg_replace_callback 
+preg_replace_callback(^!)
+#T=preg_split 
+preg_split(^!)
+#T=preg_quote 
+preg_quote(^!)
+#T=preg_grep 
+preg_grep(^!)
+#T=qdom_tree
+qdom_tree(^!)
+#T=qdom_error
+qdom_error(^!)
+#T=ereg 
+ereg(^!)
+#T=ereg_replace 
+ereg_replace(^!)
+#T=eregi 
+eregi(^!)
+#T=eregi_replace 
+eregi_replace(^!)
+#T=split 
+split(^!)
+#T=spliti 
+spliti(^!)
+#T=sql_regcase 
+sql_regcase(^!)
+#T=OrbitObject 
+OrbitObject(^!)
+#T=OrbitEnum 
+OrbitEnum(^!)
+#T=OrbitStruct 
+OrbitStruct(^!)
+#T=satellite_caught_exception 
+satellite_caught_exception(^!)
+#T=satellite_exception_id 
+satellite_exception_id(^!)
+#T=satellite_exception_value
+satellite_exception_value(^!)
+#T=satellite_object_to_string
+satellite_object_to_string(^!)
+#T=satellite_load_idl
+satellite_load_idl(^!)
+#T=satellite_get_repository_id
+satellite_get_repository_id(^!)
+#T=sem_get 
+sem_get(^!)
+#T=sem_acquire 
+sem_acquire(^!)
+#T=sem_release 
+sem_release(^!)
+#T=sem_remove 
+sem_remove(^!)
+#T=shm_attach 
+shm_attach(^!)
+#T=shm_detach 
+shm_detach(^!)
+#T=shm_remove 
+shm_remove(^!)
+#T=shm_put_var 
+shm_put_var(^!)
+#T=shm_get_var 
+shm_get_var(^!)
+#T=shm_remove_var
+shm_remove_var(^!)
+#T=ftok
+ftok(^!)
+#T=sesam_connect 
+sesam_connect(^!)
+#T=sesam_disconnect 
+sesam_disconnect(^!)
+#T=sesam_settransaction 
+sesam_settransaction(^!)
+#T=sesam_commit 
+sesam_commit(^!)
+#T=sesam_rollback 
+sesam_rollback(^!)
+#T=sesam_execimm 
+sesam_execimm(^!)
+#T=sesam_query 
+sesam_query(^!)
+#T=sesam_num_fields 
+sesam_num_fields(^!)
+#T=sesam_field_name 
+sesam_field_name(^!)
+#T=sesam_diagnostic 
+sesam_diagnostic(^!)
+#T=sesam_fetch_result 
+sesam_fetch_result(^!)
+#T=sesam_affected_rows 
+sesam_affected_rows(^!)
+#T=sesam_errormsg 
+sesam_errormsg(^!)
+#T=sesam_field_array 
+sesam_field_array(^!)
+#T=sesam_fetch_row 
+sesam_fetch_row(^!)
+#T=sesam_fetch_array 
+sesam_fetch_array(^!)
+#T=sesam_seek_row 
+sesam_seek_row(^!)
+#T=sesam_free_result 
+sesam_free_result(^!)
+#T=session_start
+session_start(^!)
+#T=session_destroy
+session_destroy(^!)
+#T=session_name
+session_name(^!)
+#T=session_module_name
+session_module_name(^!)
+#T=session_save_path
+session_save_path(^!)
+#T=session_id
+session_id(^!)
+#T=session_register 
+session_register(^!)
+#T=session_unregister 
+session_unregister(^!)
+#T=session_unset 
+session_unset(^!)
+#T=session_is_registered 
+session_is_registered(^!)
+#T=session_get_cookie_params 
+session_get_cookie_params(^!)
+#T=session_set_cookie_params 
+session_set_cookie_params(^!)
+#T=session_decode 
+session_decode(^!)
+#T=session_encode 
+session_encode(^!)
+#T=session_set_save_handler 
+session_set_save_handler(^!)
+#T=session_cache_limiter
+session_cache_limiter(^!)
+#T=session_cache_expire
+session_cache_expire(^!)
+#T=session_write_close 
+session_write_close(^!)
+#T=shmop_open 
+shmop_open(^!)
+#T=shmop_read 
+shmop_read(^!)
+#T=shmop_write 
+shmop_write(^!)
+#T=shmop_size 
+shmop_size(^!)
+#T=shmop_delete 
+shmop_delete(^!)
+#T=shmop_close 
+shmop_close(^!)
+#T=swf_openfile 
+swf_openfile(^!)
+#T=swf_closefile 
+swf_closefile(^!)
+#T=swf_labelframe 
+swf_labelframe(^!)
+#T=swf_showframe 
+swf_showframe(^!)
+#T=swf_setframe 
+swf_setframe(^!)
+#T=swf_getframe 
+swf_getframe(^!)
+#T=swf_mulcolor 
+swf_mulcolor(^!)
+#T=swf_addcolor 
+swf_addcolor(^!)
+#T=swf_placeobject 
+swf_placeobject(^!)
+#T=swf_modifyobject 
+swf_modifyobject(^!)
+#T=swf_removeobject 
+swf_removeobject(^!)
+#T=swf_nextid 
+swf_nextid(^!)
+#T=swf_startdoaction 
+swf_startdoaction(^!)
+#T=swf_actiongotoframe 
+swf_actiongotoframe(^!)
+#T=swf_actiongeturl 
+swf_actiongeturl(^!)
+#T=swf_actionnextframe 
+swf_actionnextframe(^!)
+#T=swf_actionprevframe 
+swf_actionprevframe(^!)
+#T=swf_actionplay 
+swf_actionplay(^!)
+#T=swf_actionstop 
+swf_actionstop(^!)
+#T=swf_actiontogglequality 
+swf_actiontogglequality(^!)
+#T=swf_actionwaitforframe 
+swf_actionwaitforframe(^!)
+#T=swf_actionsettarget 
+swf_actionsettarget(^!)
+#T=swf_actiongotolabel 
+swf_actiongotolabel(^!)
+#T=swf_enddoaction 
+swf_enddoaction(^!)
+#T=swf_defineline 
+swf_defineline(^!)
+#T=swf_definerect 
+swf_definerect(^!)
+#T=swf_definepoly 
+swf_definepoly(^!)
+#T=swf_startshape 
+swf_startshape(^!)
+#T=swf_shapelinesolid 
+swf_shapelinesolid(^!)
+#T=swf_shapefilloff 
+swf_shapefilloff(^!)
+#T=swf_shapefillsolid 
+swf_shapefillsolid(^!)
+#T=swf_shapefillbitmapclip 
+swf_shapefillbitmapclip(^!)
+#T=swf_shapefillbitmaptile 
+swf_shapefillbitmaptile(^!)
+#T=swf_shapemoveto 
+swf_shapemoveto(^!)
+#T=swf_shapelineto 
+swf_shapelineto(^!)
+#T=swf_shapecurveto 
+swf_shapecurveto(^!)
+#T=swf_shapecurveto3 
+swf_shapecurveto3(^!)
+#T=swf_shapearc 
+swf_shapearc(^!)
+#T=swf_endshape 
+swf_endshape(^!)
+#T=swf_definefont 
+swf_definefont(^!)
+#T=swf_setfont 
+swf_setfont(^!)
+#T=swf_fontsize 
+swf_fontsize(^!)
+#T=swf_fontslant 
+swf_fontslant(^!)
+#T=swf_fonttracking 
+swf_fonttracking(^!)
+#T=swf_getfontinfo 
+swf_getfontinfo(^!)
+#T=swf_definetext 
+swf_definetext(^!)
+#T=swf_textwidth 
+swf_textwidth(^!)
+#T=swf_definebitmap 
+swf_definebitmap(^!)
+#T=swf_getbitmapinfo 
+swf_getbitmapinfo(^!)
+#T=swf_startsymbol 
+swf_startsymbol(^!)
+#T=swf_endsymbol 
+swf_endsymbol(^!)
+#T=swf_startbutton 
+swf_startbutton(^!)
+#T=swf_addbuttonrecord 
+swf_addbuttonrecord(^!)
+#T=swf_oncondition 
+swf_oncondition(^!)
+#T=swf_endbutton 
+swf_endbutton(^!)
+#T=swf_viewport 
+swf_viewport(^!)
+#T=swf_ortho 
+swf_ortho(^!)
+#T=swf_ortho2 
+swf_ortho2(^!)
+#T=swf_perspective 
+swf_perspective(^!)
+#T=swf_polarview 
+swf_polarview(^!)
+#T=swf_lookat 
+swf_lookat(^!)
+#T=swf_pushmatrix 
+swf_pushmatrix(^!)
+#T=swf_popmatrix 
+swf_popmatrix(^!)
+#T=swf_scale 
+swf_scale(^!)
+#T=swf_translate 
+swf_translate(^!)
+#T=swf_rotate 
+swf_rotate(^!)
+#T=swf_posround 
+swf_posround(^!)
+#T=snmpget
+snmpget(^!)
+#T=snmpset
+snmpset(^!)
+#T=snmpwalk
+snmpwalk(^!)
+#T=snmpwalkoid
+snmpwalkoid(^!)
+#T=snmp_get_quick_print
+snmp_get_quick_print(^!)
+#T=snmp_set_quick_print
+snmp_set_quick_print(^!)
+#T=snmprealwalk
+snmprealwalk(^!)
+#T=socket_accept 
+socket_accept(^!)
+#T=socket_bind 
+socket_bind(^!)
+#T=socket_close 
+socket_close(^!)
+#T=socket_connect 
+socket_connect(^!)
+#T=socket_listen 
+socket_listen(^!)
+#T=socket_read 
+socket_read(^!)
+#T=socket_create 
+socket_create(^!)
+#T=socket_strerror 
+socket_strerror(^!)
+#T=socket_write 
+socket_write(^!)
+#T=socket_fd_alloc 
+socket_fd_alloc(^!)
+#T=socket_fd_free 
+socket_fd_free(^!)
+#T=socket_fd_set 
+socket_fd_set(^!)
+#T=socket_fd_clear 
+socket_fd_clear(^!)
+#T=socket_fd_isset 
+socket_fd_isset(^!)
+#T=socket_fd_zero 
+socket_fd_zero(^!)
+#T=socket_select 
+socket_select(^!)
+#T=socket_create_listen 
+socket_create_listen(^!)
+#T=socket_set_nonblock 
+socket_set_nonblock(^!)
+#T=socket_getsockname 
+socket_getsockname(^!)
+#T=socket_getpeername 
+socket_getpeername(^!)
+#T=socket_iovec_alloc 
+socket_iovec_alloc(^!)
+#T=socket_iovec_fetch 
+socket_iovec_fetch(^!)
+#T=socket_iovec_set 
+socket_iovec_set(^!)
+#T=socket_iovec_add 
+socket_iovec_add(^!)
+#T=socket_iovec_delete 
+socket_iovec_delete(^!)
+#T=socket_iovec_free 
+socket_iovec_free(^!)
+#T=socket_readv 
+socket_readv(^!)
+#T=socket_writev 
+socket_writev(^!)
+#T=socket_recv 
+socket_recv(^!)
+#T=socket_send 
+socket_send(^!)
+#T=socket_recvfrom 
+socket_recvfrom(^!)
+#T=socket_sendto 
+socket_sendto(^!)
+#T=socket_recvmsg 
+socket_recvmsg(^!)
+#T=socket_sendmsg 
+socket_sendmsg(^!)
+#T=socket_getopt 
+socket_getopt(^!)
+#T=socket_setopt 
+socket_setopt(^!)
+#T=socket_create_pair 
+socket_create_pair(^!)
+#T=socket_shutdown 
+socket_shutdown(^!)
+#T=socket_last_error 
+socket_last_error(^!)
+#T=addcslashes 
+addcslashes(^!)
+#T=addslashes 
+addslashes(^!)
+#T=bin2hex 
+bin2hex(^!)
+#T=chop 
+chop(^!)
+#T=chr 
+chr(^!)
+#T=chunk_split 
+chunk_split(^!)
+#T=convert_cyr_string 
+convert_cyr_string(^!)
+#T=count_chars 
+count_chars(^!)
+#T=crc32 
+crc32(^!)
+#T=crypt 
+crypt(^!)
+#T=echo 
+echo ^!;
+#T=explode 
+explode(^!)
+#T=get_html_translation_table 
+get_html_translation_table(^!)
+#T=get_meta_tags 
+get_meta_tags(^!)
+#T=hebrev 
+hebrev(^!)
+#T=hebrevc 
+hebrevc(^!)
+#T=htmlentities 
+htmlentities(^!)
+#T=htmlspecialchars 
+htmlspecialchars(^!)
+#T=implode 
+implode(^!)
+#T=join 
+join(^!)
+#T=levenshtein 
+levenshtein(^!)
+#T=localeconv 
+localeconv(^!)
+#T=ltrim 
+ltrim(^!)
+#T=md5 
+md5(^!)
+#T=md5_file 
+md5_file(^!)
+#T=metaphone 
+metaphone(^!)
+#T=nl2br 
+nl2br(^!)
+#T=ord 
+ord(^!)
+#T=parse_str 
+parse_str(^!)
+#T=print 
+print(^!)
+#T=printf 
+printf(^!)
+#T=quoted_printable_decode 
+quoted_printable_decode(^!)
+#T=quotemeta 
+quotemeta(^!)
+#T=str_rot13 
+str_rot13(^!)
+#T=rtrim 
+rtrim(^!)
+#T=sscanf 
+sscanf(^!)
+#T=setlocale 
+setlocale(^!)
+#T=similar_text 
+similar_text(^!)
+#T=soundex 
+soundex(^!)
+#T=sprintf 
+sprintf(^!)
+#T=strncasecmp 
+strncasecmp(^!)
+#T=strcasecmp 
+strcasecmp(^!)
+#T=strchr 
+strchr(^!)
+#T=strcmp 
+strcmp(^!)
+#T=strcoll 
+strcoll(^!)
+#T=strcspn 
+strcspn(^!)
+#T=strip_tags 
+strip_tags(^!)
+#T=stripcslashes 
+stripcslashes(^!)
+#T=stripslashes 
+stripslashes(^!)
+#T=stristr 
+stristr(^!)
+#T=strlen 
+strlen(^!)
+#T=strnatcmp 
+strnatcmp(^!)
+#T=strnatcasecmp 
+strnatcasecmp(^!)
+#T=strncmp 
+strncmp(^!)
+#T=str_pad 
+str_pad(^!)
+#T=strpos 
+strpos(^!)
+#T=strrchr 
+strrchr(^!)
+#T=str_repeat 
+str_repeat(^!)
+#T=strrev 
+strrev(^!)
+#T=strrpos 
+strrpos(^!)
+#T=strspn 
+strspn(^!)
+#T=strstr 
+strstr(^!)
+#T=strtok 
+strtok(^!)
+#T=strtolower 
+strtolower(^!)
+#T=strtoupper 
+strtoupper(^!)
+#T=str_replace 
+str_replace(^!)
+#T=strtr 
+strtr(^!)
+#T=substr 
+substr(^!)
+#T=substr_count 
+substr_count(^!)
+#T=substr_replace 
+substr_replace(^!)
+#T=trim 
+trim(^!)
+#T=ucfirst 
+ucfirst(^!)
+#T=ucwords 
+ucwords(^!)
+#T=vprintf 
+vprintf(^!)
+#T=vsprintf 
+vsprintf(^!)
+#T=wordwrap 
+wordwrap(^!)
+#T=nl_langinfo 
+nl_langinfo(^!)
+#T=sybase_affected_rows 
+sybase_affected_rows(^!)
+#T=sybase_close 
+sybase_close(^!)
+#T=sybase_connect 
+sybase_connect(^!)
+#T=sybase_data_seek 
+sybase_data_seek(^!)
+#T=sybase_fetch_array 
+sybase_fetch_array(^!)
+#T=sybase_fetch_field 
+sybase_fetch_field(^!)
+#T=sybase_fetch_object 
+sybase_fetch_object(^!)
+#T=sybase_fetch_row 
+sybase_fetch_row(^!)
+#T=sybase_field_seek 
+sybase_field_seek(^!)
+#T=sybase_free_result 
+sybase_free_result(^!)
+#T=sybase_get_last_message 
+sybase_get_last_message(^!)
+#T=sybase_min_client_severity 
+sybase_min_client_severity(^!)
+#T=sybase_min_error_severity 
+sybase_min_error_severity(^!)
+#T=sybase_min_message_severity 
+sybase_min_message_severity(^!)
+#T=sybase_min_server_severity 
+sybase_min_server_severity(^!)
+#T=sybase_num_fields 
+sybase_num_fields(^!)
+#T=sybase_num_rows 
+sybase_num_rows(^!)
+#T=sybase_pconnect 
+sybase_pconnect(^!)
+#T=sybase_query 
+sybase_query(^!)
+#T=sybase_result 
+sybase_result(^!)
+#T=sybase_select_db 
+sybase_select_db(^!)
+#T=base64_decode 
+base64_decode(^!)
+#T=base64_encode 
+base64_encode(^!)
+#T=parse_url 
+parse_url(^!)
+#T=rawurldecode 
+rawurldecode(^!)
+#T=rawurlencode 
+rawurlencode(^!)
+#T=urldecode 
+urldecode(^!)
+#T=urlencode 
+urlencode(^!)
+#T=doubleval 
+doubleval(^!)
+#T=empty 
+empty(^!)
+#T=floatval 
+floatval(^!)
+#T=gettype 
+gettype(^!)
+#T=get_defined_vars 
+get_defined_vars(^!)
+#T=get_resource_type 
+get_resource_type(^!)
+#T=import_request_variables 
+import_request_variables(^!)
+#T=intval 
+intval(^!)
+#T=is_array 
+is_array(^!)
+#T=is_bool 
+is_bool(^!)
+#T=is_double 
+is_double(^!)
+#T=is_float 
+is_float(^!)
+#T=is_int 
+is_int(^!)
+#T=is_integer 
+is_integer(^!)
+#T=is_long 
+is_long(^!)
+#T=is_null 
+is_null(^!)
+#T=is_numeric 
+is_numeric(^!)
+#T=is_object 
+is_object(^!)
+#T=is_real 
+is_real(^!)
+#T=is_resource 
+is_resource(^!)
+#T=is_scalar 
+is_scalar(^!)
+#T=is_string 
+is_string(^!)
+#T=isset 
+isset(^!)
+#T=print_r 
+print_r(^!)
+#T=serialize 
+serialize(^!)
+#T=settype 
+settype(^!)
+#T=strval 
+strval(^!)
+#T=unserialize 
+unserialize(^!)
+#T=unset 
+unset(^!)
+#T=var_dump
+var_dump(^!)
+#T=var_export
+var_export(^!)
+#T=vpopmail_add_domain
+vpopmail_add_domain(^!)
+#T=vpopmail_del_domain
+vpopmail_del_domain(^!)
+#T=vpopmail_add_alias_domain
+vpopmail_add_alias_domain(^!)
+#T=vpopmail_add_domain_ex
+vpopmail_add_domain_ex(^!)
+#T=vpopmail_del_domain_ex
+vpopmail_del_domain_ex(^!)
+#T=vpopmail_add_alias_domain_ex
+vpopmail_add_alias_domain_ex(^!)
+#T=vpopmail_add_user
+vpopmail_add_user(^!)
+#T=vpopmail_del_user
+vpopmail_del_user(^!)
+#T=vpopmail_passwd
+vpopmail_passwd(^!)
+#T=vpopmail_set_user_quota
+vpopmail_set_user_quota(^!)
+#T=vpopmail_auth_user
+vpopmail_auth_user(^!)
+#T=vpopmail_alias_add
+vpopmail_alias_add(^!)
+#T=vpopmail_alias_del
+vpopmail_alias_del(^!)
+#T=vpopmail_alias_del_domain
+vpopmail_alias_del_domain(^!)
+#T=vpopmail_alias_get
+vpopmail_alias_get(^!)
+#T=vpopmail_alias_get_all
+vpopmail_alias_get_all(^!)
+#T=vpopmail_error
+vpopmail_error(^!)
+#T=
+#T= C. W32api functions
+#T=w32api_set_call_method
+w32api_set_call_method(^!)
+#T=w32api_register_function
+w32api_register_function(^!)
+#T=w32api_invoke_function
+w32api_invoke_function(^!)
+#T=w32api_deftype
+w32api_deftype(^!)
+#T=w32api_init_dtype
+w32api_init_dtype(^!)
+#T=wddx_serialize_value 
+wddx_serialize_value(^!)
+#T=wddx_serialize_vars 
+wddx_serialize_vars(^!)
+#T=wddx_packet_start 
+wddx_packet_start(^!)
+#T=wddx_packet_end 
+wddx_packet_end(^!)
+#T=wddx_add_vars 
+wddx_add_vars(^!)
+#T=wddx_deserialize 
+wddx_deserialize(^!)
+#T=xml_parser_create 
+xml_parser_create(^!)
+#T=xml_set_object 
+xml_set_object(^!)
+#T=xml_set_element_handler 
+xml_set_element_handler(^!)
+#T=xml_set_character_data_handler 
+xml_set_character_data_handler(^!)
+#T=xml_set_processing_instruction_handler 
+xml_set_processing_instruction_handler(^!)
+#T=xml_set_default_handler 
+xml_set_default_handler(^!)
+#T=xml_set_unparsed_entity_decl_handler 
+xml_set_unparsed_entity_decl_handler(^!)
+#T=xml_set_notation_decl_handler 
+xml_set_notation_decl_handler(^!)
+#T=xml_set_external_entity_ref_handler 
+xml_set_external_entity_ref_handler(^!)
+#T=xml_parse 
+xml_parse(^!)
+#T=xml_get_error_code 
+xml_get_error_code(^!)
+#T=xml_error_string 
+xml_error_string(^!)
+#T=xml_get_current_line_number 
+xml_get_current_line_number(^!)
+#T=xml_get_current_column_number 
+xml_get_current_column_number(^!)
+#T=xml_get_current_byte_index 
+xml_get_current_byte_index(^!)
+#T=xml_parse_into_struct 
+xml_parse_into_struct(^!)
+#T=xml_parser_free 
+xml_parser_free(^!)
+#T=xml_parser_set_option 
+xml_parser_set_option(^!)
+#T=xml_parser_get_option 
+xml_parser_get_option(^!)
+#T=utf8_decode 
+utf8_decode(^!)
+#T=utf8_encode
+utf8_encode(^!)
+#T=xml_parser_create_ns
+xml_parser_create_ns(^!)
+#T=xml_set_end_namespace_decl_handler
+xml_set_end_namespace_decl_handler(^!)
+#T=xml_set_start_namespace_decl_handler
+xml_set_start_namespace_decl_handler(^!)
+#T=xmlrpc_encode_request
+xmlrpc_encode_request(^!)
+#T=xmlrpc_encode
+xmlrpc_encode(^!)
+#T=xmlrpc_decode_request
+xmlrpc_decode_request(^!)
+#T=xmlrpc_decode
+xmlrpc_decode(^!)
+#T=xmlrpc_server_create
+xmlrpc_server_create(^!)
+#T=xmlrpc_server_destroy
+xmlrpc_server_destroy(^!)
+#T=xmlrpc_server_register_method
+xmlrpc_server_register_method(^!)
+#T=xmlrpc_server_register_introspection_callback
+xmlrpc_server_register_introspection_callback(^!)
+#T=xmlrpc_server_call_method
+xmlrpc_server_call_method(^!)
+#T=xmlrpc_server_add_introspection_data
+xmlrpc_server_add_introspection_data(^!)
+#T=xmlrpc_parse_method_descriptions
+xmlrpc_parse_method_descriptions(^!)
+#T=xmlrpc_set_type
+xmlrpc_set_type(^!)
+#T=xmlrpc_get_type
+xmlrpc_get_type(^!)
+#T=xslt_set_log
+xslt_set_log(^!)
+#T=xslt_create
+xslt_create(^!)
+#T=xslt_errno
+xslt_errno(^!)
+#T=xslt_error
+xslt_error(^!)
+#T=xslt_free
+xslt_free(^!)
+#T=xslt_process
+xslt_process(^!)
+#T=xslt_set_sax_handler
+xslt_set_sax_handler(^!)
+#T=xslt_set_scheme_handler
+xslt_set_scheme_handler(^!)
+#T=xslt_set_error_handler
+xslt_set_error_handler(^!)
+#T=xslt_set_base
+xslt_set_base(^!)
+#T=xslt_set_encoding
+xslt_set_encoding(^!)
+#T=xslt_set_sax_handlers
+xslt_set_sax_handlers(^!)
+#T=xslt_set_scheme_handlers
+xslt_set_scheme_handlers(^!)
+#T=yaz_addinfo 
+yaz_addinfo(^!)
+#T=yaz_close 
+yaz_close(^!)
+#T=yaz_connect 
+yaz_connect(^!)
+#T=yaz_errno 
+yaz_errno(^!)
+#T=yaz_error 
+yaz_error(^!)
+#T=yaz_hits 
+yaz_hits(^!)
+#T=yaz_element 
+yaz_element(^!)
+#T=yaz_database 
+yaz_database(^!)
+#T=yaz_range 
+yaz_range(^!)
+#T=yaz_record 
+yaz_record(^!)
+#T=yaz_search 
+yaz_search(^!)
+#T=yaz_present 
+yaz_present(^!)
+#T=yaz_syntax 
+yaz_syntax(^!)
+#T=yaz_scan 
+yaz_scan(^!)
+#T=yaz_scan_result 
+yaz_scan_result(^!)
+#T=yaz_ccl_conf 
+yaz_ccl_conf(^!)
+#T=yaz_ccl_parse 
+yaz_ccl_parse(^!)
+#T=yaz_itemorder 
+yaz_itemorder(^!)
+#T=yaz_wait 
+yaz_wait(^!)
+#T=yaz_sort 
+yaz_sort(^!)
+#T=yp_get_default_domain 
+yp_get_default_domain(^!)
+#T=yp_order 
+yp_order(^!)
+#T=yp_master 
+yp_master(^!)
+#T=yp_match 
+yp_match(^!)
+#T=yp_first 
+yp_first(^!)
+#T=yp_next 
+yp_next(^!)
+#T=yp_errno
+yp_errno(^!)
+#T=yp_err_string
+yp_err_string(^!)
+#T=yp_all
+yp_all(^!)
+#T=yp_cat
+yp_cat(^!)
+#T=zip_close 
+zip_close(^!)
+#T=zip_entry_close 
+zip_entry_close(^!)
+#T=zip_entry_compressedsize 
+zip_entry_compressedsize(^!)
+#T=zip_entry_compressionmethod 
+zip_entry_compressionmethod(^!)
+#T=zip_entry_filesize 
+zip_entry_filesize(^!)
+#T=zip_entry_name 
+zip_entry_name(^!)
+#T=zip_entry_open 
+zip_entry_open(^!)
+#T=zip_entry_read 
+zip_entry_read(^!)
+#T=zip_open 
+zip_open(^!)
+#T=zip_read 
+zip_read(^!)
+#T=gzclose
+gzclose(^!)
+#T=gzeof 
+gzeof(^!)
+#T=gzfile 
+gzfile(^!)
+#T=gzgetc 
+gzgetc(^!)
+#T=gzgets 
+gzgets(^!)
+#T=gzgetss 
+gzgetss(^!)
+#T=gzopen 
+gzopen(^!)
+#T=gzpassthru 
+gzpassthru(^!)
+#T=gzputs 
+gzputs(^!)
+#T=gzread 
+gzread(^!)
+#T=gzrewind 
+gzrewind(^!)
+#T=gzseek 
+gzseek(^!)
+#T=gztell 
+gztell(^!)
+#T=gzwrite 
+gzwrite(^!)
+#T=readgzfile 
+readgzfile(^!)
+#T=gzcompress 
+gzcompress(^!)
+#T=gzuncompress 
+gzuncompress(^!)
+#T=gzdeflate 
+gzdeflate(^!)
+#T=gzinflate 
+gzinflate(^!)
+#T=gzencode
+gzencode(^!)
+#

@@ -1,0 +1,722 @@
+#TITLE=HTML
+; EditPlus Auto-completion File v1.0 written by ES-Computing.
+; This file is intended to be used by HTML Toolbar of EditPlus.
+; <WARNING>
+; This file is required for EditPlus to run correctly.
+; You can modify only the content of each entry.
+; Do not add/remove any entry.
+; Do not modify title of each entry.
+
+#CASE=y
+
+#T=php
+<?php
+^!
+?>
+#T==
+<?php echo $^!;?>
+#T=.
+/**^!
+/**/
+#T=I
+<i>^!</i>
+#T=U
+<u>^!</u>
+#T=body
+<body>^!</body>
+#T=header
+<header>^!</header>
+#T=footer
+<footer>^!</footer>
+#T=html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="Author" content="QQ987528260">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>首页</title>
+	<link type="text/css" href="css/mx.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/mx.js"></script>
+</head>
+
+ <body>
+^!
+ </body>
+</html>
+#T=f
+<form method="post" action="">
+^!
+</form>
+#T=jq
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(^!);
+	});
+</script>
+#T=submit
+<input type="submit" value="^!"/>
+#T=li
+<li>^!</li>
+#T=reset
+<input type="reset" value="^!"/>
+#T=head
+<head>^!</head>
+#T=title
+<title>^!</title>
+#T=js
+<script type="text/javascript">
+^!
+</script>
+#T=b
+<b>^!</b>
+#T=em
+<em>^!</em>
+#T=sp
+<span>^!</span>
+#T=spc
+<span class="^!"></span>
+#T=h1
+<h1>^!</h1>
+#T=h2
+<h2>^!</h2>
+#T=h3
+<h3>^!</h3>
+#T=h4
+<h4>^!</h4>
+#T=h5
+<h5>^!</h5>
+#T=h6
+<h6>^!</h6>
+#T=p
+<p>^!</p>
+#T=n
+&nbsp;
+#T=a
+<a href="" title="">^!</a>
+#T=at
+<a target="_blank" href="" title="">^!</a>
+#T=hr
+<hr />
+#T=img
+<img src="images/^!.jpg" alt="" />
+#T=d
+<div>^!</div>
+#T=di
+<div id="^!"></div>
+#T=dc
+<div class="^!"></div>
+#T=dic
+<div id="^!" class=""></div>
+#T=rem
+<!-- ^! -->
+#T=label
+<label>^!</label>
+#T=radio
+<input type="radio" name="^!" />
+#T=text
+<input type="text" name="^!" />
+#T=pwd
+<input type="password" name="^!" />
+#T=select
+<select name="" multiple="multiple">
+	<option value="" selected>^!</option>
+</Select>
+#T=option
+<option value="^!" ></option>
+#T=utf
+<meta http-equiv="Content-Type" content="text/html; charset=^!" />
+#T=button
+<button>^!</button>
+#T=textarea
+<textarea>^!</textarea>
+#T=lbl
+<label for="">^!</label>
+#T=center
+<center>^!</center>
+#T=blockquote
+<blockquote>^!</blockquote>
+#T=pre
+<pre>^!</pre>
+#T=<!
+<!-- ^! -->
+#T=css
+<link type="text/css" href="^!" rel="stylesheet" />
+#T=br
+<br />
+#T=style
+<style type="text/css">
+^!
+</style>
+#T=ul
+<ul>
+	<li>^!</li>
+	<li></li>
+</ul>
+#T=ua
+<ul>
+	<li><a href="^!" title=""></a></li>
+</ul>
+#T=uia
+<ul id="^!">
+	<li><a href="" title=""></a></li>
+</ul>
+#T=html5
+<!DOCTYPE>
+<html>
+ <head>
+	<meta charset="utf-8" />
+	<title>麦田稻草人</title>
+	<meta name="Author" content="QQ987528260">
+	<link href="" rel="stylesheet" />
+	<script src="js/jquery.js"></script>
+ </head>
+
+ <body>
+	<header class="header">
+		^!
+	</header>
+	<div class=""></div>
+	<footer class="footer">
+		
+	</footer>
+ </body>
+</html>
+#T=swf
+<object id="^!" width="" height="" classid="CLSID:D27CDB6E-AE6D-11cf-96B8-444553540000">
+<param name="movie" value="" />
+<param name="quality" value="high" />
+<param name="wmode" value="transparent" />
+<embed width="" height="" src="" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+</object>
+#T=ol
+<ol>
+	<li>^!
+	<li>
+</ol>
+#T=dl
+<dl>
+	<dt>^!
+	<dd>
+</dl>
+#T=form
+<form method="post" action="">
+	^!
+</form>
+#T=frame
+<frameset rows="^!," cols=",">
+	<frame src="" name="">
+	<frame src="" name="">
+</frameset>
+#T=map
+<map name="^!">
+	<area shape="" href="" coords="" alt="">
+</map>
+#T=applet
+<applet code="^!" width="" height="">
+</applet>
+#T=checkbox
+<input type="checkbox" name="^!">
+#T=password
+<input type="password" name="^!">
+#T=hidden
+<input type="hidden" name="^!">
+#T=font
+<font size="" color="">^!</font>
+#T=table
+<table width="100%" border="1" cellpadding="5" cellspacing="0" bordercolorlight="#CCCCCC" bordercolordark="#FFFFFF" class="^!">
+	<colgroup>
+		<col width="35%">
+		<col width="20%">
+		<col width="15%">
+		<col width="15%">
+		<col width="15%">
+	</colgroup>
+	<tbody>
+		<tr>
+			<th>话 题</th>
+			<th>群 组</th>
+			<th>作 者</th>
+			<th>回复/点击</th>
+			<th>最新回复</th>
+		</tr>
+		<tr>
+			<td><a href="#">北京</a></td>
+			<td><a href="#">北京</a></td>
+			<td><a href="#">北京</a></td>
+			<td><i>675/16248</i></td>
+			<td><a href="#">北京</a></td>
+		</tr>
+		<tr>
+			<td><a href="#">北京</a></td>
+			<td><a href="#">北京</a></td>
+			<td><a href="#">北京</a></td>
+			<td><i>675/16248</i></td>
+			<td><a href="#">北京</a></td>
+		</tr>
+	</tbody>
+</table>
+<!--
+<table width="100%" cellspacing="1" cellpadding="5" border="0" bordercolorlight="#CCCCCC" bordercolordark="#FFFFFF" id="^!">
+<thead id="title">
+<tr><td></td></tr>
+</thead>
+<tbody id="list">
+<tr>
+<th></th>
+<td></td>
+<td></td>
+<th></th>
+</tr>
+</tbody>
+</table>
+-->
+#T=thead
+<thead>
+	<th>^!</th>
+	<th></th>
+</thead>
+#T=tr
+<tr><td>^!</td><td></td></tr>
+#T=td
+	<td>^!</td>
+#T=object
+<object id="%s" width="^!" height="" classid="clsid:%s">
+</object>
+#T=flash
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="95" height="85" id="FlashID" title="www.7di.net">
+  <param name="movie" value="^!" />
+  <param name="quality" value="high" />
+  <param name="wmode" value="opaque" />
+  <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+  <!--[if !IE]>-->
+  <object type="application/x-shockwave-flash" data="^!" width="95" height="85">
+    <!--<![endif]-->
+    <param name="quality" value="high" />
+    <param name="wmode" value="opaque" />
+    <!--[if !IE]>-->
+  </object>
+  <!--<![endif]-->
+</object>
+#T=style
+<style type="text/css">
+	^!
+</style>
+#T=length
+<fieldset><legend>^!</legend>www.7di.net</fieldset>
+#T=top
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>^!</title>
+<meta name="keywords" content="^!">
+<meta name="description" content="^!">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="expires" content="Mon, 20 Jun 2001 08:00:00 GMT">
+<meta name="robots" content="all,none,index,noindex,follow,nofollow^!">
+<meta name="revisit-after" content="^!days">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="language" content="en-us">
+<meta http-equiv="author" content="pagemaker@semo.net">
+<meta name="generator" content="http://www.editplus.com">
+<meta http-equiv="window-target" content="_top _blank _parent _self^!">
+<meta http-equiv="pragma" content="no-cache">
+</head>
+#T=ajax
+//Ajax
+function Ajax(){
+	var _xmlHttp = null;
+	this.createXMLHttpRequest = function(){try{if (window.ActiveXObject){_xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");}else if (window.XMLHttpRequest){_xmlHttp = new XMLHttpRequest();}}catch(e){alert(e.name +" : " + e.message);}}
+	this.backFunction = function(_backFunction){if(_xmlHttp.readyState == 4){if(_xmlHttp.status == 200){_backFunction(_xmlHttp.responseText);}}_xmlHttp.onreadystatechange = null;}
+	this.doPost = function(_url,_parameter,_backFunction){try{_xmlHttp.open("POST",_url, false);_xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");_xmlHttp.send(_parameter);}catch(e){alert(e.name +" : " + e.message);}}
+	this.doGet = function(_url,_parameter,_backFunction){try{var _random = Math.round(Math.random()*10000);_xmlHttp.open("GET", (_url+"?random=" +_random +"&" + _parameter), false);_xmlHttp.send(null);}catch(e){alert(e.name +" : " + e.message);}}
+	this.ajaxRequest = function(_url,_parameter,_method,_backFunction){try{this.createXMLHttpRequest();if(_method.toLowerCase() == "post"){this.doPost(_url,_parameter,_backFunction);}else{this.doGet(_url,_parameter,_backFunction);}try{_xmlHttp.onreadystatechange = this.backFunction(_backFunction);}catch(err){}}catch(e){alert(e.name+" : "+e.message);}}
+}
+
+//
+function Fank(IntId,IntType,OBJ){
+	var url = "?action=GetFank";
+	var parameter = "Id="+IntId+"&Types="+IntType;
+	var method = "post";
+	new Ajax().ajaxRequest(url,parameter,method,callBack);
+}
+function callBack(xml){
+	if(xml.length>0){alert(unescape(xml));}else{OBJ.innerHTML=parseInt(OBJ.innerHTML)+1;}
+}
+#T=while 
+While(^!)
+	
+Wend 
+#T=for 
+For ^! 
+	
+Next 
+#T=case
+Select Case ^!
+Case  
+Case Else 
+End Select 
+#T=do 
+Do ^!
+	
+Loop 
+#T=if 
+If ^! Then End if 
+#T=sub 
+Sub ^!()
+	
+End Sub 
+#T=fun
+Function ^!()
+	
+End Function 
+#T=Abs 
+Abs(^!)
+#T=Remove 
+Remove(^!)
+#T=StaticObjects 
+StaticObjects(^!)
+#T=Array 
+Array(^!)
+#T=Asc 
+Asc(^!)
+#T=Atn 
+Atn(^!)
+#T=CBool 
+CBool(^!)
+#T=CByte 
+CByte(^!)
+#T=CCur 
+CCur(^!)
+#T=CDate 
+CDate(^!)
+#T=CDbl 
+CDbl(^!)
+#T=Chr 
+Chr(^!)
+#T=CInt 
+CInt(^!)
+#T=CLng 
+CLng(^!) 
+#T=Cos 
+Cos(^!)
+#T=CreateObject 
+CreateObject(^!)
+#T=CSng 
+CSng(^!)
+#T=CStr 
+CStr(^!)
+#T=DateAdd 
+DateAdd(^!, , )
+#T=DateDiff 
+DateDiff(^!, , )
+#T=DatePart 
+DatePart(^!, date)
+#T=DateSerial 
+DateSerial(^!, , )
+#T=DateValue 
+DateValue(^!)
+#T=Day 
+Day(^!)
+#T=Eval 
+Eval(^!)
+#T=Exp 
+Exp(^!)
+#T=CompareMode 
+CompareMode^! 
+#T=Count 
+#T=Item 
+Item(^!)
+#T=Key 
+Key(^!)=  
+#T=Add 
+Add(^!, )
+#T=Exists 
+Exists(^!)
+#T=Items 
+#T=Keys 
+#T=Remove 
+Remove(^!)
+#T=VolumeName 
+VolumeName^! 
+#T=Move 
+Move(^!)
+#T=OpenAsTextStream 
+OpenAsTextStream(^!, )
+#T=BuildPath 
+BuildPath(^!, )
+#T=CopyFile 
+CopyFile(^!, )
+#T=CopyFolder 
+CopyFolder(^!, )
+#T=CreateFolder 
+CreateFolder(^!)
+#T=DeleteFile 
+DeleteFile(^!)
+#T=DeleteFolder 
+DeleteFolder(^!)
+#T=DriveExists 
+DriveExists(^!)
+#T=FileExists 
+FileExists(^!)
+#T=FolderExists 
+FolderExists(^!)
+#T=GetAbsolutePathName 
+GetAbsolutePathName(^!)
+#T=GetBaseName 
+GetBaseName(^!)
+#T=GetDrive 
+GetDrive(^!)
+#T=GetDriveName 
+GetDriveName(^!)
+#T=GetExtensionName 
+GetExtensionName(^!)
+#T=GetFile 
+GetFile(^!)
+#T=GetFileName 
+GetFileName(^!)
+#T=GetFolder 
+GetFolder(^!)
+#T=GetParentFolderName 
+GetParentFolderName(^!)
+#T=GetSpecialFolder 
+GetSpecialFolder(^!)
+#T=GetTempName 
+#T=MoveFile 
+MoveFile(^!, )
+#T=MoveFolder 
+MoveFolder(^!,)
+#T=OpenTextFile 
+OpenTextFile(^!, , , )
+#T=Filter 
+Filter(^!, )
+#T=Fix 
+Fix(^!)
+#T=Attributes 
+Attributes^! 
+#T=Copy 
+Copy(^!)
+#T=CreateTextFile 
+CreateTextFile(^!)
+#T=Delete 
+Delete^! 
+#T=Name 
+Name^! 
+#T=FormatCurrency 
+FormatCurrency(^!)
+#T=FormatDateTime 
+FormatDateTime(^!, )
+#T=FormatNumber 
+FormatNumber(^!)
+#T=FormatPercent 
+FormatPercent(^!)
+#T=GetLocale 
+#T=GetObject 
+GetObject(^!)
+#T=GetRef 
+GetRef(^!)
+#T=Hex 
+Hex()
+#T=Hour 
+Hour(^!)
+#T=InputBox 
+InputBox(^!)
+#T=InStr 
+InStr(^! , )
+#T=InStrRev 
+InStrRev(^!, )
+#T=Int 
+Int(^!)
+#T=IsArray 
+IsArray(^!)
+#T=IsDate 
+IsDate(^!)
+#T=IsEmpty 
+IsEmpty(^!)
+#T=IsNull 
+IsNull(^!)
+#T=IsNumeric 
+IsNumeric(^!)
+#T=IsObject 
+IsObject(^!)
+#T=Join 
+Join(^!)
+#T=LBound 
+LBound(^!)
+#T=LCase 
+LCase(^!)
+#T=Left 
+Left(^!, )
+#T=Len 
+Len(^!)
+#T=LoadPicture 
+LoadPicture(^!)
+#T=Log 
+Log(^!)
+#T=LTrim 
+LTrim(^!)
+#T=Mid 
+Mid(^!, )
+#T=Minute 
+Minute(^!)
+#T=Month 
+Month(^!)
+#T=MonthName 
+MonthName(^!)
+#T=MsgBox 
+MsgBox(^!)
+#T=Oct 
+Oct(^!)
+#T=Replace 
+Replace(^!,,)
+#T=BinaryRead 
+BinaryRead(^!)
+#T=Cookies 
+Cookies(^!)
+#T=Form 
+Form(^!)
+#T=QueryString 
+QueryString(^!)
+#T=ServerVariables 
+ServerVariables(^!)
+#T=AddHeader 
+AddHeader(^!, )
+#T=AppendToLog 
+AppendToLog(^!)
+#T=BinaryWrite 
+BinaryWrite(^!)
+#T=Buffer 
+Buffer^! 
+#T=ChacheControl 
+CacheControl^! 
+#T=ContentType 
+Charset(^!)
+#T=End 
+#T=Expires 
+Expires^! 
+#T=ExpiresAbsolute 
+ExpiresAbsolute^! 
+#T=Flush 
+#T=IsClientConnected 
+IsClientConnected 
+#T=Pics 
+Pics(^!)
+#T=Redirect 
+Redirect ^! 
+#T=Status 
+Status = ^! 
+#T=RGB 
+RGB(^!, , )
+#T=Right 
+Right(^!, )
+#T=Rnd 
+Rnd^! 
+#T=Round 
+Round(^!)
+#T=RTrim 
+RTrim(^!)
+#T=Second 
+Second(^!)
+#T=CodePage 
+CodePage^! 
+#T=Contents 
+Contents(^!)
+#T=LCID 
+LCID^! 
+#T=Timeout 
+Timeout^! 
+#T=Execute 
+Execute(^!) 
+#T=HTMLEncode   
+HTMLEncode(^!) 
+#T=MapPath 
+MapPath(^!)
+#T=ScriptTimeout 
+ScriptTimeout^! 
+#T=Transfer  
+Transfer(^!)
+#T=URLEncode 
+URLEncode(^!) 
+#T=SetLocale 
+SetLocale(^!)
+#T=Sgn 
+Sgn(^!)
+#T=Sin 
+Sin(^!)
+#T=Space 
+Space(^!)
+#T=Split 
+Split(^!)
+#T=Sqr 
+Sqr(^!)
+#T=StrComp 
+StrComp(^!, )
+#T=String 
+String(^!, )
+#T=StrReverse 
+StrReverse(^!)
+#T=Tan 
+Tan(^!)
+#T=Read 
+Read(^!)
+#T=Skip 
+Skip(^!)
+#T=Write 
+Write(^!)
+#T=WriteLine 
+WriteLine(^!)
+#T=WriteBlankLines 
+WriteBlankLines(^!)
+#T=TimeSerial 
+TimeSerial(^!,, )
+#T=TimeValue 
+TimeValue(^!)
+#T=Trim 
+Trim(^!)
+#T=TypeName 
+TypeName(^!)
+#T=UBound 
+UBound(^!)
+#T=UCase 
+UCase(^!) 
+#T=VarType 
+VarType(^!)
+#T=WeekDay 
+Weekday(^!)
+#T=WeekDayName 
+WeekdayName(^!)
+#T=Year 
+Year(^!)
+#T=asp
+<%^!%> 
+#T=&&
+&^!&
+#T=rw
+Response.Write ^!
+#T=rr
+Response.Redirect ^!
+#T=re
+Response.End
+#T=sc
+Set conn=Server.CreateObject("adodb.Connection")
+conn.open "provider=microsoft.jet.oledb.4.0;data source="&server.mappath("^!")
+#T=mx
+Set mx=Server.CreateObject("adodb.Recordset")
+sql="select * from ^! where"
+mx.open sql,conn,1,1
+#T=mxc
+mx.close
+set mx=nothing
+#T=scc
+conn.close
+set conn=nothing^!
+#T=rqf
+Request.Form("^!")
+#T=rqq
+Request.QueryString("^!")
+#T=dim
+Dim ^!
+#T=inc
+<!--#include file="^!"-->
+#

@@ -1,0 +1,43 @@
+#TITLE=BAT
+; BAT syntax file written by Andrija Matkovic (andrijamatkovic@yahoo.com)
+
+#DELIMITER=,(){}[]-+*%/="'~!&|<>?:;.#@%
+#QUOTATION1="
+#CONTINUE_QUOTE=n
+#LINECOMMENT=REM
+#LINECOMMENT2='
+#ESCAPE=\
+#CASE=n
+#SPECIAL_STX=bat
+
+#KEYWORD=BAT naredbe
+call
+command
+echo
+errorlevel
+exist
+for
+goto
+if
+loadhigh
+not
+pause
+shift
+
+#KEYWORD=DOS naredbe
+cd
+cls
+comp
+copy
+del
+dir
+format
+md
+mode
+move
+print
+rd
+rename
+set
+xcopy
+#

@@ -1,0 +1,109 @@
+#TITLE=CSS
+; EditPlus Auto-completion file v1.0 written by Justin Young(http://justinyoung.cnblogs.com).
+; This file is provided as a default auto-completion file for CSS.
+
+
+#T=*
+* {margin:0; padding:0; list-style:none; }
+^!
+#T=bo
+border:1px solid #^!; 
+#T=bor
+border:1px solid red;
+^!
+#T=fl
+float:left; 
+#T=fr
+float:right; 
+#T=poa
+position:absolute; 
+#T=por
+position:relative; 
+#T=bg
+background:url(../img/^!) no-repeat;
+#T=bgc
+background-color:#^!;
+#T=h
+height:^!px;
+#T=w
+width:^!px;
+#T=m0
+margin:^!0px;
+#T=ml
+margin-left:^!px;
+#T=mr
+margin-right:^!px;
+#T=mt
+margin-top:^!px;
+#T=mb
+margin-bottom:^!px;
+#T=p0
+padding:^!0px;
+#T=pt
+padding-top:^!px;
+#T=pr
+padding-right:^!px;
+#T=pl
+padding-left:^!px;
+#T=pb
+padding-bottom:^!px;
+#T=b0
+border:^!0px;
+#T=bt
+border-top:1px solid ^!;
+#T=br
+border-right:1px solid ^!;
+#T=bl
+border-left:1px solid ^!;
+#T=bb
+border-bottom:1px solid ^!;
+#T=bs
+-webkit-box-shadow: 0px 0px 10px #^!;
+-moz-box-shadow:0px 0px 10px #^!;
+box-shadow:0px 0px 10px #^!;
+#T=bdr
+-webkit-border-radius:^!px;
+-moz-border-radius:^!px;
+border-radius:^!px;
+#T=td
+text-decoration:^!;
+#T=ts
+-moz-transition: width 2s;
+-webkit-transition: width 2s;
+transition: width 2s;
+#T=ti
+text-indent:^!em;
+#T=word
+word-break:break-all;
+word-wrap:break-word;
+overflow:hidden;
+#T=tal
+text-align:left;
+#T=tar
+text-align:right;
+#T=tac
+text-align:center;
+#T=of
+overflow:hidden;
+#T=rem
+/***********************^!***********************/
+#T=fc
+color:#^!;
+#T=ff
+font:normal 12px/150% Arial,^!SimSun,"Microsoft YaHei",Sans-serif,"Times New Roman",Georgia;
+#T=lh
+line-height:^!200%;
+#T=dn
+display:none;
+#T=db
+display:block;
+#T=di
+display:inline;
+#T=dib
+display:inline-block;
+*display:inline;
+zoom:1;
+#T=zi
+z-index:^!;
+zoom:1;
+#

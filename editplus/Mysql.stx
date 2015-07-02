@@ -1,0 +1,63 @@
+#TITLE=MySQL config
+; EditPlus compatible Syntax file for Apache configuration (my.cnf)
+; MySQL: http://www.mysql.com/
+; v1.0 r01mar2002 r01mar2002
+; by Valerio Capello (www.ElfQrin.com)
+
+#DELIMITER==
+#QUOTATION1="
+#QUOTATION2=
+#LINECOMMENT=#
+#WHOLELINE=
+#LINECOMMENT2=
+#COMMENTON=
+#COMMENTOFF=
+#ESCAPE=
+#CASE=n
+#PREFIX1=[
+#PREFIX2=
+#PREFIX3=
+#PREFIX4=
+#PREFIX5=
+#SUFFIX1=]
+#SUFFIX2=
+#SUFFIX3=
+#SUFFIX4=
+#SUFFIX5=
+
+#KEYWORD=Directives
+password
+port
+socket
+skip-locking
+default-character-set
+set-variable
+basedir
+datadir
+quick
+no-auto-rehash
+help_file
+client_file
+history_length
+database
+queries_root
+last_database_file
+
+#KEYWORD=Variables
+key_buffer
+max_allowed_packet
+thread_stack
+flush_time
+key
+
+#KEYWORD=Other Keywords
+
+;#KEYWORD=Sections
+;client
+;mysqld
+;mysqldump
+;mysql
+;isamchk
+;client_fltk
+
+#
