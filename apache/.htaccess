@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteBase /
+ErrorDocument 404 /404.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^qianbao$ index.php?g=List&m=Index&a=index&pid=qianbao [QSA,PT,L]
+RewriteRule ^qianbao(.*)$ index.php?g=List&m=Index&a=index&pid=qianbao&$1 [QSA,PT,L]
+RewriteRule ^([^\/\.\&\?]+)&u=([^&]+)&n=(.*)$ index.php?g=List&m=Index&a=index&pid=$1&partnerid=$2&username=$3 [L]
+RewriteRule ^([^\/\.\&\?]+)&u=(.*)$ index.php?g=List&m=Index&a=index&pid=$1&partnerid=$2 [L]
+RewriteRule ^([^\/\.\&\?]+)$ index.php?g=List&m=Index&a=index&pid=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?$1 [QSA,PT,L]
