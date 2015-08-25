@@ -3,6 +3,7 @@
 	"font_size": 21,
 	"ignored_packages":
 	[
+		"Modific",
 		"Groovy",
 		"OCaml",
 		"Colorsublime - Themes",
@@ -18,7 +19,6 @@
 		"AppleScript",
 		"Clojure",
 		"CSScomb",
-		"GitGutter",
 		"FileDiffs",
 		"Ruby",
 		"LESS",
@@ -54,6 +54,7 @@
 		"Less2Css",
 		"Haskell",
 		"Markdown",
+		"HTML-CSS-JS Prettify",
 		// "Phpcs",
 		// "SideBarEnhancements",
 		// "SublimeLinter",
@@ -66,8 +67,6 @@
 		// "TrailingSpaces",
 		// "SublimeTmpl",
 		// "All Autocomplete",
-		// "HTML-CSS-JS Prettify",
-		// "Better Completion",
 		// "SublimeCodeIntel",
 		// "PHP Companion",
 	],
