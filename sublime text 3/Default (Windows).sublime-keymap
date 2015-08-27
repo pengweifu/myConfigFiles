@@ -1,6 +1,6 @@
 [
     {
-        "keys" : ["ctrl+alt+a"],
+        "keys" : ["ctrl+alt+q"],
         "command" : "alignment"
     },
     {
