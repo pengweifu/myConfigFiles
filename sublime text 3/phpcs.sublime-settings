@@ -1,40 +1,36 @@
 {
-
-// Path to php on windows installation
-// This is needed as we cannot run phars on windows, so we run it through php
-"phpcs_php_prefix_path": "D:\\Server\\php5.4\\php.exe",
-
-// This is the path to the bat file when we installed PHP_CodeSniffer
-"phpcs_executable_path": "D:\\Server\\php5.4\\phpcs.bat",
-
-// PHP-CS-Fixer settings
-// Don't want to auto fix issue with php-cs-fixer
-"php_cs_fixer_on_save": false,
-
-// Show the quick panel
-"php_cs_fixer_show_quick_panel": true,
-
-// The fixer phar file is stored here:
-"php_cs_fixer_executable_path": "D:\\Server\\php5.4\\php-cs-fixer.phar",
-
-// PHP Linter settings
-// Yes, lets lint the files
-"phpcs_linter_run": true,
-
-// And execute that on each file when saved (php only as per extensions_to_execute)
-"phpcs_linter_command_on_save": true,
-
-// Path to php
-"phpcs_php_path": "D:\\Server\\php5.4\\php.exe",
-
-// This is the regex format of the errors
-"phpcs_linter_regex": "(?P<message>.*) on line (?P<line>\\d+)",
+    "show_debug": false,
+    "extensions_to_execute": ["php"],
+    "extensions_to_blacklist": ["twig.php"],
+    "phpcs_execute_on_save": true,
+    "phpcs_show_errors_on_save": true,
+    "phpcs_show_gutter_marks": true,
+    "phpcs_outline_for_errors": true,
+    "phpcs_show_errors_in_status": false,
+    "phpcs_show_quick_panel": true,
+    "phpcs_php_prefix_path": "",
+    "phpcs_commands_to_php_prefix": ["Fixer"],
+    "phpcs_sniffer_run": true,
+    "phpcs_command_on_save": true,
+    "phpcs_executable_path": "D:\\Server\\php5.4\\phpcs.bat",
+    "phpcs_additional_args": {
+        "--standard": "PSR2",
+        "-n": ""
+    },
+    "php_cs_fixer_on_save": false,
+    "php_cs_fixer_show_quick_panel": true,
+    "php_cs_fixer_executable_path": "D:\\Server\\php5.4\\php-cs-fixer.bat",
+    "php_cs_fixer_additional_args": {
+    },
+    "phpcs_linter_run": true,
+    "phpcs_linter_command_on_save": true,
+    "phpcs_php_path": "D:\\Server\\php5.4\\php.exe",
+    "phpcs_linter_regex": "(?P<message>.*) on line (?P<line>\\d+)",
 
 
-// PHP Mess Detector settings
-// Not turning on the mess detector here
-"phpmd_run": false,
-"phpmd_command_on_save": false,
-"phpmd_executable_path": "",
-"phpmd_additional_args": {}
+    // PHP Mess Detector settings
+    "phpmd_run": false,
+    "phpmd_command_on_save": false,
+    "phpmd_executable_path": "",
+    "phpmd_additional_args": {}
 }

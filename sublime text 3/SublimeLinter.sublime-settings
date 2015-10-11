@@ -7,14 +7,13 @@
         "gutter_theme_excludes": [],
         "lint_mode": "save only",
         "linters": {
-            "phpcs": {
-                "@disable": true,
+            "jshint": {
+                "@disable": false,
                 "args": [],
-                "excludes": [],
-                "standard": "PSR2"
+                "excludes": []
             }
         },
-        "mark_style": "outline",
+        "mark_style": "fill",
         "no_column_highlights_line": false,
         "passive_warnings": false,
         "paths": {
@@ -35,6 +34,7 @@
             "html (django)": "html",
             "html (rails)": "html",
             "html 5": "html",
+            "javascript (babel)": "javascript",
             "php": "html",
             "python django": "python"
         },
