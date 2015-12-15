@@ -51,15 +51,46 @@
         }
     },
     {
-        "keys": ["ctrl+alt+h"], "command": "sublime_tmpl",
-        "args": {"type": "html"}, "context": [{"key": "sublime_tmpl.html"}]
-    }
-    ,{
-        "keys": ["ctrl+alt+c"], "command": "sublime_tmpl",
-        "args": {"type": "css"}, "context": [{"key": "sublime_tmpl.css"}]
-    }
-    ,{
-        "keys": ["ctrl+alt+p"], "command": "sublime_tmpl",
-        "args": {"type": "php"}, "context": [{"key": "sublime_tmpl.php"}]
+        "keys" : ["ctrl+alt+h"],
+        "command" : "sublime_tmpl",
+        "args" :
+        {
+            "type" : "html"
+        },
+        "context" : [
+            {
+                "key" : "sublime_tmpl.html"
+            }
+        ]
+    },
+    {
+        "keys" : ["ctrl+alt+c"],
+        "command" : "sublime_tmpl",
+        "args" :
+        {
+            "type" : "css"
+        },
+        "context" : [
+            {
+                "key" : "sublime_tmpl.css"
+            }
+        ]
+    },
+    {
+        "keys" : ["ctrl+alt+p"],
+        "command" : "sublime_tmpl",
+        "args" :
+        {
+            "type" : "php"
+        },
+        "context" : [
+            {
+                "key" : "sublime_tmpl.php"
+            }
+        ]
+    },
+    {
+        "keys" : ["ctrl+alt+d"],
+        "command" : "toggle_trailing_spaces"
     }
 ]
