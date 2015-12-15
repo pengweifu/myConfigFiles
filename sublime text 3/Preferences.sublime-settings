@@ -61,6 +61,8 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
 		"SublimeTmpl",
 		// "Theme - Cobalt2",
 		"Themr",
