@@ -11,7 +11,7 @@
 				"command": "side_bar_files_open_with",
 				"args": {
 									"paths": [],
-									"application": "D:\\Program Files\\Adobe Photoshop CS6\\Photoshop.exe",
+									"application": "C:\\Program Files\\Adobe\\Adobe Photoshop CS3\\Photoshop.exe",
 									"extensions":"psd|png|jpg|jpeg",  //any file with these extensions
 									"args":[]
 								},
@@ -28,7 +28,7 @@
 				"command": "side_bar_files_open_with",
 				"args": {
 									"paths": [],
-									"application": "D:\\Program Files\\360Chrome\\Chrome\\Application\\360chrome.exe",
+									"application": "C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
 									"extensions":"html|htm|txt", //any file with extension
 									"args":[]
 						},
@@ -44,7 +44,7 @@
 				"command": "side_bar_files_open_with",
 				"args": {
 									"paths": [],
-									"application": "D:\\Program Files\\EditPlus 4\\EditPlus.exe",
+									"application": "D:\\Program Files\\EditPlus 3\\EditPlus.exe",
 									"extensions":"html|htm|txt|css|js|php|asp|tpl|aspx|vb|cs|py|json|ini|bat|md|less|conf|xml|sql", //any file with extension
 									"args":[]
 						},
