@@ -215,3 +215,87 @@ yum install redis
 yum install tcl
 yum install vim
 yum install wget
+./configure --prefix=/usr/local/php --enable-fpm --enable-inline-optimization --disable-debug --disable-rpath --enable-shared --enable-opcache  --with-mysql --with-mysqli --with-mysql-sock  --enable-pdo --with-pdo-mysql --with-gettext --enable-mbstring --with-iconv --with-mcrypt --with-mhash --with-openssl --enable-bcmath --enable-soap --with-libxml-dir --enable-pcntl --enable-shmop --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-sockets --with-curl --with-zlib --enable-zip --enable-bz2 --with-readline --without-sqlite3 --without-pdo-sqlite --with-pear --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-jpeg-dir=/usr/lib --enable-gd-native-ttf --enable-xml
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts
+./QtAV1.4.1-linux64-installer.run
+./studio.sh 
+./uninstall 
+cp php-fpm.conf.default php-fpm.conf 
+dpkg --get-selections |grep linux
+dpkg --get-selections |grep linux-image
+dpkg -l w32codecs 
+echo 3 >> /sys/class/backlight/acer-wmi/brightness 
+echo 3 >> /sys/class/backlight/acpi_video0/brightness
+echo 80 >> /sys/class/backlight/intel_backlight/brightness
+gulp --version
+killall svnserve 
+make && make test
+make && sudo make install
+mv ~/Eclipse.desktop  /usr/share/applications/
+npm install -g less-plugin-clean-css  --registry=https://registry.npm.taobao.org
+php -v
+ps aux | grep svnserve
+redis-cli
+restart xserver
+restart xwindow
+rm acn/* -R -f
+service crond restart
+source ~/.bashrc
+sudo  npm install --global del-cli
+sudo ./QtAV1.4.1-linux64-installer.run
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo add-apt-repository ppa:noobslab/apps
+sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:openshot.developers/ppa
+sudo add-apt-repository ppa:rabbitvcs/ppa
+sudo apt-get  install  build-essential  openssl  libssl-dev make   curl  libcurl4-gnutls-dev  libjpeg-dev  libpng-dev  libmcrypt-dev  libreadline6 libreadline6-dev  
+sudo apt-get install aircrack-ng
+sudo apt-get install crontab
+sudo apt-get install -f
+sudo apt-get install indicator-synapse
+sudo apt-get install libxml2-dev 
+sudo apt-get install minidwep-gtk
+sudo apt-get install nodejs
+sudo apt-get install openshot openshot-doc
+sudo apt-get install python-nautilus python-configobj python-gtk2 python-glade2 python-svn python-dbus python-dulwich subversion meld
+sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar thunarx-python
+sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus3
+sudo apt-get install subversion
+sudo apt-get install thunarx-python rabbitvcs-thunar
+sudo apt-get upgrade
+sudo chmod 755 /etc/init.d/php7-fpm 
+sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
+sudo cp php.ini-production /usr/local/php/lib/php.ini
+sudo cp php-fpm.conf.default php-fpm.conf 
+sudo cp www.conf.default www.conf
+sudo echo 80 >> /sys/class/backlight/intel_backlight/brightness
+sudo mv ~/Eclipse.desktop  /usr/share/applications/
+sudo npm config set registry https://registry.npm.taobao.org
+sudo npm install -g clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo
+sudo npm install -g csslint
+sudo npm install -g jshint
+sudo npm install -g less-plugin-autoprefix  --registry=https://registry.npm.taobao.org
+sudo npm install -g less-plugin-clean-css  --registry=https://registry.npm.taobao.org
+sudo npm install --global gulp-cli
+sudo npm install less -gd  --registry=https://registry.npm.taobao.org
+sudo npm install pm2 -g
+sudo rm acn/* -R -f
+sudo service cron restart
+sudo service nginx restart
+sudo service php7-fpm restart
+sudo start lightdm
+sudo stop lightdm
+sudo update-grub
+sudo update-rc.d brightlight.sh defaults
+sudo update-rc.d php7-fpm defaults 
+svnserve -d -r /home/william/workspace/SVN --listen-host 127.0.0.1
+tar jxf php-7.0.9RC1.tar.bz2 
+uname -a
+unzip -O gbk EDraw.zip 
+uptime
+vi .bashrc 
+whereis my.cnf
+whereis mysql
+whereis mysqldump
+whereis php
+which php
