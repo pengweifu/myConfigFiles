@@ -22,9 +22,13 @@ cd /home/william/workspace/PHP/wapacom
 
 # 修改用户权限
 `sudo vim /etc/sudoers`
+
 add these code into file
+
 `%www-data ALL=(ALL:ALL) NOPASSWD:/home/william/workspace/PHP/wapacom/hook/pull.sh`
-save adn exit
+
+save and exit
+
 `:wq!`
 
 # 修改git配置和保存git用户名密码
