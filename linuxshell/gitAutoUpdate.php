@@ -1,15 +1,22 @@
 <?php
-// this file is located in /home/william/workspace/PHP/wapacom/hook/
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-// sudo vim /etc/sudoers 
-// add `%www-data ALL=(ALL:ALL) NOPASSWD:/home/william/workspace/PHP/wapacom/hook/pull.sh` to sudoers and save
-shell_exec('sudo ./pull.sh');
+$method = $_SERVER['REQUEST_METHOD'];
+parse_str(file_get_contents('php://input'), $data);
+$data = array_merge($_GET, $_POST, $data);
+if (empty($data)) {
+	echo phpinfo();
+} else {
+	if ($data['branch'] == 'master') {
+		shell_exec('sudo ./pull.sh');
+	} else {
+		file_put_contents('pull.log', time() . "\n", FILE_APPEND);
+	}
+}
+
 
 /*
 * contents of pull.sh
 *
 * #!/bin/sh
 * cd /home/william/workspace/PHP/wapacom
-* /usr/bin/git pull >>/home/william/workspace/PHP/wapacom/hook/pull.log 2>&1
+* /usr/bin/sudo -Hu www-data /usr/bin/git pull >>/home/william/workspace/PHP/wapacom/hook/pull.log 2>&1
 */
