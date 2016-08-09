@@ -6,6 +6,7 @@
 mkdir /home/william/workspace/PHP/wapacom/hook
 sudo chown -R www-data:www-data /home/william/workspace/PHP/wapacom
 sudo -Hu www-data touch /home/william/workspace/PHP/wapacom/hook/index.php
+sudo -Hu www-data touch /home/william/workspace/PHP/wapacom/hook/pull.sh
 ```
 
 ```
@@ -46,6 +47,7 @@ sudo -Hu www-data git config --global user.email "987528260@qq.com"
 
 # 初始化
 ```
+cd /home/william/workspace/PHP/wapacom
 sudo mv hook ../
 sudo -Hu www-data git clone http://pengweifu@localhost:8080/scm/git/testAuto /home/william/workspace/PHP/wapacom/  --depth=1
 sudo mv ../hook ./
