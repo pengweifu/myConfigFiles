@@ -110,6 +110,8 @@ startx
 sudo /etc/init.d/apache2 restart
 sudo /etc/init.d/vsftpd restart 
 sudo /etc/pam.d/vsftpd
+sudo update-rc.d scm-server defaults
+sudo service --status-all
 sudo add-apt-repository ppa:bumblebee/stable
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-cache search php5
