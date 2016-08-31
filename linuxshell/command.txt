@@ -1,150 +1,108 @@
-zip -r 20150104.zip wwwroot
-wget http://www.vfunding.cn
-traceroute www.vfunding.cn 
-yum install traceroute
-top
-iftop
-mysql -u root -p
-df -hv
-du -hs data
-ps auxw | grep vsftpd
-service vsftpd restart
-service nginx restart
-service mysqld restart
-service php-fpm restart
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts --disable-debug --enable-shared --enable-opcache --with-mysqli --with-mysql-sock --enable-pdo --with-pdo-mysql --with-iconv --with-libxml-dir --enable-sysvmsg --enable-sysvshm --with-readline --with-pear --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-jpeg-dir=/usr/lib --enable-gd-native-ttf --enable-xml
 /etc/init.d/php-fpm restart
-pkill vsftpd
-kill 14461
-netstat -antp | grep 21 | grep ESTABLISHED -c
-netstat -anp
-netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
-chown -R  www:www /alidata/www/wwwroot/login/
-chmod –R 777 sh-1.3.0
-unzip t2.zip -d /alidata/www/wwwroot
-uptime
-yum install telnet
-telnet 211.103.157.45 80
-service crond status
-find / -name my.cnf
-yum install crontabs
-yum update
-crontab -e
-crontab -l
-crontab -r
-whereis php5
-finger www
-less /etc/passwd
-yum install p7zip
-rm -rf phpwind
-
-
-/usr/bin/dde-desktop
 amh info
 amh mysql start
 amh mysql stop
 amh nginx start
 amh nginx stop
-apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
-sudo apt-get install php7.0-bz2 php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-odbc php7.0-opcache php7.0-pspell php7.0-snmp php7.0-soap php7.0-sqlite3 php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-xsl php7.0-zip
-bash iRedMail.sh 
-cat /home/William/t.txt
+bash iRedMail.sh
 cat amh.log
-cd /etc/udev/rules.d
-cd /etc/vsftpd_user_conf 
-cd ~
-cd iRedMail-0.9.0/
-cd share
 chkconfig httpd off
 chkconfig redis on
+chmod –R 777 sh-1.3.0
+chown -R www:www /alidata/www/wwwroot/login/
 clear
-dde-setting
-deepin-seting
-deepin-setting
-deepin-settings
-exit
+cp php-fpm.conf.default php-fpm.conf
+crontab -e
+crontab -l
+crontab -r
+df -hv
+dpkg --get-selections |grep linux
+dpkg --get-selections |grep linux-image
+dpkg -l w32codecs
+du -hs data
+echo 3 >> /sys/class/backlight/acer-wmi/brightness
+echo 3 >> /sys/class/backlight/acpi_video0/brightness
+echo 80 >> /sys/class/backlight/intel_backlight/brightness
+find / -name my.cnf
+finger www
 ftp localhost
 gnome-session-properties
-gsettings set com.deepin.dde.desktop enabled-plugins '["clock","weather"]'
-halt
 history
 ifconfig
-killall dde-desktop
+iftop
+kill 14461
 killall dde-dock
+less /etc/passwd
 ll
-ls
 ls -l
 lspci |grep VGA
-make
+make && sudo make install
 make clean
 make distclean
-make install
-make test
+mv ~/Eclipse.desktop /usr/share/applications/
+mysql -u root -p
+netstat -anp
+netstat -antp | grep 21 | grep ESTABLISHED -c
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 nmcli con list
-node -v
-nodejs -V
-optirun nvidia-settings -c :8
-ping lys.zoesap.com
+pkill vsftpd
+ps aux | grep svnserve
+ps auxw | grep vsftpd
 ps -e|grep ssh
-python /home/william/公共的/google_appengine/goagent-2.1.5/local/proxy.py
-python -V
-reboot
-rm -rf 70-persistent-net.rules 
-service dovecot restart
-service httpd restart
-service httpd stop
-service lightdm restart
-service lightdm stop
-service network restart
-service postgresql start
-service postgresql stop
-service redis start
-service redis status
-service redis stop
-service vsftpd restart
-sestatus -b | grep ftp 
-setting
-shutdown
-ssh root@
+redis-cli
+restart xserver
+restart xwindow
+rm acn/* -R -f
+rm -rf 70-persistent-net.rules
+sestatus -b | grep ftp
+source ~/.bashrc
 ssh root@182.92.106.241
 startx
 sudo /etc/init.d/apache2 restart
-sudo /etc/init.d/vsftpd restart 
+sudo /etc/init.d/vsftpd restart
 sudo /etc/pam.d/vsftpd
-sudo update-rc.d scm-server defaults
-sudo service --status-all
 sudo add-apt-repository ppa:bumblebee/stable
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo add-apt-repository ppa:noobslab/apps
+sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:openshot.developers/ppa
+sudo add-apt-repository ppa:rabbitvcs/ppa
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-cache search php5
 sudo apt-get autoclean
 sudo apt-get autoremove
+sudo apt-get install aircrack-ng
+sudo apt-get install build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev
 sudo apt-get install bumblebee bumblebee-nvidia
-sudo apt-get install db4.8-util
-sudo apt-get install db-util
-sudo apt-get install deepin-settings
-sudo apt-get install libgcc1
-sudo apt-get install linux-headers-generic
-sudo apt-get install mysql-server mysql-client
-sudo apt-get install nginx
-sudo apt-get install php5-fpm
-sudo apt-get install phpmyadmin
+sudo apt-get install crontab
+sudo apt-get install indicator-synapse
+sudo apt-get install minidwep-gtk
+sudo apt-get install nodejs
+sudo apt-get install openshot openshot-doc
+sudo apt-get install nginx mysql-server mysql-client php7.0-bz2 php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-odbc php7.0-opcache php7.0-pspell php7.0-snmp php7.0-soap php7.0-sqlite3 php7.0-tidy php7.0-xml php7.0-xmlrpc php7.0-xsl php7.0-zip
+sudo apt-get install nginx mysql-server mysql-client php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+sudo apt-get install meld
 sudo apt-get install --reinstall bcmwl-kernel-source
 sudo apt-get install ubuntu-tweak
 sudo apt-get install vsftpd
-sudo apt-get purge linux-headers-3.13.0-30 linux-headers-3.13.0-30-generic linux-image-3.13.0-30-generic linux-image-extra-3.13.0-30-generic 
-sudo apt-get --reinstall install dde-meta-zh-hans
-sudo apt-get remove indicator-messages 
+sudo apt-get purge linux-headers-3.13.0-30 linux-headers-3.13.0-30-generic linux-image-3.13.0-30-generic linux-image-extra-3.13.0-30-generic
+sudo apt-get remove indicator-messages
 sudo apt-get remove --purge btrfs-tools
-sudo apt-get remove --purge pointdownload
 sudo apt-get remove --purge vsftpd
 sudo apt-get update
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get --reinstall install dde-meta-zh-hans && reboot
 sudo apt-get update --fix-missing
-sudo chmod 600 /etc/vsftpd_login.db
-sudo chmod 777 /etc/vsftpd_login.db
+sudo apt-get upgrade
 sudo chmod -R 775 /home/William/share
 sudo chown -R www-data:www-data /home/William/share
+sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
+sudo cp php.ini-production /usr/local/php/lib/php.ini
+sudo cp php-fpm.conf.default php-fpm.conf
+sudo cp www.conf.default www.conf
 sudo db5.3_load -T -t hash -f /home/William/t.txt /etc/vsftpd_login.db
 sudo dpkg --get-selections |grep linux
+sudo echo 80 >> /sys/class/backlight/intel_backlight/brightness
 sudo gedit /boot/grub/grub.cfg
 sudo gedit /etc/default/grub
 sudo gedit /etc/fstab
@@ -160,27 +118,53 @@ sudo gedit /var/log/nginx/error.log
 sudo gedit ~/.bash_history
 sudo mkdir /etc/vsftpd/vuser_conf
 sudo mkdir /etc/vsftpd_user_conf
-sudo mkdir Data
 sudo modprobe wl
-sudo mv /usr/share/phpmyadmin/ /home/william/phpmyadmin
+sudo npm config set registry https://registry.npm.taobao.org
+sudo npm install -g cordova ionic
+sudo npm install -g less-plugin-clean-css clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo  csslint jshint less-plugin-autoprefix del-cli gulp less pm2
 sudo passwd t1
 sudo reboot
+sudo rm acn/* -R -f
 sudo rmmod b43
 sudo rmmod bcma
 sudo rmmod brcmsmac
 sudo rmmod wl
 sudo -s
-sudo service nginx restart 
+sudo service cron restart
+sudo service nginx restart
 sudo service nginx start
 sudo service nginx stop
 sudo service php5-fpm restart
 sudo service php5-fpm start
 sudo service php5-fpm stop
+sudo service php7-fpm restart
 sudo service php-fpm stop
+sudo service --status-all
 sudo service vsftpd restart
+sudo service crond restart
+sudo service crond status
+sudo service dovecot restart
+sudo service httpd restart
+sudo service httpd stop
+sudo service lightdm restart
+sudo service lightdm stop
+sudo service mysqld restart
+sudo service network restart
+sudo service php-fpm restart
+sudo service postgresql start
+sudo service postgresql stop
+sudo service redis start
+sudo service redis status
+sudo service redis stop
+sudo start lightdm
+sudo stop lightdm
 sudo touch t1 t2 t3
 sudo update --fix-missing
 sudo update-grub
+sudo update-grub
+sudo update-rc.d brightlight.sh defaults
+sudo update-rc.d php7-fpm defaults
+sudo update-rc.d scm-server defaults
 sudo useradd -d /home/William/share/t1 –s /bin/false t1
 sudo useradd -d /home/William/share/t1 –s /bin/false t1clear
 sudo useradd -g www-data -d /home/William/share/t1 –s /bin/false t1
@@ -201,104 +185,39 @@ sudo usermod -s /usr/sbin/nologin
 sudo usermod -s /usr/sbin/nologin t1
 sudo vi /etc/vsftpd.chroot_list
 sudo vi /etc/vsftpd.conf
+svnserve -d -r /home/william/workspace/SVN --listen-host 127.0.0.1
+tar jxf php-7.0.9RC1.tar.bz2
+telnet 211.103.157.45 80
 top
+traceroute www.vfunding.cn
+uname -a
 uname -r
+unzip -O gbk EDraw.zip
+unzip t2.zip -d /alidata/www/wwwroot
+uptime
+uptime
 useradd -g www-data -d /home/William/share/t1 –s /sbin/nologin t1
 usermod
 usermod -s /usr/sbin/nologin t1
-vi /etc/sysconfig/network-scripts/ifcfg-eth0 
-vim /etc/redis.conf 
+vi .bashrc
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+vim /etc/redis.conf
 wget http://amh.sh/file/AMH/4.2/amh.sh && chmod 775 amh.sh && ./amh.sh 2>&1|tee amh.log
-which nologin
+wget http://www.vfunding.cn
+whereis my.cnf
+whereis mysql
+whereis mysqldump
+yum install crontabs
 yum install epel-release
 yum install nodejs npm
+yum install p7zip
 yum install php-devel
 yum install php-redis
 yum install redis
 yum install tcl
+yum install telnet
+yum install traceroute
 yum install vim
 yum install wget
-./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts --disable-debug --enable-shared --enable-opcache --with-mysqli --with-mysql-sock  --enable-pdo --with-pdo-mysql --with-iconv --with-libxml-dir --enable-sysvmsg --enable-sysvshm --with-readline --with-pear --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-jpeg-dir=/usr/lib --enable-gd-native-ttf --enable-xml
-./QtAV1.4.1-linux64-installer.run
-./studio.sh 
-./uninstall 
-cp php-fpm.conf.default php-fpm.conf 
-dpkg --get-selections |grep linux
-dpkg --get-selections |grep linux-image
-dpkg -l w32codecs 
-echo 3 >> /sys/class/backlight/acer-wmi/brightness 
-echo 3 >> /sys/class/backlight/acpi_video0/brightness
-echo 80 >> /sys/class/backlight/intel_backlight/brightness
-gulp --version
-killall svnserve 
-make && make test
-make && sudo make install
-mv ~/Eclipse.desktop  /usr/share/applications/
-npm install -g less-plugin-clean-css  --registry=https://registry.npm.taobao.org
-php -v
-ps aux | grep svnserve
-redis-cli
-restart xserver
-restart xwindow
-rm acn/* -R -f
-service crond restart
-source ~/.bashrc
-sudo  npm install --global del-cli
-sudo ./QtAV1.4.1-linux64-installer.run
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo add-apt-repository ppa:noobslab/apps
-sudo add-apt-repository ppa:ondrej/php
-sudo add-apt-repository ppa:openshot.developers/ppa
-sudo add-apt-repository ppa:rabbitvcs/ppa
-sudo apt-get  install  build-essential  openssl  libssl-dev make   curl  libcurl4-gnutls-dev  libjpeg-dev  libpng-dev  libmcrypt-dev  libreadline6 libreadline6-dev  
-sudo apt-get install aircrack-ng
-sudo apt-get install crontab
-sudo apt-get install -f
-sudo apt-get install indicator-synapse
-sudo apt-get install libxml2-dev 
-sudo apt-get install minidwep-gtk
-sudo apt-get install nodejs
-sudo apt-get install openshot openshot-doc
-sudo apt-get install python-nautilus python-configobj python-gtk2 python-glade2 python-svn python-dbus python-dulwich subversion meld
-sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar thunarx-python
-sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus3
-sudo apt-get install subversion
-sudo apt-get install thunarx-python rabbitvcs-thunar
-sudo apt-get upgrade
-sudo chmod 755 /etc/init.d/php7-fpm 
-sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup
-sudo cp php.ini-production /usr/local/php/lib/php.ini
-sudo cp php-fpm.conf.default php-fpm.conf 
-sudo cp www.conf.default www.conf
-sudo echo 80 >> /sys/class/backlight/intel_backlight/brightness
-sudo mv ~/Eclipse.desktop  /usr/share/applications/
-sudo npm config set registry https://registry.npm.taobao.org
-sudo npm install -g clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo
-sudo npm install -g csslint
-sudo npm install -g jshint
-sudo npm install -g less-plugin-autoprefix  --registry=https://registry.npm.taobao.org
-sudo npm install -g less-plugin-clean-css  --registry=https://registry.npm.taobao.org
-sudo npm install --global gulp
-sudo npm install less -gd  --registry=https://registry.npm.taobao.org
-sudo npm install pm2 -g
-npm install -g cordova ionic
-sudo rm acn/* -R -f
-sudo service cron restart
-sudo service nginx restart
-sudo service php7-fpm restart
-sudo start lightdm
-sudo stop lightdm
-sudo update-grub
-sudo update-rc.d brightlight.sh defaults
-sudo update-rc.d php7-fpm defaults 
-svnserve -d -r /home/william/workspace/SVN --listen-host 127.0.0.1
-tar jxf php-7.0.9RC1.tar.bz2 
-uname -a
-unzip -O gbk EDraw.zip 
-uptime
-vi .bashrc 
-whereis my.cnf
-whereis mysql
-whereis mysqldump
-whereis php
-which php
+yum update
+zip -r 20150104.zip wwwroot
