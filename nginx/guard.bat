@@ -1,22 +1,23 @@
 @echo off
-set logFile=D:\Server\nginx\logs\php-cgi.log
+title guard
+set logFile=D:\Server\nginx\logs\php-exit.log
 :guard
-ping 127.0.0.1 -n 4 >nul
-tasklist | find /i "php-cgi.exe" 1>nul 2>nul
+TASKLIST | FIND /I "php-cgi.exe" 1>nul 2>nul
 if "0"=="%errorlevel%" (
 	netstat -ano | find "9000" 1>nul 2>nul
 	if "0"=="%errorlevel%" (
-		echo [%date:~0,10% %time:~0,8%] php-cgi is running ....
+		echo php is running
 	) else (
-		echo  php-cgi is running, but it cann't to work ....
+		cd /D D:\Server\nginx
 		echo [%date% %time%] [notice] php-cgi is running, but it cann't to work ....>>%logFile%
-		cd D:\Server\nginx
-		RunHiddenConsole D:/Server/php5.4/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/php5.4/php.ini
+		cd /D D:\Server\nginx
+		RunHiddenConsole D:/Server/PHP7.0/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/PHP7.0/php.ini
 	)
 ) else (
-	echo [%date% %time%] php-cgi is stoped.
+	cd /D D:\Server\nginx
 	echo [%date% %time%] [error] php-cgi is stoped.>>%logFile%
-	cd D:\Server\nginx
-	RunHiddenConsole D:/Server/php5.4/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/php5.4/php.ini
+	cd /D D:\Server\nginx
+	RunHiddenConsole D:/Server/PHP7.0/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/PHP7.0/php.ini
 )
+choice /t 10 /d y /n >nul
 goto guard

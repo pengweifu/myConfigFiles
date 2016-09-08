@@ -1,96 +1,110 @@
-@echo off
+@ echo off
+%1 %2
+ver|find "5.">nul&&goto :o
+mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :o","","runas",1)(window.close)&goto :eof
+
 :o
 cls
-echo a.³õÊ¼»¯°²×°²¢Æô¶¯ s.½öÆô¶¯·þÎñ e.½öÍ£Ö¹·þÎñ d.Ð¶ÔØËùÓÐ·þÎñ²¢É¾³ý q.ÍË³ö
-choice /c asedq /n
+echo a.åˆå§‹åŒ–å®‰è£…å¹¶å¯åŠ¨ s.ä»…å¯åŠ¨æœåŠ¡ e.ä»…åœæ­¢æœåŠ¡ d.å¸è½½æ‰€æœ‰æœåŠ¡å¹¶åˆ é™¤ n.é‡å¯nginx q.é€€å‡º
+choice /c asednq /n
 if %errorlevel%==1 goto :install
 if %errorlevel%==2 goto :start
 if %errorlevel%==3 goto :stop
 if %errorlevel%==4 goto :uninstall
-if %errorlevel%==5 goto :ed
+if %errorlevel%==5 goto :restart
+if %errorlevel%==6 goto :ed
 goto o
 
 
 :install
-echo ×¢²ámysql·þÎñ...
-cd D:\Server\mysql\bin
+echo æ³¨å†ŒmysqlæœåŠ¡...
+cd /D D:\Server\mysql\bin
 mysqld-nt.exe --install mysql --defaults-file=D:/Server/mysql/my.ini
-echo ×¢²ámemcached·þÎñÆ÷...
-cd D:\Server\memcached
+echo æ³¨å†ŒmemcachedæœåŠ¡å™¨...
+cd /D D:\Server\memcached
 memcached -d install
-memcached -d start
-echo ×¢²ángrok·þÎñ...
-cd D:\Server\nginx
-ngrok authtoken token
+echo æ³¨å†ŒRedisæœåŠ¡å™¨...
+cd /D D:\Server\REDIS
+redis-server --service-install redis.windows-service.conf
+echo æ³¨å†ŒngrokæœåŠ¡...
+cd /D D:\Server\nginx
+RunHiddenConsole D:/Server/nginx/ngrok.exe authtoken 7ot9xUgfL8ZXDmLa9m5y2_5XkYFdLSMQyRV4q2JSGBW
 goto start
 
 
 :uninstall
-echo Í£Ö¹netbox·þÎñÆ÷...  
+echo åœæ­¢netboxæœåŠ¡å™¨...  
 taskkill /F /IM netbox.dll > nul
-echo Í£Ö¹ PHP FastCGI...
-taskkill /F /IM xxfpm.exe > nul
-echo Í£Ö¹redis·þÎñÆ÷...  
+echo åœæ­¢ PHP FastCGI...
+taskkill /F /IM php-cgi.exe > nul
+echo åœæ­¢redisæœåŠ¡å™¨...  
 taskkill /F /IM redis-server.exe > nul
-echo Í£Ö¹Memcached·þÎñ...
-cd D:\Server\memcached
+echo åœæ­¢MemcachedæœåŠ¡...
+cd /D D:\Server\memcached
 memcached -d stop
-echo Í£Ö¹nginx...  
+echo åœæ­¢nginx...  
 taskkill /F /IM nginx.exe > nul
-echo Í£Ö¹mysql·þÎñ³ÌÐò...
+echo åœæ­¢mysqlæœåŠ¡ç¨‹åº...
 net stop mysql
-echo Í£Ö¹ngrok...  
+echo åœæ­¢ngrok...  
 taskkill /F /IM ngrok.exe > nul
-echo Ð¶ÔØmysql·þÎñ...
-cd D:\Server\mysql\bin
+echo å¸è½½mysqlæœåŠ¡...
+cd /D D:\Server\mysql\bin
 mysqld-nt.exe --remove mysql
-echo Ð¶ÔØMemcached·þÎñ...
-cd D:\Server\memcached
+echo å¸è½½MemcachedæœåŠ¡...
+cd /D D:\Server\memcached
 memcached -d stop
 memcached -d remove
 sc delete "Memcached Server"
+echo å¸è½½RedisæœåŠ¡...
+cd /D D:\Server\REDIS
+redis-server --service-uninstall
 pause
 goto o
 
 
 :start
-rem net start|findstr /i /c:"mysql">nul && net stop mysql
-rem net start|findstr /i /c:"Memcached Server">nul && net stop mysql
-rem echo Æô¶¯mysql·þÎñ³ÌÐò...
-rem net start mysql
-rem echo StartingMemcached·þÎñÆ÷...
-rem net start "Memcached Server"
-TASKLIST | FIND /I "ngrok.exe" && taskkill /F /IM ngrok.exe > nul
-TASKLIST | FIND /I "nginx.exe" && taskkill /F /IM nginx.exe > nul
-TASKLIST | FIND /I "php-cgi.exe" && taskkill /F /IM php-cgi.exe > nul
-TASKLIST | FIND /I "redis-server.exe" && taskkill /F /IM redis-server.exe > nul
-cd D:\Server\nginx
-echo Starting Redis·þÎñÆ÷...
-RunHiddenConsole D:/Server/redis/redis-server.exe D:/Server/redis/redis.conf
-echo Starting PHPºÍFastCGI·þÎñÆ÷...
-RunHiddenConsole D:/Server/php5.4/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/php5.4/php.ini
-echo Starting nginx·þÎñÆ÷...
-RunHiddenConsole D:/Server/nginx/nginx.exe -p D:/Server/nginx
-rem echo Starting ngrok...
-rem RunHiddenConsole D:/Server/nginx/ngrok.exe -subdomain=pengweifu -config ngrok.cfg 80
-rem echo ¿ªÊ¼¿ªÆônetbox·þÎñÆ÷
-rem cd D:\Server\web\
+echo å¯åŠ¨mysqlæœåŠ¡ç¨‹åº...
+rem start|findstr /i /c:"Memcached Server">nul || net start "Memcached Server"
+rem RunHiddenConsole D:/Server/PHP7.0/php-cgi.exe -b 127.0.0.1:9000 -c D:/Server/PHP7.0/php.ini
+rem cd /D D:\Server\web\
 rem start Asp.exe
-mshta vbscript:createobject("wscript.shell").run("cmd /c D:\Server\nginx\guard.bat",0)(window.close)
-mshta vbscript:createobject("wscript.shell").run("cmd /c D:\Server\nginx\node.bat",0)(window.close)
+net start|findstr /i /c:"mysql">nul || net start mysql
+cd /D D:\Server\nginx
+echo å¯åŠ¨ngrokå†…ç½‘ç©¿é€ç¨‹åº...
+TASKLIST | FIND /I "ngrok.exe" || RunHiddenConsole D:/Server/nginx/ngrok.exe http 80
+echo å¯åŠ¨nginx WebæœåŠ¡ ...
+TASKLIST | FIND /I "nginx.exe" || RunHiddenConsole D:/Server/nginx/nginx.exe -p D:/Server/nginx
+echo å¯åŠ¨redis æ•°æ®åº“ ...
+cd /D D:\Server\REDIS
+TASKLIST | FIND /I "redis-server.exe" || redis-server --service-start
+echo å¯åŠ¨PHP7 å®ˆæŠ¤ç¨‹åº ..
+tasklist /FI "WINDOWTITLE eq ç®¡ç†å‘˜:  guard" | find /I "cmd.exe" || mshta vbscript:createobject("wscript.shell").run("cmd /c D:\Server\nginx\guard.bat",0)(window.close)
+rem mshta vbscript:createobject("wscript.shell").run("cmd /c D:\Server\nginx\node.bat",0)(window.close)
 rem pause
 rem explorer http://localhost/index.php
 goto o
 
+:restart
+TASKLIST | FIND /I "nginx.exe" && taskkill /F /IM nginx.exe > nul
+TASKLIST | FIND /I "xxfpm.exe" && taskkill /F /IM xxfpm.exe > nul
+TASKLIST | FIND /I "php-cgi.exe" && taskkill /F /IM php-cgi.exe > nul
+cd /D D:\Server\nginx
+RunHiddenConsole D:/Server/nginx/nginx.exe -p D:/Server/nginx
+goto o
+
 :stop
 rem net start|findstr /i /c:"mysql">nul && net stop mysql
-net start|findstr /i /c:"Memcached Server">nul && net stop mysql
+tasklist /FI "WINDOWTITLE eq ç®¡ç†å‘˜:  guard" | find /I "cmd.exe" && taskkill /F /T /FI "WINDOWTITLE eq ç®¡ç†å‘˜:  guard" > nul
+tasklist /FI "WINDOWTITLE eq guard" | find /I "cmd.exe" && taskkill /F /T /FI "WINDOWTITLE eq guard" > nul
+net start|findstr /i /c:"Memcached Server">nul && net stop "Memcached Server"
+TASKLIST | FIND /I "choice.exe" && taskkill /F /IM choice.exe > nul
 TASKLIST | FIND /I "ngrok.exe" && taskkill /F /IM ngrok.exe > nul
 TASKLIST | FIND /I "nginx.exe" && taskkill /F /IM nginx.exe > nul
-TASKLIST | FIND /I "php-cgi.exe" && taskkill /F /IM php-cgi.exe > nul
-TASKLIST | FIND /I "redis-server.exe" && taskkill /F /IM redis-server.exe > nul
+TASKLIST | FIND /I "redis-server.exe" && cd /D D:\Server\REDIS && redis-server --service-stop > nul
 TASKLIST | FIND /I "netbox.dll" && taskkill /F /IM netbox.dll > nul
 TASKLIST | FIND /I "node.exe" && taskkill /F /IM node.exe > nul
+TASKLIST | FIND /I "php-cgi.exe" && taskkill /F /IM php-cgi.exe > nul
 pause
 goto o
 

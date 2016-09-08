@@ -1,0 +1,50 @@
+Albert Launcher
+bleachbit
+blender
+classicmenu-indicator
+FileZilla
+gdebi 
+GIMP
+Git
+Gitg
+goldendict
+Google Chrome
+Grub Customizer
+indicator-keylock
+Inkscape
+Kazam
+Krita
+macbuntu-os-icons-lts-v7
+macbuntu-os-ithemes-lts-v7
+macbuntu-os-lightdm-lts-v7
+macbuntu-os-plank-theme-lts-v7
+Meld
+mysql-server 
+netease cloud music
+Nginx
+Node.js
+nvidia-361
+OpenJDK
+OpenShot
+php7.0-fpm
+php7.0-dev
+Plank
+Plymouth
+plymouth-themes
+RAR
+Redis
+Remmina
+scm-server
+Shutter
+Skype
+Slingscold
+Sublime Text
+SuperTuxKart
+Synaptic
+Unrar
+Vim
+vim-gtk
+VLC
+WizNote
+Zeal
+Zsh
