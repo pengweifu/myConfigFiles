@@ -1,6 +1,8 @@
 {
 	"dpi_scale": 1.0,
+	"color_scheme": "Packages/User/SublimeLinter/karyfoundation-light (SL).tmTheme",
 	"font_size": 14,
+	"font_face": "Anonymous Pro",
 	"ignored_packages":
 	[
 		// inner plugins
@@ -79,8 +81,12 @@
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
+	"open_files_in_new_window": false,
+	"save_on_focus_lost": true,
+	"show_full_path": true,
 	"tab_size": 2,
+	"theme": "Soda Light 3.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"update_check": false,
-	"word_wrap": "auto"
+	"word_wrap": true
 }
