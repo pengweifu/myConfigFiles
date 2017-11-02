@@ -587,3 +587,22 @@ $ws = new WebSocket("127.0.0.1", "2000");
     }
 </script>
 <?php
+
+/**=======================================ajax跨域==============================================**/
+
+header('Access-Control-Allow-Origin: http://www.b.com');
+$callback = $_GET['callback'];
+$result   = ['data'=>'data','errno'=>500];
+$post=empty($_POST)?json_decode(file_get_contents('php://input'), 1):$_POST;
+if (!empty($post)) {
+    if ($post['email']=='1@qq.com' && $post['password']=='111111') {
+        $result = [];
+    } else {
+        $result = [];
+    }
+}
+if (!empty($callback)) {
+    echo $callback . '(' . json_encode($result) . ')';
+} else {
+    echo json_encode($result);
+}
